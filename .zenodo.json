@@ -1,0 +1,23 @@
+{
+  "title": "SH-GD/SM-L: Dynamic Alternative-Path Selection for AI Agents Based on Learned Schema Compatibility and State Monitoring - code and results",
+  "description": "Reference implementation, experiment harnesses, result logs and the scripts that generate every number, table and figure of the article 'SH-GD/SM-L: Dynamic Alternative-Path Selection for AI Agents Based on Learned Schema Compatibility and State Monitoring' (submitted to IEEE Access).",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Otsuki, Akira",
+      "affiliation": "College of Economics, Nihon University"
+    }
+  ],
+  "keywords": [
+    "AI agents",
+    "alternative path selection",
+    "Bayesian estimation",
+    "calibration",
+    "fault recovery",
+    "schema compatibility",
+    "state machines",
+    "tool use"
+  ],
+  "access_right": "open"
+}

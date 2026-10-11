@@ -1,0 +1,84 @@
+{
+  "config": {
+    "endpoint": "http://127.0.0.1:8080/v1/chat/completions",
+    "model": null,
+    "backend": "llama",
+    "lang": "en",
+    "think": false,
+    "episodes": 15,
+    "train_episodes": 1600,
+    "seeds": 2,
+    "arms": "A,B,D",
+    "estimator": "lcb",
+    "out": "llm_results_real_ABD.json",
+    "measure_rho": 0
+  },
+  "results": {
+    "A": {
+      "arm": "A",
+      "completion": 0.0,
+      "completion_ci": 0.0,
+      "steps": 5.433333333333334,
+      "malformed": 0.0,
+      "seconds_per_episode": 295.6849609454473,
+      "llm_calls_per_episode": 24.0,
+      "mean_call_latency_s": 12.329016207222534
+    },
+    "B": {
+      "arm": "B",
+      "completion": 0.0,
+      "completion_ci": 0.0,
+      "steps": 14.666666666666666,
+      "malformed": 0.0,
+      "seconds_per_episode": 384.55101492404935,
+      "llm_calls_per_episode": 31.666666666666668,
+      "mean_call_latency_s": 12.110002424947208
+    }
+  },
+  "per_seed": {
+    "A": [
+      {
+        "seed": 1,
+        "completion": 0.0,
+        "steps": 5.2,
+        "malformed": 0.0,
+        "llm_calls": 360,
+        "prompt_tokens": 147146,
+        "completion_tokens": 8072,
+        "mean_call_latency_s": 15.850704277499931
+      },
+      {
+        "seed": 2,
+        "completion": 0.0,
+        "steps": 5.666666666666667,
+        "malformed": 0.0,
+        "llm_calls": 360,
+        "prompt_tokens": 148197,
+        "completion_tokens": 7989,
+        "mean_call_latency_s": 8.807328136945134
+      }
+    ],
+    "B": [
+      {
+        "seed": 1,
+        "completion": 0.0,
+        "steps": 14.666666666666666,
+        "malformed": 0.0,
+        "llm_calls": 475,
+        "prompt_tokens": 157203,
+        "completion_tokens": 9945,
+        "mean_call_latency_s": 12.873027343578839
+      },
+      {
+        "seed": 2,
+        "completion": 0.0,
+        "steps": 14.666666666666666,
+        "malformed": 0.0,
+        "llm_calls": 475,
+        "prompt_tokens": 157207,
+        "completion_tokens": 9951,
+        "mean_call_latency_s": 11.346977506315575
+      }
+    ]
+  }
+}

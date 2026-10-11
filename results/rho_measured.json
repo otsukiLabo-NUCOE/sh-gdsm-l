@@ -1,0 +1,30 @@
+{
+  "n": 40000,
+  "rows": [
+    [
+      "market_raw -> stock_raw",
+      0.857225,
+      0.85
+    ],
+    [
+      "market_raw -> econ_raw",
+      0.70705,
+      0.7
+    ],
+    [
+      "econ_raw -> stock_raw",
+      0.2983,
+      0.3
+    ],
+    [
+      "stock_raw -> econ_raw",
+      0.250075,
+      0.25
+    ],
+    [
+      "news_digest -> news_summary",
+      0.149225,
+      0.15
+    ]
+  ]
+}

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "SH-GD/SM-L: Dynamic Alternative-Path Selection for AI Agents Based on Learned Schema Compatibility and State Monitoring - code and results"
+authors:
+  - family-names: Otsuki
+    given-names: Akira
+    affiliation: "College of Economics, Nihon University"
+    email: otsuki.akira@nihon-u.ac.jp
+license: MIT
+version: 1.0.0
+date-released: 2026-10-11

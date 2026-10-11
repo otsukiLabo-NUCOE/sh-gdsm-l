@@ -1,0 +1,55 @@
+{
+  "config": {
+    "endpoint": "http://127.0.0.1:8080/v1/chat/completions",
+    "model": null,
+    "backend": "llama",
+    "lang": "en",
+    "think": false,
+    "episodes": 15,
+    "train_episodes": 1600,
+    "seeds": 2,
+    "arms": "D",
+    "estimator": "lcb",
+    "out": "llm_results_real_D.json",
+    "measure_rho": 0
+  },
+  "results": {
+    "D": {
+      "arm": "D",
+      "completion": 0.2,
+      "completion_ci": 0.13066666666666665,
+      "steps": 8.2,
+      "malformed": 0.0,
+      "seconds_per_episode": 203.77196865081788,
+      "llm_calls_per_episode": 21.299999999999997,
+      "mean_call_latency_s": 9.598358369157292,
+      "claim": 0.46890126293231565,
+      "claim_ci": 0.013036061212404278,
+      "calibration_gap": 0.26890126293231564
+    }
+  },
+  "per_seed": {
+    "D": [
+      {
+        "seed": 1,
+        "completion": 0.26666666666666666,
+        "steps": 8.533333333333333,
+        "malformed": 0.0,
+        "llm_calls": 306,
+        "prompt_tokens": 439600,
+        "completion_tokens": 8310,
+        "mean_call_latency_s": 10.378839194771679
+      },
+      {
+        "seed": 2,
+        "completion": 0.13333333333333333,
+        "steps": 7.866666666666666,
+        "malformed": 0.0,
+        "llm_calls": 333,
+        "prompt_tokens": 471711,
+        "completion_tokens": 8444,
+        "mean_call_latency_s": 8.817877543542904
+      }
+    ]
+  }
+}

@@ -1,0 +1,1038 @@
+{
+  "config": {
+    "categories": "c3,c4",
+    "modes": "P2",
+    "tasks_per_cell": 12,
+    "arms": "llm,hybrid",
+    "base_url": "http://127.0.0.1:8080/v1",
+    "model": "NVIDIA-Nemotron-Nano-9B-v2-Japanese-Q8_0",
+    "temperature": 0.0,
+    "max_rounds": 15,
+    "seed": 1,
+    "out": "results_toolmaze_pilot.json"
+  },
+  "pretraining": {
+    "pass_observations": 200,
+    "exec_observations": 1151
+  },
+  "summary": {
+    "llm": {
+      "n": 24,
+      "tsr": 0.0,
+      "prr": 0.0,
+      "llm_calls": 2.2916666666666665,
+      "tool_calls": 1.2916666666666667,
+      "latency": 33.88346517069393
+    },
+    "hybrid": {
+      "n": 24,
+      "tsr": 0.0,
+      "prr": 0.0,
+      "llm_calls": 2.7083333333333335,
+      "tool_calls": 1.75,
+      "latency": 22.93172513319207
+    }
+  },
+  "runs": [
+    {
+      "task_id": "C3_task_054",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 24.600991750001413,
+      "seconds": 101.08289408683777,
+      "tokens": {
+        "input_tokens": 8438,
+        "output_tokens": 382,
+        "total_tokens": 8820
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'hold_best_recommendation' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_054",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 34.02122468666833,
+      "seconds": 517.3727977275848,
+      "tokens": {
+        "input_tokens": 50436,
+        "output_tokens": 2262,
+        "total_tokens": 52698
+      },
+      "interventions": [
+        {
+          "failed": "hold_best_recommendation",
+          "chosen": "get_recommendations_content",
+          "ranked": [
+            [
+              "get_recommendations_content",
+              0.03493286599309184
+            ]
+          ]
+        },
+        {
+          "failed": "hold_best_recommendation",
+          "chosen": "get_recommendations_content",
+          "ranked": [
+            [
+              "get_recommendations_content",
+              0.0750667101581228
+            ]
+          ]
+        },
+        {
+          "failed": "hold_best_recommendation",
+          "chosen": "get_recommendations_content",
+          "ranked": [
+            [
+              "get_recommendations_content",
+              0.11726654218707375
+            ]
+          ]
+        },
+        {
+          "failed": "hold_best_recommendation",
+          "chosen": "get_recommendations_content",
+          "ranked": [
+            [
+              "get_recommendations_content",
+              0.15845684294485124
+            ]
+          ]
+        },
+        {
+          "failed": "hold_best_recommendation",
+          "chosen": "get_recommendations_content",
+          "ranked": [
+            [
+              "get_recommendations_content",
+              0.19748694690983312
+            ]
+          ]
+        },
+        {
+          "failed": "hold_best_recommendation",
+          "chosen": "get_recommendations_content",
+          "ranked": [
+            [
+              "get_recommendations_content",
+              0.23397831913588704
+            ]
+          ]
+        },
+        {
+          "failed": "hold_best_recommendation",
+          "chosen": "get_recommendations_content",
+          "ranked": [
+            [
+              "get_recommendations_content",
+              0.26788719759824076
+            ]
+          ]
+        }
+      ],
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'hold_best_recommendation' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_038",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 17.87127266000607,
+      "seconds": 91.46002101898193,
+      "tokens": {
+        "input_tokens": 10206,
+        "output_tokens": 228,
+        "total_tokens": 10434
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_quote_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_038",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 13.51915593999729,
+      "seconds": 69.54771494865417,
+      "tokens": {
+        "input_tokens": 10245,
+        "output_tokens": 226,
+        "total_tokens": 10471
+      },
+      "interventions": [
+        {
+          "failed": "get_quote_snapshot_native",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_quote_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_066",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 21.70807424999657,
+      "seconds": 45.2660710811615,
+      "tokens": {
+        "input_tokens": 3478,
+        "output_tokens": 135,
+        "total_tokens": 3613
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_066",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 17.53786129999935,
+      "seconds": 37.17079710960388,
+      "tokens": {
+        "input_tokens": 3519,
+        "output_tokens": 163,
+        "total_tokens": 3682
+      },
+      "interventions": [
+        {
+          "failed": "get_booking_stay_sheet_native",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_052",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 30.15658579999581,
+      "seconds": 32.11580038070679,
+      "tokens": {
+        "input_tokens": 1807,
+        "output_tokens": 88,
+        "total_tokens": 1895
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_052",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 13.062909799991758,
+      "seconds": 15.017536163330078,
+      "tokens": {
+        "input_tokens": 1807,
+        "output_tokens": 88,
+        "total_tokens": 1895
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_005",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 18.69804474999546,
+      "seconds": 39.423261642456055,
+      "tokens": {
+        "input_tokens": 3142,
+        "output_tokens": 75,
+        "total_tokens": 3217
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_light_mesh_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_005",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 13.99813549999817,
+      "seconds": 29.88035273551941,
+      "tokens": {
+        "input_tokens": 3181,
+        "output_tokens": 91,
+        "total_tokens": 3272
+      },
+      "interventions": [
+        {
+          "failed": "get_light_mesh_snapshot_native",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_light_mesh_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_021",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 38.155700599993,
+      "seconds": 40.220290660858154,
+      "tokens": {
+        "input_tokens": 2515,
+        "output_tokens": 138,
+        "total_tokens": 2653
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_021",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 19.580908699994325,
+      "seconds": 21.558796644210815,
+      "tokens": {
+        "input_tokens": 2515,
+        "output_tokens": 138,
+        "total_tokens": 2653
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_039",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 28.77921800000331,
+      "seconds": 59.60716390609741,
+      "tokens": {
+        "input_tokens": 3832,
+        "output_tokens": 222,
+        "total_tokens": 4054
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_broker_balance_ledger_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_039",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 21.673142649997317,
+      "seconds": 45.28829598426819,
+      "tokens": {
+        "input_tokens": 3874,
+        "output_tokens": 215,
+        "total_tokens": 4089
+      },
+      "interventions": [
+        {
+          "failed": "get_broker_balance_ledger_native",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_broker_balance_ledger_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_010",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 34.5925997000013,
+      "seconds": 36.65253138542175,
+      "tokens": {
+        "input_tokens": 1835,
+        "output_tokens": 125,
+        "total_tokens": 1960
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_010",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 17.632725999996183,
+      "seconds": 19.603276252746582,
+      "tokens": {
+        "input_tokens": 1835,
+        "output_tokens": 125,
+        "total_tokens": 1960
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_011",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 23.59108339999875,
+      "seconds": 96.43799328804016,
+      "tokens": {
+        "input_tokens": 8126,
+        "output_tokens": 367,
+        "total_tokens": 8493
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_aviationstack_gate_board_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_011",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 23.01506470000095,
+      "seconds": 94.04559397697449,
+      "tokens": {
+        "input_tokens": 8168,
+        "output_tokens": 460,
+        "total_tokens": 8628
+      },
+      "interventions": [
+        {
+          "failed": "get_aviationstack_gate_board_native",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_aviationstack_gate_board_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_082",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 24.514176899996528,
+      "seconds": 99.90901446342468,
+      "tokens": {
+        "input_tokens": 8446,
+        "output_tokens": 378,
+        "total_tokens": 8824
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_discovered_lock_ticket_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_082",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 20.188786974998948,
+      "seconds": 82.82214426994324,
+      "tokens": {
+        "input_tokens": 8486,
+        "output_tokens": 357,
+        "total_tokens": 8843
+      },
+      "interventions": [
+        {
+          "failed": "get_discovered_lock_ticket_native",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_discovered_lock_ticket_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_045",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 23.834392199998547,
+      "seconds": 49.64503192901611,
+      "tokens": {
+        "input_tokens": 3598,
+        "output_tokens": 145,
+        "total_tokens": 3743
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_045",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 17.164328599996225,
+      "seconds": 36.424349308013916,
+      "tokens": {
+        "input_tokens": 3598,
+        "output_tokens": 145,
+        "total_tokens": 3743
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_037",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 33.61291419999907,
+      "seconds": 35.570693016052246,
+      "tokens": {
+        "input_tokens": 2015,
+        "output_tokens": 116,
+        "total_tokens": 2131
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_037",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 16.50766649999423,
+      "seconds": 18.57470941543579,
+      "tokens": {
+        "input_tokens": 2015,
+        "output_tokens": 116,
+        "total_tokens": 2131
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_020",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 60.25018629999249,
+      "seconds": 62.20569086074829,
+      "tokens": {
+        "input_tokens": 2880,
+        "output_tokens": 289,
+        "total_tokens": 3169
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_020",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 40.10756809999293,
+      "seconds": 42.162248849868774,
+      "tokens": {
+        "input_tokens": 2880,
+        "output_tokens": 289,
+        "total_tokens": 3169
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_024",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 27.258005399999092,
+      "seconds": 29.204065799713135,
+      "tokens": {
+        "input_tokens": 2906,
+        "output_tokens": 29,
+        "total_tokens": 2935
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_024",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 6.1501108999946155,
+      "seconds": 8.178640604019165,
+      "tokens": {
+        "input_tokens": 2906,
+        "output_tokens": 29,
+        "total_tokens": 2935
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_019",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 20.372222450001573,
+      "seconds": 83.42204761505127,
+      "tokens": {
+        "input_tokens": 10483,
+        "output_tokens": 241,
+        "total_tokens": 10724
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_hotel_info_expedia' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_019",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 17.300402975004545,
+      "seconds": 71.10341358184814,
+      "tokens": {
+        "input_tokens": 8797,
+        "output_tokens": 170,
+        "total_tokens": 8967
+      },
+      "interventions": [
+        {
+          "failed": "get_hotel_info_expedia",
+          "chosen": "get_hotel_info",
+          "ranked": [
+            [
+              "get_hotel_info",
+              0.9444444444444444
+            ]
+          ]
+        }
+      ],
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_hotel_info_expedia' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_034",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 24.9033980000022,
+      "seconds": 51.894493103027344,
+      "tokens": {
+        "input_tokens": 7611,
+        "output_tokens": 105,
+        "total_tokens": 7716
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_034",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 14.864089099995908,
+      "seconds": 31.695544481277466,
+      "tokens": {
+        "input_tokens": 7611,
+        "output_tokens": 105,
+        "total_tokens": 7716
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_032",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 56.21263419999741,
+      "seconds": 58.32474327087402,
+      "tokens": {
+        "input_tokens": 2685,
+        "output_tokens": 269,
+        "total_tokens": 2954
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_032",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 37.585606499997084,
+      "seconds": 39.54919147491455,
+      "tokens": {
+        "input_tokens": 2685,
+        "output_tokens": 269,
+        "total_tokens": 2954
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_033",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 89.17991940000502,
+      "seconds": 91.19636821746826,
+      "tokens": {
+        "input_tokens": 2734,
+        "output_tokens": 508,
+        "total_tokens": 3242
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_033",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 69.72180449998996,
+      "seconds": 71.67806339263916,
+      "tokens": {
+        "input_tokens": 2734,
+        "output_tokens": 508,
+        "total_tokens": 3242
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_056",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 28.728810200002044,
+      "seconds": 30.789214611053467,
+      "tokens": {
+        "input_tokens": 3480,
+        "output_tokens": 19,
+        "total_tokens": 3499
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_056",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 5.026957699999912,
+      "seconds": 6.964401006698608,
+      "tokens": {
+        "input_tokens": 3480,
+        "output_tokens": 19,
+        "total_tokens": 3499
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_058",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 69.58467680000467,
+      "seconds": 71.62823557853699,
+      "tokens": {
+        "input_tokens": 3472,
+        "output_tokens": 338,
+        "total_tokens": 3810
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_058",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 46.535893399995985,
+      "seconds": 48.49382996559143,
+      "tokens": {
+        "input_tokens": 3472,
+        "output_tokens": 338,
+        "total_tokens": 3810
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_014",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 25.36915289999888,
+      "seconds": 52.65496826171875,
+      "tokens": {
+        "input_tokens": 6220,
+        "output_tokens": 129,
+        "total_tokens": 6349
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_014",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 18.73084965000453,
+      "seconds": 39.45323395729065,
+      "tokens": {
+        "input_tokens": 6255,
+        "output_tokens": 166,
+        "total_tokens": 6421
+      },
+      "interventions": [
+        {
+          "failed": "book_hotel",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_095",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 23.62006261999777,
+      "seconds": 120.07644009590149,
+      "tokens": {
+        "input_tokens": 20655,
+        "output_tokens": 387,
+        "total_tokens": 21042
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_available_coupons' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_095",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 19.402510900003836,
+      "seconds": 99.09148168563843,
+      "tokens": {
+        "input_tokens": 20692,
+        "output_tokens": 389,
+        "total_tokens": 21081
+      },
+      "interventions": [
+        {
+          "failed": "get_available_coupons",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_available_coupons' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_013",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 19.554866116666137,
+      "seconds": 119.30188989639282,
+      "tokens": {
+        "input_tokens": 17521,
+        "output_tokens": 338,
+        "total_tokens": 17859
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no complete valid path executed successfully; 'get_flight_info' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_013",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 15.607733719999668,
+      "seconds": 80.10880780220032,
+      "tokens": {
+        "input_tokens": 14323,
+        "output_tokens": 282,
+        "total_tokens": 14605
+      },
+      "interventions": [
+        {
+          "failed": "create_document",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_025",
+      "mode": "P2",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 48.05417550000129,
+      "seconds": 49.79083061218262,
+      "tokens": {
+        "input_tokens": 2446,
+        "output_tokens": 224,
+        "total_tokens": 2670
+      },
+      "interventions": null,
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_025",
+      "mode": "P2",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 0,
+      "llm_calls": 1,
+      "latency_per_call": 31.42596439999761,
+      "seconds": 32.54883909225464,
+      "tokens": {
+        "input_tokens": 2446,
+        "output_tokens": 224,
+        "total_tokens": 2670
+      },
+      "interventions": [],
+      "failure_reason": "P2 failed: no perturbed C4 entry tool was called"
+    }
+  ]
+}

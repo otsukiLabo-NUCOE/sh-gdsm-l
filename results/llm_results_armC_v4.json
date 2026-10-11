@@ -1,0 +1,85 @@
+{
+  "config": {
+    "endpoint": "http://127.0.0.1:8080/v1/chat/completions",
+    "model": null,
+    "backend": "llama",
+    "lang": "en",
+    "think": false,
+    "episodes": 500,
+    "train_episodes": 1600,
+    "seeds": 5,
+    "arms": "C",
+    "estimator": "lcb",
+    "out": "llm_results_armC_v4.json",
+    "measure_rho": 0
+  },
+  "results": {
+    "C": {
+      "arm": "C",
+      "completion": 0.4544,
+      "completion_ci": 0.012296559518824777,
+      "steps": 10.886,
+      "malformed": 0.0,
+      "seconds_per_episode": 0.031912298011779784,
+      "llm_calls_per_episode": 0.0,
+      "mean_call_latency_s": 0.0,
+      "claim": 0.46061803268247586,
+      "claim_ci": 0.016557382606083883,
+      "calibration_gap": 0.006218032682475838
+    }
+  },
+  "per_seed": {
+    "C": [
+      {
+        "seed": 1,
+        "completion": 0.458,
+        "steps": 10.882,
+        "malformed": 0.0,
+        "llm_calls": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "mean_call_latency_s": 0.0
+      },
+      {
+        "seed": 2,
+        "completion": 0.43,
+        "steps": 10.902,
+        "malformed": 0.0,
+        "llm_calls": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "mean_call_latency_s": 0.0
+      },
+      {
+        "seed": 3,
+        "completion": 0.466,
+        "steps": 10.892,
+        "malformed": 0.0,
+        "llm_calls": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "mean_call_latency_s": 0.0
+      },
+      {
+        "seed": 4,
+        "completion": 0.46,
+        "steps": 10.926,
+        "malformed": 0.0,
+        "llm_calls": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "mean_call_latency_s": 0.0
+      },
+      {
+        "seed": 5,
+        "completion": 0.458,
+        "steps": 10.828,
+        "malformed": 0.0,
+        "llm_calls": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "mean_call_latency_s": 0.0
+      }
+    ]
+  }
+}
