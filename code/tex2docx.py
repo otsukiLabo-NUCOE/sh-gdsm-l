@@ -784,7 +784,7 @@ class Writer:
     # -- body walker ---------------------------------------------------------
     def body(self, s: str):
         pat = re.compile(r"\\(section\*?|subsection|subsubsection)\{|\\appendices|"
-                         r"\\begin\{([A-Za-z*]+)\}(\[[^\]]*\])?")
+                         r"\\begin\{([A-Za-z*]+)\}(\[(?:[^\]\[]|\[[^\]]*\])*\])?")
         i = 0
         while True:
             m = pat.search(s, i)
@@ -831,7 +831,22 @@ class Writer:
                 self.itemize(inner)
             elif env == "thebibliography":
                 self.bibliography(inner)
-            elif env in ("IEEEbiography", "IEEEbiographynophoto"):
+            elif env == "IEEEbiography":
+                full = s[m.start():end]
+                bm = re.match(r"\\begin\{IEEEbiography\}\[\{\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}\}\]\{([^}]*)\}(.*)",
+                              full, re.S)
+                photo, name, text = bm.group(1), bm.group(2), bm.group(3)
+                t = self.doc.add_table(rows=1, cols=2)
+                t.autofit = False
+                c0, c1 = t.cell(0, 0), t.cell(0, 1)
+                c0.width, c1.width = Inches(1.15), Inches(5.75)
+                c0.paragraphs[0].add_run().add_picture(os.path.join(self.root, photo), width=Inches(1.0))
+                p = c1.paragraphs[0]
+                p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+                r = p.add_run(name.upper() + " ")
+                r.bold = True
+                self.add_segs(p, self.il.convert(text.strip()))
+            elif env == "IEEEbiographynophoto":
                 name, j = brace_arg(inner, inner.find("{"))
                 p = self.doc.add_paragraph()
                 p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY

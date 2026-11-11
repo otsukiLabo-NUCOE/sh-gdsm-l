@@ -1,0 +1,2633 @@
+{
+  "config": {
+    "categories": "c3,c4",
+    "modes": "P0",
+    "tasks_per_cell": 50,
+    "arms": "llm",
+    "base_url": "http://127.0.0.1:8080/v1",
+    "model": "claude-sonnet-5-5",
+    "temperature": 0.0,
+    "backend": "anthropic",
+    "effort": "medium",
+    "max_rounds": 15,
+    "seed": 1,
+    "out": "EL/toolmaze_P0_sonnet.json"
+  },
+  "pretraining": {
+    "pass_observations": 200,
+    "exec_observations": 1151
+  },
+  "summary": {
+    "llm": {
+      "n": 100,
+      "tsr": 0.6,
+      "prr": null,
+      "llm_calls": 9.57,
+      "tool_calls": 8.59,
+      "latency": 1.579402332399891,
+      "cost_usd": 2.9826802
+    }
+  },
+  "runs": [
+    {
+      "task_id": "C3_task_054",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.615244066665279,
+      "seconds": 11.053507804870605,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 849,
+        "total_tokens": 863
+      },
+      "interventions": null,
+      "cost_usd": 0.0194521,
+      "claude_usage": {
+        "input": 14,
+        "output": 849,
+        "cache_read": 14541,
+        "cache_write": 3792,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['get_recommendations_content']"
+    },
+    {
+      "task_id": "C3_task_038",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.2858246374998998,
+      "seconds": 11.194350242614746,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 836,
+        "total_tokens": 854
+      },
+      "interventions": null,
+      "cost_usd": 0.019528900000000002,
+      "claude_usage": {
+        "input": 18,
+        "output": 836,
+        "cache_read": 20804,
+        "cache_write": 3621,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_066",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.455352799998114,
+      "seconds": 11.125767469406128,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 918,
+        "total_tokens": 934
+      },
+      "interventions": null,
+      "cost_usd": 0.0198915,
+      "claude_usage": {
+        "input": 16,
+        "output": 918,
+        "cache_read": 16395,
+        "cache_write": 3616,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_052",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.4308124857114828,
+      "seconds": 10.949456453323364,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 997,
+        "total_tokens": 1013
+      },
+      "interventions": null,
+      "cost_usd": 0.021399599999999998,
+      "claude_usage": {
+        "input": 16,
+        "output": 997,
+        "cache_read": 17551,
+        "cache_write": 3857,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_005",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.3213240857169564,
+      "seconds": 10.197760581970215,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 724,
+        "total_tokens": 740
+      },
+      "interventions": null,
+      "cost_usd": 0.0162408,
+      "claude_usage": {
+        "input": 16,
+        "output": 724,
+        "cache_read": 14538,
+        "cache_write": 3006,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['get_iot_device_status']"
+    },
+    {
+      "task_id": "C3_task_021",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 9,
+      "llm_calls": 10,
+      "latency_per_call": 1.5048097699997016,
+      "seconds": 15.96814513206482,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1503,
+        "total_tokens": 1525
+      },
+      "interventions": null,
+      "cost_usd": 0.0336969,
+      "claude_usage": {
+        "input": 22,
+        "output": 1503,
+        "cache_read": 40304,
+        "cache_write": 5837,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['stringify_data']"
+    },
+    {
+      "task_id": "C3_task_039",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.468838462500571,
+      "seconds": 12.641303539276123,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1045,
+        "total_tokens": 1063
+      },
+      "interventions": null,
+      "cost_usd": 0.021903799999999998,
+      "claude_usage": {
+        "input": 18,
+        "output": 1045,
+        "cache_read": 20353,
+        "cache_write": 3753,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_010",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.4222143857124527,
+      "seconds": 10.925956010818481,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 887,
+        "total_tokens": 903
+      },
+      "interventions": null,
+      "cost_usd": 0.020344599999999997,
+      "claude_usage": {
+        "input": 16,
+        "output": 887,
+        "cache_read": 19001,
+        "cache_write": 3817,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_011",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.4977223285698398,
+      "seconds": 11.524084568023682,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 981,
+        "total_tokens": 997
+      },
+      "interventions": null,
+      "cost_usd": 0.0204707,
+      "claude_usage": {
+        "input": 16,
+        "output": 981,
+        "cache_read": 16812,
+        "cache_write": 3579,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_082",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.5674272000014753,
+      "seconds": 13.529255151748657,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1206,
+        "total_tokens": 1224
+      },
+      "interventions": null,
+      "cost_usd": 0.0243793,
+      "claude_usage": {
+        "input": 18,
+        "output": 1206,
+        "cache_read": 22383,
+        "cache_write": 4018,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_045",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.574003085714399,
+      "seconds": 12.065052032470703,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 727,
+        "total_tokens": 743
+      },
+      "interventions": null,
+      "cost_usd": 0.0170632,
+      "claude_usage": {
+        "input": 16,
+        "output": 727,
+        "cache_read": 15762,
+        "cache_write": 3274,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_037",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.374200350002866,
+      "seconds": 11.952044486999512,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1020,
+        "total_tokens": 1038
+      },
+      "interventions": null,
+      "cost_usd": 0.0227219,
+      "claude_usage": {
+        "input": 18,
+        "output": 1020,
+        "cache_read": 22734,
+        "cache_write": 4085,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_085",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.6021255142820467,
+      "seconds": 11.89587926864624,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 1034,
+        "total_tokens": 1050
+      },
+      "interventions": null,
+      "cost_usd": 0.021359,
+      "claude_usage": {
+        "input": 16,
+        "output": 1034,
+        "cache_read": 17770,
+        "cache_write": 3684,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['query_connected_devices']"
+    },
+    {
+      "task_id": "C3_task_051",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.4713124571426306,
+      "seconds": 10.880588293075562,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 900,
+        "total_tokens": 916
+      },
+      "interventions": null,
+      "cost_usd": 0.019504,
+      "claude_usage": {
+        "input": 16,
+        "output": 900,
+        "cache_read": 16170,
+        "cache_write": 3542,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_097",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.5032852333339786,
+      "seconds": 14.053104877471924,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1250,
+        "total_tokens": 1270
+      },
+      "interventions": null,
+      "cost_usd": 0.028931400000000003,
+      "claude_usage": {
+        "input": 20,
+        "output": 1250,
+        "cache_read": 33914,
+        "cache_write": 5200,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['add_best_recommendation_to_cart']"
+    },
+    {
+      "task_id": "C3_task_091",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.7454866000007314,
+      "seconds": 14.495330095291138,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1310,
+        "total_tokens": 1328
+      },
+      "interventions": null,
+      "cost_usd": 0.0279703,
+      "claude_usage": {
+        "input": 18,
+        "output": 1310,
+        "cache_read": 27343,
+        "cache_write": 4840,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['confirm_held_recommendation_order']"
+    },
+    {
+      "task_id": "C3_task_067",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.7985570000000735,
+      "seconds": 14.969720602035522,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1467,
+        "total_tokens": 1485
+      },
+      "interventions": null,
+      "cost_usd": 0.0291178,
+      "claude_usage": {
+        "input": 18,
+        "output": 1467,
+        "cache_read": 23543,
+        "cache_write": 4823,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_017",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.6779375625010289,
+      "seconds": 13.948507070541382,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 997,
+        "total_tokens": 1015
+      },
+      "interventions": null,
+      "cost_usd": 0.0218461,
+      "claude_usage": {
+        "input": 18,
+        "output": 997,
+        "cache_read": 21476,
+        "cache_write": 3877,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_081",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.4584228555565157,
+      "seconds": 13.701819658279419,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1310,
+        "total_tokens": 1330
+      },
+      "interventions": null,
+      "cost_usd": 0.0294921,
+      "claude_usage": {
+        "input": 20,
+        "output": 1310,
+        "cache_read": 33046,
+        "cache_write": 5219,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_034",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.5689115818161306,
+      "seconds": 17.782281637191772,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1626,
+        "total_tokens": 1650
+      },
+      "interventions": null,
+      "cost_usd": 0.0361804,
+      "claude_usage": {
+        "input": 24,
+        "output": 1626,
+        "cache_read": 47074,
+        "cache_write": 6066,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_025",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.2163588249950408,
+      "seconds": 10.319239139556885,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 892,
+        "total_tokens": 910
+      },
+      "interventions": null,
+      "cost_usd": 0.0205191,
+      "claude_usage": {
+        "input": 18,
+        "output": 892,
+        "cache_read": 21081,
+        "cache_write": 3782,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['get_weather_visualcrossing']"
+    },
+    {
+      "task_id": "C3_task_053",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.5327794111120359,
+      "seconds": 14.324029207229614,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1245,
+        "total_tokens": 1265
+      },
+      "interventions": null,
+      "cost_usd": 0.0271267,
+      "claude_usage": {
+        "input": 20,
+        "output": 1245,
+        "cache_read": 29217,
+        "cache_write": 4686,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_092",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 2.2370611428590825,
+      "seconds": 16.24698281288147,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 1226,
+        "total_tokens": 1242
+      },
+      "interventions": null,
+      "cost_usd": 0.0260582,
+      "claude_usage": {
+        "input": 16,
+        "output": 1226,
+        "cache_read": 22712,
+        "cache_write": 4598,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_100",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.7630285857178802,
+      "seconds": 12.862654685974121,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 870,
+        "total_tokens": 886
+      },
+      "interventions": null,
+      "cost_usd": 0.0188581,
+      "claude_usage": {
+        "input": 16,
+        "output": 870,
+        "cache_read": 15761,
+        "cache_write": 3420,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_065",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 9,
+      "llm_calls": 10,
+      "latency_per_call": 1.551857729999756,
+      "seconds": 16.09877586364746,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1632,
+        "total_tokens": 1654
+      },
+      "interventions": null,
+      "cost_usd": 0.035951699999999996,
+      "claude_usage": {
+        "input": 22,
+        "output": 1632,
+        "cache_read": 41402,
+        "cache_write": 6179,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['stringify_data']"
+    },
+    {
+      "task_id": "C3_task_006",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.3308741428544246,
+      "seconds": 9.835047721862793,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 753,
+        "total_tokens": 769
+      },
+      "interventions": null,
+      "cost_usd": 0.017194900000000003,
+      "claude_usage": {
+        "input": 16,
+        "output": 753,
+        "cache_read": 15604,
+        "cache_write": 3229,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_059",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.3794755428576277,
+      "seconds": 10.184073448181152,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 809,
+        "total_tokens": 825
+      },
+      "interventions": null,
+      "cost_usd": 0.0177481,
+      "claude_usage": {
+        "input": 16,
+        "output": 809,
+        "cache_read": 15286,
+        "cache_write": 3239,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_077",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.892825166665716,
+      "seconds": 11.935770034790039,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 910,
+        "total_tokens": 924
+      },
+      "interventions": null,
+      "cost_usd": 0.0190297,
+      "claude_usage": {
+        "input": 14,
+        "output": 910,
+        "cache_read": 13042,
+        "cache_write": 3439,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['stringify_data']"
+    },
+    {
+      "task_id": "C3_task_040",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.4794310499983112,
+      "seconds": 12.356302738189697,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 789,
+        "total_tokens": 807
+      },
+      "interventions": null,
+      "cost_usd": 0.019130900000000003,
+      "claude_usage": {
+        "input": 18,
+        "output": 789,
+        "cache_read": 20124,
+        "cache_write": 3677,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_080",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.2440330142853782,
+      "seconds": 9.293270587921143,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 612,
+        "total_tokens": 628
+      },
+      "interventions": null,
+      "cost_usd": 0.0156638,
+      "claude_usage": {
+        "input": 16,
+        "output": 612,
+        "cache_read": 15493,
+        "cache_write": 3185,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_024",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.2470927857191003,
+      "seconds": 9.247949361801147,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 841,
+        "total_tokens": 857
+      },
+      "interventions": null,
+      "cost_usd": 0.018294400000000002,
+      "claude_usage": {
+        "input": 16,
+        "output": 841,
+        "cache_read": 15149,
+        "cache_write": 3335,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_095",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.5382712428524559,
+      "seconds": 11.347137212753296,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 1130,
+        "total_tokens": 1146
+      },
+      "interventions": null,
+      "cost_usd": 0.0231015,
+      "claude_usage": {
+        "input": 16,
+        "output": 1130,
+        "cache_read": 17995,
+        "cache_write": 3988,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_031",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 2.0458921500012366,
+      "seconds": 16.889777660369873,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1257,
+        "total_tokens": 1275
+      },
+      "interventions": null,
+      "cost_usd": 0.0246097,
+      "claude_usage": {
+        "input": 18,
+        "output": 1257,
+        "cache_read": 21862,
+        "cache_write": 3927,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['build_contact_alert_payload']"
+    },
+    {
+      "task_id": "C3_task_074",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.450575128573941,
+      "seconds": 10.738415956497192,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 923,
+        "total_tokens": 939
+      },
+      "interventions": null,
+      "cost_usd": 0.0234738,
+      "claude_usage": {
+        "input": 16,
+        "output": 923,
+        "cache_read": 23968,
+        "cache_write": 4726,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['get_recommendations_content']"
+    },
+    {
+      "task_id": "C3_task_026",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.3222457875017426,
+      "seconds": 11.109960317611694,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 880,
+        "total_tokens": 898
+      },
+      "interventions": null,
+      "cost_usd": 0.0205414,
+      "claude_usage": {
+        "input": 18,
+        "output": 880,
+        "cache_read": 21529,
+        "cache_write": 3821,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_048",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.881094242855657,
+      "seconds": 13.76749563217163,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 1299,
+        "total_tokens": 1315
+      },
+      "interventions": null,
+      "cost_usd": 0.0269829,
+      "claude_usage": {
+        "input": 16,
+        "output": 1299,
+        "cache_read": 21259,
+        "cache_write": 4734,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['order_items', 'select_recommendation']"
+    },
+    {
+      "task_id": "C3_task_032",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.5810763555540082,
+      "seconds": 14.757210493087769,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1395,
+        "total_tokens": 1415
+      },
+      "interventions": null,
+      "cost_usd": 0.030464099999999997,
+      "claude_usage": {
+        "input": 20,
+        "output": 1395,
+        "cache_read": 32591,
+        "cache_write": 5286,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_046",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 2.022154825001053,
+      "seconds": 16.70616888999939,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1029,
+        "total_tokens": 1047
+      },
+      "interventions": null,
+      "cost_usd": 0.021672900000000002,
+      "claude_usage": {
+        "input": 18,
+        "output": 1029,
+        "cache_read": 20519,
+        "cache_write": 3718,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_020",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.5127956428602505,
+      "seconds": 11.206034421920776,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 933,
+        "total_tokens": 949
+      },
+      "interventions": null,
+      "cost_usd": 0.0210832,
+      "claude_usage": {
+        "input": 16,
+        "output": 933,
+        "cache_read": 18812,
+        "cache_write": 3936,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_088",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.3596909428597428,
+      "seconds": 10.042356967926025,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 786,
+        "total_tokens": 802
+      },
+      "interventions": null,
+      "cost_usd": 0.0165703,
+      "claude_usage": {
+        "input": 16,
+        "output": 786,
+        "cache_read": 14083,
+        "cache_write": 2908,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_043",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.5849175500043202,
+      "seconds": 13.25792646408081,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 913,
+        "total_tokens": 931
+      },
+      "interventions": null,
+      "cost_usd": 0.019961299999999998,
+      "claude_usage": {
+        "input": 18,
+        "output": 913,
+        "cache_read": 19928,
+        "cache_write": 3521,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_069",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.4967204374988796,
+      "seconds": 12.494879961013794,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1047,
+        "total_tokens": 1065
+      },
+      "interventions": null,
+      "cost_usd": 0.024959400000000003,
+      "claude_usage": {
+        "input": 18,
+        "output": 1047,
+        "cache_read": 26034,
+        "cache_write": 4740,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['select_recommendation']"
+    },
+    {
+      "task_id": "C3_task_096",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.525752374998774,
+      "seconds": 12.785812616348267,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1088,
+        "total_tokens": 1106
+      },
+      "interventions": null,
+      "cost_usd": 0.0225918,
+      "claude_usage": {
+        "input": 18,
+        "output": 1088,
+        "cache_read": 21983,
+        "cache_write": 3791,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_022",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.7230909374975454,
+      "seconds": 14.30675458908081,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 992,
+        "total_tokens": 1010
+      },
+      "interventions": null,
+      "cost_usd": 0.0216991,
+      "claude_usage": {
+        "input": 18,
+        "output": 992,
+        "cache_read": 21631,
+        "cache_write": 3832,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['push_alert_to_contact', 'update_device_config']"
+    },
+    {
+      "task_id": "C3_task_008",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.6244565624983807,
+      "seconds": 13.574503183364868,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 875,
+        "total_tokens": 893
+      },
+      "interventions": null,
+      "cost_usd": 0.0194931,
+      "claude_usage": {
+        "input": 18,
+        "output": 875,
+        "cache_read": 18621,
+        "cache_write": 3538,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_068",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.7043493571462542,
+      "seconds": 12.507160425186157,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 1048,
+        "total_tokens": 1064
+      },
+      "interventions": null,
+      "cost_usd": 0.022325599999999998,
+      "claude_usage": {
+        "input": 16,
+        "output": 1048,
+        "cache_read": 17561,
+        "cache_write": 4023,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_047",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 2.3639701749998494,
+      "seconds": 10.029823064804077,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 789,
+        "total_tokens": 799
+      },
+      "interventions": null,
+      "cost_usd": 0.015511,
+      "claude_usage": {
+        "input": 10,
+        "output": 789,
+        "cache_read": 7260,
+        "cache_write": 2750,
+        "refusals": 0
+      },
+      "failure_reason": "C3 P0 failed: no complete valid path executed successfully; missing_tools=['archive_alpha_market_window_native', 'get_alpha_market_window_native', 'place_equity_order_from_cost']"
+    },
+    {
+      "task_id": "C3_task_083",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.2720571142874957,
+      "seconds": 9.424232006072998,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 715,
+        "total_tokens": 731
+      },
+      "interventions": null,
+      "cost_usd": 0.017125,
+      "claude_usage": {
+        "input": 16,
+        "output": 715,
+        "cache_read": 16005,
+        "cache_write": 3337,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_012",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.3511192000026182,
+      "seconds": 9.982044696807861,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 765,
+        "total_tokens": 781
+      },
+      "interventions": null,
+      "cost_usd": 0.0176393,
+      "claude_usage": {
+        "input": 16,
+        "output": 765,
+        "cache_read": 16373,
+        "cache_write": 3328,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_007",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.7125641428574454,
+      "seconds": 12.558113813400269,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 781,
+        "total_tokens": 797
+      },
+      "interventions": null,
+      "cost_usd": 0.0176369,
+      "claude_usage": {
+        "input": 16,
+        "output": 781,
+        "cache_read": 15824,
+        "cache_write": 3285,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_020",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.5670501692276537,
+      "seconds": 20.910120010375977,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 1618,
+        "total_tokens": 1646
+      },
+      "interventions": null,
+      "cost_usd": 0.038727,
+      "claude_usage": {
+        "input": 28,
+        "output": 1618,
+        "cache_read": 63210,
+        "cache_write": 6468,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_024",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 9,
+      "llm_calls": 10,
+      "latency_per_call": 1.6187588000000688,
+      "seconds": 16.77569317817688,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1777,
+        "total_tokens": 1799
+      },
+      "interventions": null,
+      "cost_usd": 0.0385051,
+      "claude_usage": {
+        "input": 22,
+        "output": 1777,
+        "cache_read": 44811,
+        "cache_write": 6484,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_019",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.3927436272722182,
+      "seconds": 15.844708919525146,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1525,
+        "total_tokens": 1549
+      },
+      "interventions": null,
+      "cost_usd": 0.0335522,
+      "claude_usage": {
+        "input": 24,
+        "output": 1525,
+        "cache_read": 43692,
+        "cache_write": 5554,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_034",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 13,
+      "llm_calls": 14,
+      "latency_per_call": 1.5340436285727523,
+      "seconds": 22.056164264678955,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 2201,
+        "total_tokens": 2231
+      },
+      "interventions": null,
+      "cost_usd": 0.052668099999999995,
+      "claude_usage": {
+        "input": 30,
+        "output": 2201,
+        "cache_read": 88631,
+        "cache_write": 8694,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_032",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.5950247818175491,
+      "seconds": 18.073269367218018,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1487,
+        "total_tokens": 1511
+      },
+      "interventions": null,
+      "cost_usd": 0.0344936,
+      "claude_usage": {
+        "input": 24,
+        "output": 1487,
+        "cache_read": 48831,
+        "cache_write": 5877,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['confirm_held_recommendation_order']"
+    },
+    {
+      "task_id": "C4_task_033",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.4090054181843614,
+      "seconds": 16.08062219619751,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1394,
+        "total_tokens": 1418
+      },
+      "interventions": null,
+      "cost_usd": 0.03288,
+      "claude_usage": {
+        "input": 24,
+        "output": 1394,
+        "cache_read": 45170,
+        "cache_write": 5750,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_056",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 13,
+      "llm_calls": 14,
+      "latency_per_call": 1.5576998285739267,
+      "seconds": 22.336721897125244,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 2177,
+        "total_tokens": 2207
+      },
+      "interventions": null,
+      "cost_usd": 0.049459300000000005,
+      "claude_usage": {
+        "input": 30,
+        "output": 2177,
+        "cache_read": 80543,
+        "cache_write": 7830,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['express_checkout', 'hold_best_recommendation']"
+    },
+    {
+      "task_id": "C4_task_058",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 13,
+      "llm_calls": 14,
+      "latency_per_call": 1.5553116500013857,
+      "seconds": 22.349201917648315,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 2102,
+        "total_tokens": 2132
+      },
+      "interventions": null,
+      "cost_usd": 0.0487622,
+      "claude_usage": {
+        "input": 30,
+        "output": 2102,
+        "cache_read": 80397,
+        "cache_write": 7857,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['select_recommendation']"
+    },
+    {
+      "task_id": "C4_task_014",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 9,
+      "llm_calls": 10,
+      "latency_per_call": 1.9025690299997222,
+      "seconds": 19.5478675365448,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1464,
+        "total_tokens": 1486
+      },
+      "interventions": null,
+      "cost_usd": 0.0352525,
+      "claude_usage": {
+        "input": 22,
+        "output": 1464,
+        "cache_read": 45635,
+        "cache_write": 6402,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['get_recommendations']"
+    },
+    {
+      "task_id": "C4_task_095",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.356029776923466,
+      "seconds": 18.21605348587036,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 1806,
+        "total_tokens": 1834
+      },
+      "interventions": null,
+      "cost_usd": 0.0458991,
+      "claude_usage": {
+        "input": 28,
+        "output": 1806,
+        "cache_read": 75806,
+        "cache_write": 8081,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['optimize_discount']"
+    },
+    {
+      "task_id": "C4_task_013",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.511215499998798,
+      "seconds": 18.657055616378784,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1789,
+        "total_tokens": 1815
+      },
+      "interventions": null,
+      "cost_usd": 0.03786,
+      "claude_usage": {
+        "input": 26,
+        "output": 1789,
+        "cache_read": 49780,
+        "cache_write": 5976,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_025",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.4634767833316193,
+      "seconds": 18.086602687835693,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1339,
+        "total_tokens": 1365
+      },
+      "interventions": null,
+      "cost_usd": 0.030498,
+      "claude_usage": {
+        "input": 26,
+        "output": 1339,
+        "cache_read": 45460,
+        "cache_write": 5004,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['push_alert', 'select_discovered_device_by_type', 'update_device_config']"
+    },
+    {
+      "task_id": "C4_task_007",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.892358999997007,
+      "seconds": 21.397016763687134,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1812,
+        "total_tokens": 1836
+      },
+      "interventions": null,
+      "cost_usd": 0.0395347,
+      "claude_usage": {
+        "input": 24,
+        "output": 1812,
+        "cache_read": 51167,
+        "cache_write": 6500,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_042",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.6210724166679331,
+      "seconds": 19.974023818969727,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1930,
+        "total_tokens": 1956
+      },
+      "interventions": null,
+      "cost_usd": 0.0414197,
+      "claude_usage": {
+        "input": 26,
+        "output": 1930,
+        "cache_read": 55952,
+        "cache_write": 6589,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['publish_weatherapi_alert_card_native']"
+    },
+    {
+      "task_id": "C4_task_048",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.831698727276737,
+      "seconds": 20.73647928237915,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1498,
+        "total_tokens": 1522
+      },
+      "interventions": null,
+      "cost_usd": 0.036067,
+      "claude_usage": {
+        "input": 24,
+        "output": 1498,
+        "cache_read": 51690,
+        "cache_write": 6348,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_004",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 13,
+      "llm_calls": 14,
+      "latency_per_call": 1.7427547500005207,
+      "seconds": 24.928804636001587,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 2527,
+        "total_tokens": 2557
+      },
+      "interventions": null,
+      "cost_usd": 0.0538077,
+      "claude_usage": {
+        "input": 30,
+        "output": 2527,
+        "cache_read": 83177,
+        "cache_write": 8064,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['hold_inventory']"
+    },
+    {
+      "task_id": "C4_task_061",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.368029311111766,
+      "seconds": 12.892753839492798,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1181,
+        "total_tokens": 1201
+      },
+      "interventions": null,
+      "cost_usd": 0.0281995,
+      "claude_usage": {
+        "input": 20,
+        "output": 1181,
+        "cache_read": 33420,
+        "cache_write": 5203,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['build_device_restart_request', 'restart_device']"
+    },
+    {
+      "task_id": "C4_task_064",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 9,
+      "llm_calls": 10,
+      "latency_per_call": 1.6048023199997261,
+      "seconds": 16.577797412872314,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1495,
+        "total_tokens": 1517
+      },
+      "interventions": null,
+      "cost_usd": 0.0316889,
+      "claude_usage": {
+        "input": 22,
+        "output": 1495,
+        "cache_read": 36024,
+        "cache_write": 5237,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['build_device_config_request']"
+    },
+    {
+      "task_id": "C4_task_011",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.5638455000007525,
+      "seconds": 19.35403060913086,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1628,
+        "total_tokens": 1654
+      },
+      "interventions": null,
+      "cost_usd": 0.037491199999999995,
+      "claude_usage": {
+        "input": 26,
+        "output": 1628,
+        "cache_read": 52942,
+        "cache_write": 6346,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_068",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.7710851076923204,
+      "seconds": 23.58788275718689,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 1410,
+        "total_tokens": 1438
+      },
+      "interventions": null,
+      "cost_usd": 0.0326329,
+      "claude_usage": {
+        "input": 28,
+        "output": 1410,
+        "cache_read": 50969,
+        "cache_write": 5352,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_031",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.3558325250002479,
+      "seconds": 16.87622380256653,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1410,
+        "total_tokens": 1436
+      },
+      "interventions": null,
+      "cost_usd": 0.033498099999999996,
+      "claude_usage": {
+        "input": 26,
+        "output": 1410,
+        "cache_read": 51686,
+        "cache_write": 5671,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_021",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.6407594444495368,
+      "seconds": 15.293335914611816,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1513,
+        "total_tokens": 1533
+      },
+      "interventions": null,
+      "cost_usd": 0.0333135,
+      "claude_usage": {
+        "input": 20,
+        "output": 1513,
+        "cache_read": 37710,
+        "cache_write": 5749,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['book_meeting_room', 'get_meeting_rooms_office365']"
+    },
+    {
+      "task_id": "C4_task_076",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.96944273333429,
+      "seconds": 24.152106523513794,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1674,
+        "total_tokens": 1700
+      },
+      "interventions": null,
+      "cost_usd": 0.0359786,
+      "claude_usage": {
+        "input": 26,
+        "output": 1674,
+        "cache_read": 49791,
+        "cache_write": 5683,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_057",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 9,
+      "llm_calls": 10,
+      "latency_per_call": 1.6273960499995155,
+      "seconds": 16.874444246292114,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1710,
+        "total_tokens": 1732
+      },
+      "interventions": null,
+      "cost_usd": 0.0362204,
+      "claude_usage": {
+        "input": 22,
+        "output": 1710,
+        "cache_read": 40939,
+        "cache_write": 5993,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['convert_datetime']"
+    },
+    {
+      "task_id": "C4_task_028",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.43689968333274,
+      "seconds": 17.768690586090088,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1664,
+        "total_tokens": 1690
+      },
+      "interventions": null,
+      "cost_usd": 0.0385164,
+      "claude_usage": {
+        "input": 26,
+        "output": 1664,
+        "cache_read": 57544,
+        "cache_write": 6428,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['select_discovered_device_by_type']"
+    },
+    {
+      "task_id": "C4_task_044",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.7192914777745802,
+      "seconds": 16.05133080482483,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1785,
+        "total_tokens": 1805
+      },
+      "interventions": null,
+      "cost_usd": 0.0399248,
+      "claude_usage": {
+        "input": 20,
+        "output": 1785,
+        "cache_read": 44948,
+        "cache_write": 7016,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_009",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.2408105111115018,
+      "seconds": 11.693519830703735,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 839,
+        "total_tokens": 859
+      },
+      "interventions": null,
+      "cost_usd": 0.0204223,
+      "claude_usage": {
+        "input": 20,
+        "output": 839,
+        "cache_read": 24798,
+        "cache_write": 3805,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_075",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.2720802333361159,
+      "seconds": 19.668110370635986,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1376,
+        "total_tokens": 1408
+      },
+      "interventions": null,
+      "cost_usd": 0.0348843,
+      "claude_usage": {
+        "input": 32,
+        "output": 1376,
+        "cache_read": 65603,
+        "cache_write": 5800,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['snapshot_workspace_and_alert']"
+    },
+    {
+      "task_id": "C4_task_087",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.9992764454562513,
+      "seconds": 22.508345127105713,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1769,
+        "total_tokens": 1793
+      },
+      "interventions": null,
+      "cost_usd": 0.0429175,
+      "claude_usage": {
+        "input": 24,
+        "output": 1769,
+        "cache_read": 63720,
+        "cache_write": 7523,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_043",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.851409681821348,
+      "seconds": 20.966727256774902,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1293,
+        "total_tokens": 1317
+      },
+      "interventions": null,
+      "cost_usd": 0.0307091,
+      "claude_usage": {
+        "input": 24,
+        "output": 1293,
+        "cache_read": 43411,
+        "cache_write": 5356,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_010",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 2.1573686499978066,
+      "seconds": 17.781397342681885,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1589,
+        "total_tokens": 1607
+      },
+      "interventions": null,
+      "cost_usd": 0.033913900000000004,
+      "claude_usage": {
+        "input": 18,
+        "output": 1589,
+        "cache_read": 33754,
+        "cache_write": 5845,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['confirm_order', 'hold_best_recommendation']"
+    },
+    {
+      "task_id": "C4_task_023",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.4288629181802124,
+      "seconds": 16.295954942703247,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1224,
+        "total_tokens": 1248
+      },
+      "interventions": null,
+      "cost_usd": 0.0282518,
+      "claude_usage": {
+        "input": 24,
+        "output": 1224,
+        "cache_read": 39088,
+        "cache_write": 4822,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['stringify_data']"
+    },
+    {
+      "task_id": "C4_task_077",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 2.1009604500050045,
+      "seconds": 17.35146975517273,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1378,
+        "total_tokens": 1396
+      },
+      "interventions": null,
+      "cost_usd": 0.031635,
+      "claude_usage": {
+        "input": 18,
+        "output": 1378,
+        "cache_read": 34065,
+        "cache_write": 5765,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['book_flight_with_status_check', 'build_flight_booking_request', 'send_email']"
+    },
+    {
+      "task_id": "C4_task_089",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.5753280545441983,
+      "seconds": 17.854899168014526,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1518,
+        "total_tokens": 1542
+      },
+      "interventions": null,
+      "cost_usd": 0.036734699999999995,
+      "claude_usage": {
+        "input": 24,
+        "output": 1518,
+        "cache_read": 53267,
+        "cache_write": 6472,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['push_alert_to_contact']"
+    },
+    {
+      "task_id": "C4_task_037",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.313771133333406,
+      "seconds": 20.285446405410767,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1962,
+        "total_tokens": 1994
+      },
+      "interventions": null,
+      "cost_usd": 0.049742699999999994,
+      "claude_usage": {
+        "input": 32,
+        "output": 1962,
+        "cache_read": 91812,
+        "cache_write": 8351,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['build_device_restart_request', 'generate_invoice_with_best_discount']"
+    },
+    {
+      "task_id": "C4_task_016",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.9331154416662077,
+      "seconds": 23.720165729522705,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1458,
+        "total_tokens": 1484
+      },
+      "interventions": null,
+      "cost_usd": 0.0330304,
+      "claude_usage": {
+        "input": 26,
+        "output": 1458,
+        "cache_read": 48409,
+        "cache_write": 5423,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['update_device_config']"
+    },
+    {
+      "task_id": "C4_task_018",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.4006348500006425,
+      "seconds": 17.389302015304565,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1625,
+        "total_tokens": 1651
+      },
+      "interventions": null,
+      "cost_usd": 0.040022800000000004,
+      "claude_usage": {
+        "input": 26,
+        "output": 1625,
+        "cache_read": 61183,
+        "cache_write": 7041,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_083",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.4536737461525122,
+      "seconds": 19.43166756629944,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 1663,
+        "total_tokens": 1691
+      },
+      "interventions": null,
+      "cost_usd": 0.0400825,
+      "claude_usage": {
+        "input": 28,
+        "output": 1663,
+        "cache_read": 66165,
+        "cache_write": 6712,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['get_field_value']"
+    },
+    {
+      "task_id": "C4_task_029",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 13,
+      "llm_calls": 14,
+      "latency_per_call": 1.7268956142880987,
+      "seconds": 24.753904342651367,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 2213,
+        "total_tokens": 2243
+      },
+      "interventions": null,
+      "cost_usd": 0.052728300000000006,
+      "claude_usage": {
+        "input": 30,
+        "output": 2213,
+        "cache_read": 88008,
+        "cache_write": 8695,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_069",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 9,
+      "llm_calls": 10,
+      "latency_per_call": 1.665051229998062,
+      "seconds": 17.18498396873474,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1555,
+        "total_tokens": 1577
+      },
+      "interventions": null,
+      "cost_usd": 0.0342455,
+      "claude_usage": {
+        "input": 22,
+        "output": 1555,
+        "cache_read": 38440,
+        "cache_write": 5923,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_080",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 13,
+      "llm_calls": 14,
+      "latency_per_call": 1.4379076642861557,
+      "seconds": 20.72293996810913,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 1818,
+        "total_tokens": 1848
+      },
+      "interventions": null,
+      "cost_usd": 0.047353400000000004,
+      "claude_usage": {
+        "input": 30,
+        "output": 1818,
+        "cache_read": 86584,
+        "cache_write": 8182,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['select_discovered_device_by_type', 'update_cart_item']"
+    },
+    {
+      "task_id": "C4_task_005",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.351298950000152,
+      "seconds": 16.733692407608032,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1328,
+        "total_tokens": 1354
+      },
+      "interventions": null,
+      "cost_usd": 0.0319886,
+      "claude_usage": {
+        "input": 26,
+        "output": 1328,
+        "cache_read": 47716,
+        "cache_write": 5554,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_003",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.5023628777788771,
+      "seconds": 14.103514194488525,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1260,
+        "total_tokens": 1280
+      },
+      "interventions": null,
+      "cost_usd": 0.029024400000000002,
+      "claude_usage": {
+        "input": 20,
+        "output": 1260,
+        "cache_read": 33294,
+        "cache_write": 5222,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['archive_weatherapi_alert_card_native']"
+    },
+    {
+      "task_id": "C4_task_079",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.4276708083331566,
+      "seconds": 17.66022515296936,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1660,
+        "total_tokens": 1686
+      },
+      "interventions": null,
+      "cost_usd": 0.0394811,
+      "claude_usage": {
+        "input": 26,
+        "output": 1660,
+        "cache_read": 58441,
+        "cache_write": 6794,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_049",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.4800138000036196,
+      "seconds": 19.763622522354126,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 1790,
+        "total_tokens": 1818
+      },
+      "interventions": null,
+      "cost_usd": 0.045489800000000004,
+      "claude_usage": {
+        "input": 28,
+        "output": 1790,
+        "cache_read": 76313,
+        "cache_write": 7961,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_006",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.606389599999106,
+      "seconds": 18.251801252365112,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1309,
+        "total_tokens": 1333
+      },
+      "interventions": null,
+      "cost_usd": 0.0328578,
+      "claude_usage": {
+        "input": 24,
+        "output": 1309,
+        "cache_read": 49198,
+        "cache_write": 5920,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['select_discovered_device_by_type', 'stringify_data']"
+    },
+    {
+      "task_id": "C4_task_081",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.9748032076917856,
+      "seconds": 26.195582628250122,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 2101,
+        "total_tokens": 2129
+      },
+      "interventions": null,
+      "cost_usd": 0.048009300000000005,
+      "claude_usage": {
+        "input": 28,
+        "output": 2101,
+        "cache_read": 71708,
+        "cache_write": 7909,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_038",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.1123882727260934,
+      "seconds": 12.83296251296997,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1025,
+        "total_tokens": 1049
+      },
+      "interventions": null,
+      "cost_usd": 0.0259898,
+      "claude_usage": {
+        "input": 24,
+        "output": 1025,
+        "cache_read": 38618,
+        "cache_write": 4732,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_036",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 9,
+      "llm_calls": 10,
+      "latency_per_call": 1.4257242200023028,
+      "seconds": 14.783205270767212,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1296,
+        "total_tokens": 1318
+      },
+      "interventions": null,
+      "cost_usd": 0.035840300000000005,
+      "claude_usage": {
+        "input": 22,
+        "output": 1296,
+        "cache_read": 52713,
+        "cache_write": 7026,
+        "refusals": 0
+      },
+      "failure_reason": "C4 P0 failed: no complete valid path executed successfully; missing_tools=['add_best_recommendation_to_cart', 'build_employee_im_payload', 'express_checkout', 'submit_order']"
+    },
+    {
+      "task_id": "C4_task_012",
+      "mode": "P0",
+      "arm": "llm",
+      "passed": true,
+      "hit": false,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.602812809093104,
+      "seconds": 18.21039390563965,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1114,
+        "total_tokens": 1138
+      },
+      "interventions": null,
+      "cost_usd": 0.0259621,
+      "claude_usage": {
+        "input": 24,
+        "output": 1114,
+        "cache_read": 35866,
+        "cache_write": 4475,
+        "refusals": 0
+      },
+      "failure_reason": null
+    }
+  ]
+}

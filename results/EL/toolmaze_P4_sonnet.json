@@ -1,0 +1,5624 @@
+{
+  "config": {
+    "categories": "c3,c4",
+    "modes": "P4",
+    "tasks_per_cell": 50,
+    "arms": "llm,hybrid",
+    "base_url": "http://127.0.0.1:8080/v1",
+    "model": "claude-sonnet-5-5",
+    "temperature": 0.0,
+    "backend": "anthropic",
+    "effort": "medium",
+    "max_rounds": 15,
+    "seed": 1,
+    "out": "EL/toolmaze_P4_sonnet.json"
+  },
+  "pretraining": {
+    "pass_observations": 200,
+    "exec_observations": 1151
+  },
+  "summary": {
+    "llm": {
+      "n": 100,
+      "tsr": 0.15,
+      "prr": 0.1595744680851064,
+      "llm_calls": 8.23,
+      "tool_calls": 7.29,
+      "latency": 1.847582613055372,
+      "cost_usd": 2.7389091
+    },
+    "hybrid": {
+      "n": 100,
+      "tsr": 0.11,
+      "prr": 0.11956521739130435,
+      "llm_calls": 7.6,
+      "tool_calls": 6.66,
+      "latency": 1.8423372905269713,
+      "cost_usd": 1.7753094
+    }
+  },
+  "runs": [
+    {
+      "task_id": "C3_task_054",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.782242450000922,
+      "seconds": 8.151302576065063,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 670,
+        "total_tokens": 680
+      },
+      "interventions": null,
+      "cost_usd": 0.0163902,
+      "claude_usage": {
+        "input": 10,
+        "output": 670,
+        "cache_read": 8577,
+        "cache_write": 3525,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'hold_best_recommendation' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_054",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.7551163999996788,
+      "seconds": 7.557296514511108,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 593,
+        "total_tokens": 603
+      },
+      "interventions": [],
+      "cost_usd": 0.0088512,
+      "claude_usage": {
+        "input": 10,
+        "output": 593,
+        "cache_read": 11312,
+        "cache_write": 708,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'hold_best_recommendation' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_038",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.4099929000027867,
+      "seconds": 9.083379983901978,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 659,
+        "total_tokens": 673
+      },
+      "interventions": null,
+      "cost_usd": 0.0166796,
+      "claude_usage": {
+        "input": 14,
+        "output": 659,
+        "cache_read": 15191,
+        "cache_write": 3417,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_quote_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_038",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.4709457333325797,
+      "seconds": 9.339507818222046,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 674,
+        "total_tokens": 688
+      },
+      "interventions": [],
+      "cost_usd": 0.0090104,
+      "claude_usage": {
+        "input": 14,
+        "output": 674,
+        "cache_read": 18449,
+        "cache_write": 159,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_quote_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_066",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.5471930249987054,
+      "seconds": 6.824209928512573,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 511,
+        "total_tokens": 521
+      },
+      "interventions": null,
+      "cost_usd": 0.0135657,
+      "claude_usage": {
+        "input": 10,
+        "output": 511,
+        "cache_read": 8032,
+        "cache_write": 3053,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_066",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.4252795749998768,
+      "seconds": 6.228474140167236,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 430,
+        "total_tokens": 440
+      },
+      "interventions": [],
+      "cost_usd": 0.0059365,
+      "claude_usage": {
+        "input": 10,
+        "output": 430,
+        "cache_read": 10865,
+        "cache_write": 212,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_052",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.5697358749985142,
+      "seconds": 13.125231981277466,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1251,
+        "total_tokens": 1269
+      },
+      "interventions": null,
+      "cost_usd": 0.025890299999999998,
+      "claude_usage": {
+        "input": 18,
+        "output": 1251,
+        "cache_read": 23193,
+        "cache_write": 4410,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_052",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.779325625002457,
+      "seconds": 14.814110517501831,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1307,
+        "total_tokens": 1325
+      },
+      "interventions": [],
+      "cost_usd": 0.018752900000000003,
+      "claude_usage": {
+        "input": 18,
+        "output": 1307,
+        "cache_read": 26469,
+        "cache_write": 1200,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_005",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.38704012499511,
+      "seconds": 6.070767879486084,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 399,
+        "total_tokens": 409
+      },
+      "interventions": null,
+      "cost_usd": 0.0115396,
+      "claude_usage": {
+        "input": 10,
+        "output": 399,
+        "cache_read": 7296,
+        "cache_write": 2720,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_light_mesh_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_005",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.3940307749944623,
+      "seconds": 6.1498870849609375,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 415,
+        "total_tokens": 425
+      },
+      "interventions": [],
+      "cost_usd": 0.0055959,
+      "claude_usage": {
+        "input": 10,
+        "output": 415,
+        "cache_read": 9834,
+        "cache_write": 177,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_light_mesh_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_021",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.6647980999958236,
+      "seconds": 8.837432384490967,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 707,
+        "total_tokens": 719
+      },
+      "interventions": null,
+      "cost_usd": 0.0214574,
+      "claude_usage": {
+        "input": 12,
+        "output": 707,
+        "cache_read": 16359,
+        "cache_write": 5091,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_021",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.7816544800036354,
+      "seconds": 9.485518455505371,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 766,
+        "total_tokens": 778
+      },
+      "interventions": [],
+      "cost_usd": 0.011027799999999999,
+      "claude_usage": {
+        "input": 12,
+        "output": 766,
+        "cache_read": 20938,
+        "cache_write": 500,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_039",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.8322480166655926,
+      "seconds": 11.511348962783813,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 759,
+        "total_tokens": 773
+      },
+      "interventions": null,
+      "cost_usd": 0.017935,
+      "claude_usage": {
+        "input": 14,
+        "output": 759,
+        "cache_read": 14870,
+        "cache_write": 3532,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_bank_balance_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_039",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 2.012812599995717,
+      "seconds": 13.186005115509033,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 972,
+        "total_tokens": 988
+      },
+      "interventions": [
+        {
+          "failed": "get_stock_price_and_convert",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0136566,
+      "claude_usage": {
+        "input": 16,
+        "output": 972,
+        "cache_read": 18371,
+        "cache_write": 827,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_bank_balance_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_010",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.411057114285151,
+      "seconds": 10.397593259811401,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 916,
+        "total_tokens": 932
+      },
+      "interventions": null,
+      "cost_usd": 0.021439299999999998,
+      "claude_usage": {
+        "input": 16,
+        "output": 916,
+        "cache_read": 20473,
+        "cache_write": 4080,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: 'hold_best_recommendation' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_010",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.689119175003725,
+      "seconds": 7.347231388092041,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 636,
+        "total_tokens": 646
+      },
+      "interventions": [],
+      "cost_usd": 0.0085676,
+      "claude_usage": {
+        "input": 10,
+        "output": 636,
+        "cache_read": 12476,
+        "cache_write": 376,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'hold_best_recommendation' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_011",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 2.302812266667994,
+      "seconds": 14.351873636245728,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 781,
+        "total_tokens": 795
+      },
+      "interventions": null,
+      "cost_usd": 0.0180973,
+      "claude_usage": {
+        "input": 14,
+        "output": 781,
+        "cache_read": 14743,
+        "cache_write": 3514,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_aviationstack_gate_board_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_011",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 2.143572616664945,
+      "seconds": 13.705378532409668,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 783,
+        "total_tokens": 797
+      },
+      "interventions": [],
+      "cost_usd": 0.011555600000000001,
+      "claude_usage": {
+        "input": 14,
+        "output": 783,
+        "cache_read": 17501,
+        "cache_write": 779,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_aviationstack_gate_board_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_082",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.6936048400006256,
+      "seconds": 9.650172710418701,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 751,
+        "total_tokens": 763
+      },
+      "interventions": null,
+      "cost_usd": 0.017765,
+      "claude_usage": {
+        "input": 12,
+        "output": 751,
+        "cache_read": 12485,
+        "cache_write": 3593,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_discovered_lock_ticket_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_082",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.525202866665495,
+      "seconds": 10.15118145942688,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 755,
+        "total_tokens": 769
+      },
+      "interventions": [],
+      "cost_usd": 0.0112413,
+      "claude_usage": {
+        "input": 14,
+        "output": 755,
+        "cache_read": 18808,
+        "cache_write": 713,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_discovered_lock_ticket_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_045",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.8989793555568515,
+      "seconds": 17.993561029434204,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 955,
+        "total_tokens": 975
+      },
+      "interventions": null,
+      "cost_usd": 0.02147,
+      "claude_usage": {
+        "input": 20,
+        "output": 955,
+        "cache_read": 24100,
+        "cache_write": 3788,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_045",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 2.0588486666658556,
+      "seconds": 19.49183177947998,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 997,
+        "total_tokens": 1017
+      },
+      "interventions": [],
+      "cost_usd": 0.0146096,
+      "claude_usage": {
+        "input": 20,
+        "output": 997,
+        "cache_read": 27221,
+        "cache_write": 751,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_037",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 2.0166989799996373,
+      "seconds": 10.977901458740234,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 615,
+        "total_tokens": 627
+      },
+      "interventions": null,
+      "cost_usd": 0.0169321,
+      "claude_usage": {
+        "input": 12,
+        "output": 615,
+        "cache_read": 12781,
+        "cache_write": 3792,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_bank_balance_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_037",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 2.0688856200053123,
+      "seconds": 11.272648572921753,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 608,
+        "total_tokens": 620
+      },
+      "interventions": [],
+      "cost_usd": 0.0083903,
+      "claude_usage": {
+        "input": 12,
+        "output": 608,
+        "cache_read": 16313,
+        "cache_write": 262,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_bank_balance_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_085",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.9423446125001647,
+      "seconds": 16.58925151824951,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1160,
+        "total_tokens": 1178
+      },
+      "interventions": null,
+      "cost_usd": 0.0241769,
+      "claude_usage": {
+        "input": 18,
+        "output": 1160,
+        "cache_read": 22959,
+        "cache_write": 4098,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_connected_lock_pass_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_085",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.9982526250005321,
+      "seconds": 16.959823608398438,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1163,
+        "total_tokens": 1183
+      },
+      "interventions": [
+        {
+          "failed": "get_iot_device_status",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0177129,
+      "claude_usage": {
+        "input": 20,
+        "output": 1163,
+        "cache_read": 26079,
+        "cache_write": 1374,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_connected_lock_pass_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_051",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 2.008734880000702,
+      "seconds": 11.064796924591064,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 503,
+        "total_tokens": 515
+      },
+      "interventions": null,
+      "cost_usd": 0.0139865,
+      "claude_usage": {
+        "input": 12,
+        "output": 503,
+        "cache_read": 11150,
+        "cache_write": 3127,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_discovered_lock_ticket_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_051",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.9018192399991676,
+      "seconds": 10.466801404953003,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 479,
+        "total_tokens": 491
+      },
+      "interventions": [],
+      "cost_usd": 0.0062417,
+      "claude_usage": {
+        "input": 12,
+        "output": 479,
+        "cache_read": 14277,
+        "cache_write": 0,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_discovered_lock_ticket_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_097",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 2.0097784000002625,
+      "seconds": 13.06225299835205,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 1273,
+        "total_tokens": 1287
+      },
+      "interventions": null,
+      "cost_usd": 0.027283599999999998,
+      "claude_usage": {
+        "input": 14,
+        "output": 1273,
+        "cache_read": 20731,
+        "cache_write": 4981,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_097",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.8735626999938784,
+      "seconds": 12.117748260498047,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 1173,
+        "total_tokens": 1187
+      },
+      "interventions": [],
+      "cost_usd": 0.016315200000000002,
+      "claude_usage": {
+        "input": 14,
+        "output": 1173,
+        "cache_read": 24847,
+        "cache_write": 829,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_091",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.4175742500010529,
+      "seconds": 6.623893737792969,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 449,
+        "total_tokens": 459
+      },
+      "interventions": null,
+      "cost_usd": 0.016318100000000002,
+      "claude_usage": {
+        "input": 10,
+        "output": 449,
+        "cache_read": 10806,
+        "cache_write": 4291,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_popularity' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_091",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.3556082749964844,
+      "seconds": 6.341497182846069,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 427,
+        "total_tokens": 437
+      },
+      "interventions": [],
+      "cost_usd": 0.0066995,
+      "claude_usage": {
+        "input": 10,
+        "output": 427,
+        "cache_read": 14720,
+        "cache_write": 375,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_popularity' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_067",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.9083376200025668,
+      "seconds": 10.521849155426025,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 700,
+        "total_tokens": 712
+      },
+      "interventions": null,
+      "cost_usd": 0.0174293,
+      "claude_usage": {
+        "input": 12,
+        "output": 700,
+        "cache_read": 12853,
+        "cache_write": 3648,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_stock_price_and_convert' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_067",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.861841120000463,
+      "seconds": 10.217526912689209,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 740,
+        "total_tokens": 752
+      },
+      "interventions": [],
+      "cost_usd": 0.010364799999999999,
+      "claude_usage": {
+        "input": 12,
+        "output": 740,
+        "cache_read": 15883,
+        "cache_write": 541,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_stock_price_and_convert' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_017",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.4524218571459642,
+      "seconds": 11.081144571304321,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 807,
+        "total_tokens": 823
+      },
+      "interventions": null,
+      "cost_usd": 0.019998400000000003,
+      "claude_usage": {
+        "input": 16,
+        "output": 807,
+        "cache_read": 19414,
+        "cache_write": 3982,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_aviationstack_gate_board_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_017",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.3461543285728632,
+      "seconds": 10.472650527954102,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 815,
+        "total_tokens": 831
+      },
+      "interventions": [],
+      "cost_usd": 0.0112406,
+      "claude_usage": {
+        "input": 16,
+        "output": 815,
+        "cache_read": 23111,
+        "cache_write": 299,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_aviationstack_gate_board_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_081",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.4296259111094212,
+      "seconds": 13.776125192642212,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1293,
+        "total_tokens": 1313
+      },
+      "interventions": null,
+      "cost_usd": 0.029818900000000002,
+      "claude_usage": {
+        "input": 20,
+        "output": 1293,
+        "cache_read": 34639,
+        "cache_write": 5354,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: 'get_available_coupons' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_081",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.7029070999964864,
+      "seconds": 16.346614837646484,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1626,
+        "total_tokens": 1650
+      },
+      "interventions": [
+        {
+          "failed": "optimize_discount",
+          "chosen": null,
+          "ranked": []
+        },
+        {
+          "failed": "get_cart_summary",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0243095,
+      "claude_usage": {
+        "input": 24,
+        "output": 1626,
+        "cache_read": 39840,
+        "cache_write": 1607,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: 'get_available_coupons' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_034",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.9003882999997586,
+      "seconds": 10.3899667263031,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 609,
+        "total_tokens": 621
+      },
+      "interventions": null,
+      "cost_usd": 0.019588,
+      "claude_usage": {
+        "input": 12,
+        "output": 609,
+        "cache_read": 16590,
+        "cache_write": 4726,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_collaborative' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_034",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.905448040002375,
+      "seconds": 10.511524200439453,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 617,
+        "total_tokens": 629
+      },
+      "interventions": [],
+      "cost_usd": 0.0089639,
+      "claude_usage": {
+        "input": 12,
+        "output": 617,
+        "cache_read": 21049,
+        "cache_write": 266,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_collaborative' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_025",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.9308153888883277,
+      "seconds": 18.314204692840576,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1224,
+        "total_tokens": 1244
+      },
+      "interventions": null,
+      "cost_usd": 0.025558400000000002,
+      "claude_usage": {
+        "input": 20,
+        "output": 1224,
+        "cache_read": 26934,
+        "cache_write": 4234,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_025",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.8667689777761955,
+      "seconds": 17.804502725601196,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1192,
+        "total_tokens": 1212
+      },
+      "interventions": [],
+      "cost_usd": 0.0173764,
+      "claude_usage": {
+        "input": 20,
+        "output": 1192,
+        "cache_read": 30189,
+        "cache_write": 959,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_053",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.654321300000447,
+      "seconds": 14.210269927978516,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1297,
+        "total_tokens": 1315
+      },
+      "interventions": null,
+      "cost_usd": 0.0276451,
+      "claude_usage": {
+        "input": 18,
+        "output": 1297,
+        "cache_read": 26666,
+        "cache_write": 4789,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_053",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.872128711114379,
+      "seconds": 17.81192898750305,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1729,
+        "total_tokens": 1751
+      },
+      "interventions": [
+        {
+          "failed": "create_document",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0256257,
+      "claude_usage": {
+        "input": 22,
+        "output": 1729,
+        "cache_read": 35142,
+        "cache_write": 1911,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_092",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 2.156235899996924,
+      "seconds": 13.8474440574646,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 1011,
+        "total_tokens": 1025
+      },
+      "interventions": null,
+      "cost_usd": 0.0230133,
+      "claude_usage": {
+        "input": 14,
+        "output": 1011,
+        "cache_read": 18703,
+        "cache_write": 4402,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_092",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 2.1591774833286763,
+      "seconds": 13.840940952301025,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 996,
+        "total_tokens": 1010
+      },
+      "interventions": [],
+      "cost_usd": 0.0154504,
+      "claude_usage": {
+        "input": 14,
+        "output": 996,
+        "cache_read": 21674,
+        "cache_write": 1318,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_100",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 2.029983679999714,
+      "seconds": 11.379086971282959,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 547,
+        "total_tokens": 559
+      },
+      "interventions": null,
+      "cost_usd": 0.014283,
+      "claude_usage": {
+        "input": 12,
+        "output": 547,
+        "cache_read": 10890,
+        "cache_write": 3080,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_100",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.8599566666647054,
+      "seconds": 12.125512599945068,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 630,
+        "total_tokens": 644
+      },
+      "interventions": [],
+      "cost_usd": 0.0085455,
+      "claude_usage": {
+        "input": 14,
+        "output": 630,
+        "cache_read": 17050,
+        "cache_write": 205,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_065",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.7180265818182803,
+      "seconds": 19.900834798812866,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1961,
+        "total_tokens": 1985
+      },
+      "interventions": null,
+      "cost_usd": 0.0421517,
+      "claude_usage": {
+        "input": 24,
+        "output": 1961,
+        "cache_read": 51537,
+        "cache_write": 6936,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_065",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.971677075001935,
+      "seconds": 8.802351713180542,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 704,
+        "total_tokens": 714
+      },
+      "interventions": [],
+      "cost_usd": 0.0097573,
+      "claude_usage": {
+        "input": 10,
+        "output": 704,
+        "cache_read": 16398,
+        "cache_write": 423,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_006",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.5882838250036002,
+      "seconds": 7.394273042678833,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 502,
+        "total_tokens": 512
+      },
+      "interventions": null,
+      "cost_usd": 0.0129996,
+      "claude_usage": {
+        "input": 10,
+        "output": 502,
+        "cache_read": 7646,
+        "cache_write": 2878,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_006",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.680800674996135,
+      "seconds": 8.505510807037354,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 563,
+        "total_tokens": 573
+      },
+      "interventions": [],
+      "cost_usd": 0.0071218,
+      "claude_usage": {
+        "input": 10,
+        "output": 563,
+        "cache_read": 10343,
+        "cache_write": 175,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_059",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 2.1329150999990816,
+      "seconds": 11.316832542419434,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 518,
+        "total_tokens": 528
+      },
+      "interventions": null,
+      "cost_usd": 0.013062200000000001,
+      "claude_usage": {
+        "input": 10,
+        "output": 518,
+        "cache_read": 7547,
+        "cache_write": 2843,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_light_mesh_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_059",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 2.1881439499993576,
+      "seconds": 11.114816904067993,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 602,
+        "total_tokens": 614
+      },
+      "interventions": [
+        {
+          "failed": "get_iot_device_status",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.008201100000000001,
+      "claude_usage": {
+        "input": 12,
+        "output": 602,
+        "cache_read": 10246,
+        "cache_write": 453,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_light_mesh_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_077",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.8326123000006191,
+      "seconds": 11.675914764404297,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 587,
+        "total_tokens": 599
+      },
+      "interventions": null,
+      "cost_usd": 0.0149742,
+      "claude_usage": {
+        "input": 12,
+        "output": 587,
+        "cache_read": 11052,
+        "cache_write": 3190,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_alpha_market_window_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_077",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.9630845600011526,
+      "seconds": 10.883907556533813,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 663,
+        "total_tokens": 675
+      },
+      "interventions": [],
+      "cost_usd": 0.008569,
+      "claude_usage": {
+        "input": 12,
+        "output": 663,
+        "cache_read": 14025,
+        "cache_write": 205,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_alpha_market_window_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_040",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 2.136451375001343,
+      "seconds": 9.446030616760254,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 472,
+        "total_tokens": 482
+      },
+      "interventions": null,
+      "cost_usd": 0.013844700000000001,
+      "claude_usage": {
+        "input": 10,
+        "output": 472,
+        "cache_read": 8422,
+        "cache_write": 3305,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_040",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 2,
+      "llm_calls": 3,
+      "latency_per_call": 2.047371866671407,
+      "seconds": 7.172420263290405,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 412,
+        "total_tokens": 422
+      },
+      "interventions": [
+        {
+          "failed": "get_weatherapi_alert_card_native",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0051322,
+      "claude_usage": {
+        "input": 10,
+        "output": 412,
+        "cache_read": 8422,
+        "cache_write": 60,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_080",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.484532725000463,
+      "seconds": 6.66788911819458,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 370,
+        "total_tokens": 380
+      },
+      "interventions": null,
+      "cost_usd": 0.0115725,
+      "claude_usage": {
+        "input": 10,
+        "output": 370,
+        "cache_read": 7675,
+        "cache_write": 2834,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_light_mesh_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_080",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.9147752499957278,
+      "seconds": 8.436018943786621,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 389,
+        "total_tokens": 399
+      },
+      "interventions": [],
+      "cost_usd": 0.0053342,
+      "claude_usage": {
+        "input": 10,
+        "output": 389,
+        "cache_read": 10342,
+        "cache_write": 156,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_light_mesh_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_024",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.2166060599964112,
+      "seconds": 6.820347785949707,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 435,
+        "total_tokens": 447
+      },
+      "interventions": null,
+      "cost_usd": 0.012876799999999999,
+      "claude_usage": {
+        "input": 12,
+        "output": 435,
+        "cache_read": 10303,
+        "cache_write": 2989,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_024",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.302135619998444,
+      "seconds": 7.345690011978149,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 463,
+        "total_tokens": 475
+      },
+      "interventions": [],
+      "cost_usd": 0.0064776,
+      "claude_usage": {
+        "input": 12,
+        "output": 463,
+        "cache_read": 13086,
+        "cache_write": 206,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_095",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 2,
+      "llm_calls": 3,
+      "latency_per_call": 1.7139381333302783,
+      "seconds": 5.876242399215698,
+      "tokens": {
+        "input_tokens": 8,
+        "output_tokens": 450,
+        "total_tokens": 458
+      },
+      "interventions": null,
+      "cost_usd": 0.012739299999999999,
+      "claude_usage": {
+        "input": 8,
+        "output": 450,
+        "cache_read": 5608,
+        "cache_write": 3065,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_aviationstack_gate_board_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_095",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.6416111500038824,
+      "seconds": 7.394059181213379,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 536,
+        "total_tokens": 546
+      },
+      "interventions": [],
+      "cost_usd": 0.0072138,
+      "claude_usage": {
+        "input": 10,
+        "output": 536,
+        "cache_read": 11738,
+        "cache_write": 264,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_aviationstack_gate_board_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_031",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 2.11665825000091,
+      "seconds": 9.217816591262817,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 607,
+        "total_tokens": 617
+      },
+      "interventions": null,
+      "cost_usd": 0.015586200000000001,
+      "claude_usage": {
+        "input": 10,
+        "output": 607,
+        "cache_read": 8762,
+        "cache_write": 3448,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_aviationstack_gate_board_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_031",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.727795774993865,
+      "seconds": 7.702121019363403,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 426,
+        "total_tokens": 436
+      },
+      "interventions": [],
+      "cost_usd": 0.0072625,
+      "claude_usage": {
+        "input": 10,
+        "output": 426,
+        "cache_read": 11575,
+        "cache_write": 730,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_aviationstack_gate_board_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_074",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.5513411857142014,
+      "seconds": 11.728286266326904,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 1111,
+        "total_tokens": 1127
+      },
+      "interventions": null,
+      "cost_usd": 0.026762099999999997,
+      "claude_usage": {
+        "input": 16,
+        "output": 1111,
+        "cache_read": 26226,
+        "cache_write": 5199,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_available_coupons' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_074",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.854753000002044,
+      "seconds": 17.453499794006348,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1734,
+        "total_tokens": 1758
+      },
+      "interventions": [
+        {
+          "failed": "optimize_discount",
+          "chosen": null,
+          "ranked": []
+        },
+        {
+          "failed": "get_cart_summary",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.026318099999999997,
+      "claude_usage": {
+        "input": 24,
+        "output": 1734,
+        "cache_read": 42401,
+        "cache_write": 1876,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_available_coupons' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_026",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.416786819996196,
+      "seconds": 7.966639041900635,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 471,
+        "total_tokens": 483
+      },
+      "interventions": null,
+      "cost_usd": 0.0145267,
+      "claude_usage": {
+        "input": 12,
+        "output": 471,
+        "cache_read": 12252,
+        "cache_write": 3427,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_026",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.375507060001837,
+      "seconds": 7.661314487457275,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 476,
+        "total_tokens": 488
+      },
+      "interventions": [],
+      "cost_usd": 0.0068017,
+      "claude_usage": {
+        "input": 12,
+        "output": 476,
+        "cache_read": 15502,
+        "cache_write": 187,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_048",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.869299777775369,
+      "seconds": 17.708921670913696,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1692,
+        "total_tokens": 1712
+      },
+      "interventions": null,
+      "cost_usd": 0.0333551,
+      "claude_usage": {
+        "input": 20,
+        "output": 1692,
+        "cache_read": 31401,
+        "cache_write": 5302,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_trending' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_048",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.8180335749966616,
+      "seconds": 8.047344207763672,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 666,
+        "total_tokens": 676
+      },
+      "interventions": [],
+      "cost_usd": 0.0085495,
+      "claude_usage": {
+        "input": 10,
+        "output": 666,
+        "cache_read": 13670,
+        "cache_write": 201,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_trending' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_032",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.7448204111117067,
+      "seconds": 16.585305213928223,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1455,
+        "total_tokens": 1475
+      },
+      "interventions": null,
+      "cost_usd": 0.0317124,
+      "claude_usage": {
+        "input": 20,
+        "output": 1455,
+        "cache_read": 34299,
+        "cache_write": 5477,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: 'get_available_coupons' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_032",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.887021255553312,
+      "seconds": 18.175421476364136,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1721,
+        "total_tokens": 1745
+      },
+      "interventions": [
+        {
+          "failed": "optimize_discount",
+          "chosen": null,
+          "ranked": []
+        },
+        {
+          "failed": "get_cart_summary",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.025684400000000003,
+      "claude_usage": {
+        "input": 24,
+        "output": 1721,
+        "cache_read": 39314,
+        "cache_write": 1798,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: 'get_available_coupons' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_046",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.7239573571381956,
+      "seconds": 14.120172262191772,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 798,
+        "total_tokens": 814
+      },
+      "interventions": null,
+      "cost_usd": 0.0190823,
+      "claude_usage": {
+        "input": 16,
+        "output": 798,
+        "cache_read": 18578,
+        "cache_write": 3685,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_alpha_market_window_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_046",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.7098898428604505,
+      "seconds": 12.75748348236084,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 784,
+        "total_tokens": 800
+      },
+      "interventions": [],
+      "cost_usd": 0.0105191,
+      "claude_usage": {
+        "input": 16,
+        "output": 784,
+        "cache_read": 22071,
+        "cache_write": 176,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_alpha_market_window_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_020",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.5312517666679923,
+      "seconds": 10.64426064491272,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 750,
+        "total_tokens": 764
+      },
+      "interventions": null,
+      "cost_usd": 0.0189551,
+      "claude_usage": {
+        "input": 14,
+        "output": 750,
+        "cache_read": 16421,
+        "cache_write": 3914,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_020",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.7675031166678916,
+      "seconds": 12.654261112213135,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 888,
+        "total_tokens": 902
+      },
+      "interventions": [],
+      "cost_usd": 0.011449299999999999,
+      "claude_usage": {
+        "input": 14,
+        "output": 888,
+        "cache_read": 20138,
+        "cache_write": 211,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_088",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.5722254874999635,
+      "seconds": 13.69057035446167,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1086,
+        "total_tokens": 1104
+      },
+      "interventions": null,
+      "cost_usd": 0.0213831,
+      "claude_usage": {
+        "input": 18,
+        "output": 1086,
+        "cache_read": 18996,
+        "cache_write": 3435,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_088",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.6453009333320854,
+      "seconds": 11.133732318878174,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 925,
+        "total_tokens": 939
+      },
+      "interventions": [],
+      "cost_usd": 0.0121949,
+      "claude_usage": {
+        "input": 14,
+        "output": 925,
+        "cache_read": 15169,
+        "cache_write": 560,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_stock_price_and_convert' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_043",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.8028924999998708,
+      "seconds": 8.326520204544067,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 439,
+        "total_tokens": 449
+      },
+      "interventions": null,
+      "cost_usd": 0.0129736,
+      "claude_usage": {
+        "input": 10,
+        "output": 439,
+        "cache_read": 8236,
+        "cache_write": 3096,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_alpha_market_window_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_043",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.8813664250010333,
+      "seconds": 10.080230712890625,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 458,
+        "total_tokens": 468
+      },
+      "interventions": [],
+      "cost_usd": 0.0062745,
+      "claude_usage": {
+        "input": 10,
+        "output": 458,
+        "cache_read": 11120,
+        "cache_write": 225,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_alpha_market_window_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_069",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.7155183499999112,
+      "seconds": 7.693252325057983,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 559,
+        "total_tokens": 569
+      },
+      "interventions": null,
+      "cost_usd": 0.016909900000000002,
+      "claude_usage": {
+        "input": 10,
+        "output": 559,
+        "cache_read": 10324,
+        "cache_write": 4107,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_trending' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_069",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.8877619777777,
+      "seconds": 18.026565313339233,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1495,
+        "total_tokens": 1519
+      },
+      "interventions": [
+        {
+          "failed": "get_recommendations_trending",
+          "chosen": "add_best_recommendation_to_cart",
+          "ranked": [
+            [
+              "add_best_recommendation_to_cart",
+              0.11602562639673435
+            ]
+          ]
+        },
+        {
+          "failed": "create_document_and_alert",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0277071,
+      "claude_usage": {
+        "input": 24,
+        "output": 1495,
+        "cache_read": 33816,
+        "cache_write": 3731,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_trending' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_096",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 8.957610016664452,
+      "seconds": 55.74591064453125,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 1053,
+        "total_tokens": 1067
+      },
+      "interventions": null,
+      "cost_usd": 0.021716700000000002,
+      "claude_usage": {
+        "input": 14,
+        "output": 1053,
+        "cache_read": 16012,
+        "cache_write": 3823,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_light_mesh_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_096",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 2.6007894000005245,
+      "seconds": 20.355222940444946,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 1103,
+        "total_tokens": 1119
+      },
+      "interventions": [],
+      "cost_usd": 0.0159922,
+      "claude_usage": {
+        "input": 16,
+        "output": 1103,
+        "cache_read": 22877,
+        "cache_write": 1057,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_light_mesh_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_022",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 2.611881819998962,
+      "seconds": 15.03481388092041,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 673,
+        "total_tokens": 685
+      },
+      "interventions": null,
+      "cost_usd": 0.016617299999999998,
+      "claude_usage": {
+        "input": 12,
+        "output": 673,
+        "cache_read": 12433,
+        "cache_write": 3448,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_022",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 3.0997734500051592,
+      "seconds": 14.437933206558228,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 783,
+        "total_tokens": 795
+      },
+      "interventions": [
+        {
+          "failed": "update_device_config",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0096016,
+      "claude_usage": {
+        "input": 12,
+        "output": 783,
+        "cache_read": 12276,
+        "cache_write": 208,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_008",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.5500515000050654,
+      "seconds": 8.611698865890503,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 459,
+        "total_tokens": 471
+      },
+      "interventions": null,
+      "cost_usd": 0.0128925,
+      "claude_usage": {
+        "input": 12,
+        "output": 459,
+        "cache_read": 10435,
+        "cache_write": 2894,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_light_mesh_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_008",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 2,
+      "llm_calls": 3,
+      "latency_per_call": 2.213714199999231,
+      "seconds": 7.4327497482299805,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 474,
+        "total_tokens": 484
+      },
+      "interventions": [
+        {
+          "failed": "get_iot_device_status",
+          "chosen": "get_light_status",
+          "ranked": [
+            [
+              "get_light_status",
+              0.23357210677627616
+            ]
+          ]
+        }
+      ],
+      "cost_usd": 0.0086201,
+      "claude_usage": {
+        "input": 10,
+        "output": 474,
+        "cache_read": 5026,
+        "cache_write": 1343,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_068",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.9902104250031698,
+      "seconds": 8.794612884521484,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 388,
+        "total_tokens": 398
+      },
+      "interventions": null,
+      "cost_usd": 0.012500899999999999,
+      "claude_usage": {
+        "input": 10,
+        "output": 388,
+        "cache_read": 8359,
+        "cache_write": 3106,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_068",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.8878340000010212,
+      "seconds": 8.413781642913818,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 394,
+        "total_tokens": 404
+      },
+      "interventions": [],
+      "cost_usd": 0.0055194,
+      "claude_usage": {
+        "input": 10,
+        "output": 394,
+        "cache_read": 11294,
+        "cache_write": 172,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_047",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 2.37575432500671,
+      "seconds": 10.287748098373413,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 814,
+        "total_tokens": 824
+      },
+      "interventions": null,
+      "cost_usd": 0.0161918,
+      "claude_usage": {
+        "input": 10,
+        "output": 814,
+        "cache_read": 7818,
+        "cache_write": 2900,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_047",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 2.0168103500000143,
+      "seconds": 8.836211919784546,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 586,
+        "total_tokens": 596
+      },
+      "interventions": [],
+      "cost_usd": 0.0079817,
+      "claude_usage": {
+        "input": 10,
+        "output": 586,
+        "cache_read": 10167,
+        "cache_write": 434,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C3 entry tool was called"
+    },
+    {
+      "task_id": "C3_task_083",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.2711668750016543,
+      "seconds": 11.00920820236206,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 745,
+        "total_tokens": 763
+      },
+      "interventions": null,
+      "cost_usd": 0.0183275,
+      "claude_usage": {
+        "input": 18,
+        "output": 745,
+        "cache_read": 20315,
+        "cache_write": 3524,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_083",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.26346331249988,
+      "seconds": 10.828224182128906,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 760,
+        "total_tokens": 778
+      },
+      "interventions": [],
+      "cost_usd": 0.0116283,
+      "claude_usage": {
+        "input": 18,
+        "output": 760,
+        "cache_read": 23173,
+        "cache_write": 670,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_012",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.5107929375008098,
+      "seconds": 12.87376880645752,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1054,
+        "total_tokens": 1072
+      },
+      "interventions": null,
+      "cost_usd": 0.0225455,
+      "claude_usage": {
+        "input": 18,
+        "output": 1054,
+        "cache_read": 22045,
+        "cache_write": 3906,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_012",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.458880237498306,
+      "seconds": 12.397610425949097,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1042,
+        "total_tokens": 1060
+      },
+      "interventions": [],
+      "cost_usd": 0.0154434,
+      "claude_usage": {
+        "input": 18,
+        "output": 1042,
+        "cache_read": 24899,
+        "cache_write": 999,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C3_task_007",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.479711560002761,
+      "seconds": 8.628645896911621,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 474,
+        "total_tokens": 486
+      },
+      "interventions": null,
+      "cost_usd": 0.013492299999999999,
+      "claude_usage": {
+        "input": 12,
+        "output": 474,
+        "cache_read": 10783,
+        "cache_write": 3060,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_aviationstack_gate_board_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C3_task_007",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.6160346800024854,
+      "seconds": 9.738187074661255,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 527,
+        "total_tokens": 539
+      },
+      "interventions": [],
+      "cost_usd": 0.0070556,
+      "claude_usage": {
+        "input": 12,
+        "output": 527,
+        "cache_read": 13691,
+        "cache_write": 157,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_aviationstack_gate_board_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_020",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.5470095769247005,
+      "seconds": 21.632919788360596,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 1857,
+        "total_tokens": 1885
+      },
+      "interventions": null,
+      "cost_usd": 0.0425629,
+      "claude_usage": {
+        "input": 28,
+        "output": 1857,
+        "cache_read": 67594,
+        "cache_write": 6871,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_020",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.5486694416673952,
+      "seconds": 20.208752870559692,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1662,
+        "total_tokens": 1688
+      },
+      "interventions": [],
+      "cost_usd": 0.0276631,
+      "claude_usage": {
+        "input": 26,
+        "output": 1662,
+        "cache_read": 64186,
+        "cache_write": 1829,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_024",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 1.7290280466666446,
+      "seconds": 27.47971272468567,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 2712,
+        "total_tokens": 2744
+      },
+      "interventions": null,
+      "cost_usd": 0.0562476,
+      "claude_usage": {
+        "input": 32,
+        "output": 2712,
+        "cache_read": 84136,
+        "cache_write": 8260,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: 'hold_best_recommendation' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_024",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.6295597999996971,
+      "seconds": 8.692617893218994,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 542,
+        "total_tokens": 552
+      },
+      "interventions": [],
+      "cost_usd": 0.008373299999999998,
+      "claude_usage": {
+        "input": 10,
+        "output": 542,
+        "cache_read": 18208,
+        "cache_write": 445,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'hold_best_recommendation' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_019",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.5676873624979635,
+      "seconds": 14.617937564849854,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1081,
+        "total_tokens": 1099
+      },
+      "interventions": null,
+      "cost_usd": 0.0265898,
+      "claude_usage": {
+        "input": 18,
+        "output": 1081,
+        "cache_read": 29638,
+        "cache_write": 5112,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_hotel_info' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_019",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.6012606375024916,
+      "seconds": 14.97336483001709,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1074,
+        "total_tokens": 1092
+      },
+      "interventions": [],
+      "cost_usd": 0.0165104,
+      "claude_usage": {
+        "input": 18,
+        "output": 1074,
+        "cache_read": 33844,
+        "cache_write": 940,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_hotel_info' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_034",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.906238650000887,
+      "seconds": 12.671459197998047,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 567,
+        "total_tokens": 577
+      },
+      "interventions": null,
+      "cost_usd": 0.0240392,
+      "claude_usage": {
+        "input": 10,
+        "output": 567,
+        "cache_read": 17267,
+        "cache_write": 6649,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_034",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.9075093999999808,
+      "seconds": 17.49961018562317,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 563,
+        "total_tokens": 573
+      },
+      "interventions": [],
+      "cost_usd": 0.0092922,
+      "claude_usage": {
+        "input": 10,
+        "output": 563,
+        "cache_read": 23372,
+        "cache_write": 522,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_032",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 2,
+      "llm_calls": 3,
+      "latency_per_call": 3.351929233336705,
+      "seconds": 18.10099768638611,
+      "tokens": {
+        "input_tokens": 8,
+        "output_tokens": 596,
+        "total_tokens": 604
+      },
+      "interventions": null,
+      "cost_usd": 0.018327700000000002,
+      "claude_usage": {
+        "input": 8,
+        "output": 596,
+        "cache_read": 8267,
+        "cache_write": 4610,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_032",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 2,
+      "llm_calls": 3,
+      "latency_per_call": 3.2510734333336586,
+      "seconds": 19.993918895721436,
+      "tokens": {
+        "input_tokens": 8,
+        "output_tokens": 584,
+        "total_tokens": 592
+      },
+      "interventions": [],
+      "cost_usd": 0.0071437,
+      "claude_usage": {
+        "input": 8,
+        "output": 584,
+        "cache_read": 12877,
+        "cache_write": 0,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_033",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.4776981923070986,
+      "seconds": 27.27353858947754,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 1679,
+        "total_tokens": 1707
+      },
+      "interventions": null,
+      "cost_usd": 0.0380941,
+      "claude_usage": {
+        "input": 28,
+        "output": 1679,
+        "cache_read": 58331,
+        "cache_write": 6166,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_exchange_rate_fixer' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_033",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 8,
+      "llm_calls": 9,
+      "latency_per_call": 1.6071779444432144,
+      "seconds": 16.15583324432373,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1237,
+        "total_tokens": 1259
+      },
+      "interventions": [
+        {
+          "failed": "get_weatherapi_alert_card_native",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0187805,
+      "claude_usage": {
+        "input": 22,
+        "output": 1237,
+        "cache_read": 40440,
+        "cache_write": 929,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_exchange_rate_fixer' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_056",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 1.637997366664543,
+      "seconds": 26.299070596694946,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 2134,
+        "total_tokens": 2166
+      },
+      "interventions": null,
+      "cost_usd": 0.050804199999999994,
+      "claude_usage": {
+        "input": 32,
+        "output": 2134,
+        "cache_read": 91427,
+        "cache_write": 8103,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_exchange_rate_fixer' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_056",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.971909783334316,
+      "seconds": 25.255465269088745,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 2196,
+        "total_tokens": 2224
+      },
+      "interventions": [
+        {
+          "failed": "create_document_and_alert",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0360526,
+      "claude_usage": {
+        "input": 28,
+        "output": 2196,
+        "cache_read": 74816,
+        "cache_write": 2622,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_exchange_rate_fixer' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_058",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.376850160001777,
+      "seconds": 22.757675647735596,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1774,
+        "total_tokens": 1806
+      },
+      "interventions": null,
+      "cost_usd": 0.047845599999999995,
+      "claude_usage": {
+        "input": 32,
+        "output": 1774,
+        "cache_read": 93616,
+        "cache_write": 8272,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_058",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.3799572999977197,
+      "seconds": 22.232866525650024,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1714,
+        "total_tokens": 1746
+      },
+      "interventions": [
+        {
+          "failed": "create_document_and_alert",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0333923,
+      "claude_usage": {
+        "input": 32,
+        "output": 1714,
+        "cache_read": 98683,
+        "cache_write": 2528,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_content' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_014",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 1.9241732799981643,
+      "seconds": 30.873193740844727,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 2373,
+        "total_tokens": 2405
+      },
+      "interventions": null,
+      "cost_usd": 0.0523963,
+      "claude_usage": {
+        "input": 32,
+        "output": 2373,
+        "cache_read": 82648,
+        "cache_write": 8135,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_014",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.713081213333256,
+      "seconds": 27.634708642959595,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1958,
+        "total_tokens": 1990
+      },
+      "interventions": [],
+      "cost_usd": 0.0352434,
+      "claude_usage": {
+        "input": 32,
+        "output": 1958,
+        "cache_read": 87719,
+        "cache_write": 2731,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_095",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.5550362866653207,
+      "seconds": 25.316701412200928,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 2110,
+        "total_tokens": 2142
+      },
+      "interventions": null,
+      "cost_usd": 0.052159,
+      "claude_usage": {
+        "input": 32,
+        "output": 2110,
+        "cache_read": 95900,
+        "cache_write": 8562,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_available_coupons' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_095",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.950109585714277,
+      "seconds": 15.182352542877197,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1330,
+        "total_tokens": 1350
+      },
+      "interventions": [
+        {
+          "failed": "get_cart_summary",
+          "chosen": null,
+          "ranked": []
+        },
+        {
+          "failed": "optimize_discount",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0196335,
+      "claude_usage": {
+        "input": 20,
+        "output": 1330,
+        "cache_read": 41810,
+        "cache_write": 845,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_available_coupons' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_013",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.765043576925214,
+      "seconds": 24.634658575057983,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 1764,
+        "total_tokens": 1792
+      },
+      "interventions": null,
+      "cost_usd": 0.0394215,
+      "claude_usage": {
+        "input": 28,
+        "output": 1764,
+        "cache_read": 58630,
+        "cache_write": 6345,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_flight_info' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_013",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 2.1503032400010853,
+      "seconds": 12.213715076446533,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 892,
+        "total_tokens": 906
+      },
+      "interventions": [
+        {
+          "failed": "create_document",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.011133299999999999,
+      "claude_usage": {
+        "input": 14,
+        "output": 892,
+        "cache_read": 20628,
+        "cache_write": 49,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_025",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.3754114384635334,
+      "seconds": 19.48000717163086,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 1434,
+        "total_tokens": 1462
+      },
+      "interventions": null,
+      "cost_usd": 0.033334699999999995,
+      "claude_usage": {
+        "input": 28,
+        "output": 1434,
+        "cache_read": 53587,
+        "cache_write": 5432,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'discover_smart_devices' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_025",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.440905354546637,
+      "seconds": 17.592190980911255,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1254,
+        "total_tokens": 1280
+      },
+      "interventions": [
+        {
+          "failed": "update_device_config",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0197009,
+      "claude_usage": {
+        "input": 26,
+        "output": 1254,
+        "cache_read": 47439,
+        "cache_write": 946,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'discover_smart_devices' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_007",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.466236280000885,
+      "seconds": 8.977711915969849,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 533,
+        "total_tokens": 545
+      },
+      "interventions": null,
+      "cost_usd": 0.019793099999999998,
+      "claude_usage": {
+        "input": 12,
+        "output": 533,
+        "cache_read": 18566,
+        "cache_write": 5033,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_007",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 13,
+      "llm_calls": 14,
+      "latency_per_call": 1.6996235642873216,
+      "seconds": 25.49293875694275,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 2527,
+        "total_tokens": 2559
+      },
+      "interventions": [
+        {
+          "failed": "create_document",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.040385199999999996,
+      "claude_usage": {
+        "input": 32,
+        "output": 2527,
+        "cache_read": 79437,
+        "cache_write": 2843,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_042",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 2.110155049998866,
+      "seconds": 10.358367919921875,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 509,
+        "total_tokens": 519
+      },
+      "interventions": null,
+      "cost_usd": 0.0185494,
+      "claude_usage": {
+        "input": 10,
+        "output": 509,
+        "cache_read": 13394,
+        "cache_write": 4840,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_042",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 2.084536949998437,
+      "seconds": 10.073777675628662,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 493,
+        "total_tokens": 503
+      },
+      "interventions": [],
+      "cost_usd": 0.0073067,
+      "claude_usage": {
+        "input": 10,
+        "output": 493,
+        "cache_read": 18017,
+        "cache_write": 222,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_048",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.810983793332707,
+      "seconds": 29.116257667541504,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1754,
+        "total_tokens": 1786
+      },
+      "interventions": null,
+      "cost_usd": 0.043957699999999995,
+      "claude_usage": {
+        "input": 32,
+        "output": 1754,
+        "cache_read": 82212,
+        "cache_write": 7253,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_office365_room_ticket_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_048",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 2.182145541668433,
+      "seconds": 28.33068084716797,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 1989,
+        "total_tokens": 2017
+      },
+      "interventions": [
+        {
+          "failed": "build_device_config_request",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.032031,
+      "claude_usage": {
+        "input": 28,
+        "output": 1989,
+        "cache_read": 66000,
+        "cache_write": 2194,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_office365_room_ticket_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_004",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 1.8217765000008512,
+      "seconds": 29.312694311141968,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 2570,
+        "total_tokens": 2602
+      },
+      "interventions": null,
+      "cost_usd": 0.0568701,
+      "claude_usage": {
+        "input": 32,
+        "output": 2570,
+        "cache_read": 95361,
+        "cache_write": 8628,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_004",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 6,
+      "llm_calls": 7,
+      "latency_per_call": 1.8810486714293282,
+      "seconds": 17.785599946975708,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 1069,
+        "total_tokens": 1085
+      },
+      "interventions": [],
+      "cost_usd": 0.0196233,
+      "claude_usage": {
+        "input": 16,
+        "output": 1069,
+        "cache_read": 39788,
+        "cache_write": 1969,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'hold_best_recommendation' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_061",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.5116804333338223,
+      "seconds": 22.223997831344604,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1569,
+        "total_tokens": 1595
+      },
+      "interventions": null,
+      "cost_usd": 0.036134400000000004,
+      "claude_usage": {
+        "input": 26,
+        "output": 1569,
+        "cache_read": 53499,
+        "cache_write": 6017,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'discover_smart_devices' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_061",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.6718441499979235,
+      "seconds": 14.687970161437988,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 908,
+        "total_tokens": 922
+      },
+      "interventions": [],
+      "cost_usd": 0.0127677,
+      "claude_usage": {
+        "input": 14,
+        "output": 908,
+        "cache_read": 25197,
+        "cache_write": 456,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'discover_smart_devices' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_064",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 9,
+      "llm_calls": 10,
+      "latency_per_call": 1.9679952600010437,
+      "seconds": 24.317469358444214,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1682,
+        "total_tokens": 1704
+      },
+      "interventions": null,
+      "cost_usd": 0.0350188,
+      "claude_usage": {
+        "input": 22,
+        "output": 1682,
+        "cache_read": 39448,
+        "cache_write": 5684,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'discover_smart_devices' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_064",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.9173361545452445,
+      "seconds": 25.65112590789795,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 1842,
+        "total_tokens": 1872
+      },
+      "interventions": [
+        {
+          "failed": "discover_smart_devices",
+          "chosen": null,
+          "ranked": []
+        },
+        {
+          "failed": "get_iot_device_status",
+          "chosen": "get_light_status",
+          "ranked": [
+            [
+              "get_light_status",
+              0.23357210677627616
+            ]
+          ]
+        },
+        {
+          "failed": "create_document_and_alert",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0339709,
+      "claude_usage": {
+        "input": 30,
+        "output": 1842,
+        "cache_read": 44384,
+        "cache_write": 4421,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'discover_smart_devices' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_011",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 9,
+      "llm_calls": 10,
+      "latency_per_call": 1.647474379996129,
+      "seconds": 19.64908766746521,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1196,
+        "total_tokens": 1218
+      },
+      "interventions": null,
+      "cost_usd": 0.0299885,
+      "claude_usage": {
+        "input": 22,
+        "output": 1196,
+        "cache_read": 43070,
+        "cache_write": 5471,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_account_balance_bank_api' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_011",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 9,
+      "llm_calls": 10,
+      "latency_per_call": 1.818368040001951,
+      "seconds": 20.967883348464966,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1236,
+        "total_tokens": 1258
+      },
+      "interventions": [],
+      "cost_usd": 0.020030700000000002,
+      "claude_usage": {
+        "input": 22,
+        "output": 1236,
+        "cache_read": 47742,
+        "cache_write": 1141,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_account_balance_bank_api' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_068",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 1.377978493333406,
+      "seconds": 23.719482898712158,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1660,
+        "total_tokens": 1692
+      },
+      "interventions": null,
+      "cost_usd": 0.037917099999999995,
+      "claude_usage": {
+        "input": 32,
+        "output": 1660,
+        "cache_read": 65031,
+        "cache_write": 5900,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_068",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 1.3955321266655423,
+      "seconds": 24.177342891693115,
+      "tokens": {
+        "input_tokens": 34,
+        "output_tokens": 1760,
+        "total_tokens": 1794
+      },
+      "interventions": [
+        {
+          "failed": "create_document_and_alert",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.029955700000000002,
+      "claude_usage": {
+        "input": 34,
+        "output": 1760,
+        "cache_read": 68652,
+        "cache_write": 2169,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_031",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 13,
+      "llm_calls": 14,
+      "latency_per_call": 1.6245410214282205,
+      "seconds": 27.172881603240967,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 1811,
+        "total_tokens": 1841
+      },
+      "interventions": null,
+      "cost_usd": 0.0401215,
+      "claude_usage": {
+        "input": 30,
+        "output": 1811,
+        "cache_read": 66515,
+        "cache_write": 6120,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_hotel_info' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_031",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 13,
+      "llm_calls": 14,
+      "latency_per_call": 1.4864348642846121,
+      "seconds": 23.762559413909912,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 1663,
+        "total_tokens": 1693
+      },
+      "interventions": [],
+      "cost_usd": 0.0286511,
+      "claude_usage": {
+        "input": 30,
+        "output": 1663,
+        "cache_read": 70536,
+        "cache_write": 1963,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_hotel_info' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_021",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.7776829333330777,
+      "seconds": 14.399614334106445,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 1007,
+        "total_tokens": 1021
+      },
+      "interventions": null,
+      "cost_usd": 0.025541,
+      "claude_usage": {
+        "input": 14,
+        "output": 1007,
+        "cache_read": 23305,
+        "cache_write": 5245,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_021",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 2.3420861599995986,
+      "seconds": 16.13615655899048,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 1108,
+        "total_tokens": 1122
+      },
+      "interventions": [
+        {
+          "failed": "get_booking_stay_sheet_native",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.015606799999999999,
+      "claude_usage": {
+        "input": 14,
+        "output": 1108,
+        "cache_read": 22863,
+        "cache_write": 885,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_076",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 2.3690378466630744,
+      "seconds": 40.1883909702301,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 2044,
+        "total_tokens": 2076
+      },
+      "interventions": null,
+      "cost_usd": 0.043838199999999994,
+      "claude_usage": {
+        "input": 32,
+        "output": 2044,
+        "cache_read": 70742,
+        "cache_write": 6504,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_076",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 2.4220525133326496,
+      "seconds": 40.09801626205444,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 2037,
+        "total_tokens": 2069
+      },
+      "interventions": [],
+      "cost_usd": 0.033507699999999994,
+      "claude_usage": {
+        "input": 32,
+        "output": 2037,
+        "cache_read": 75212,
+        "cache_write": 2221,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_057",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.7654600499966666,
+      "seconds": 25.25640034675598,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 2145,
+        "total_tokens": 2171
+      },
+      "interventions": null,
+      "cost_usd": 0.0440429,
+      "claude_usage": {
+        "input": 26,
+        "output": 2145,
+        "cache_read": 54509,
+        "cache_write": 6836,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_contact_info_directory' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_057",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.804490316666488,
+      "seconds": 25.434279918670654,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 2177,
+        "total_tokens": 2207
+      },
+      "interventions": [
+        {
+          "failed": "get_contact_info_directory",
+          "chosen": "get_contact_info_hris",
+          "ranked": [
+            [
+              "get_contact_info_hris",
+              0.9333333333333333
+            ]
+          ]
+        },
+        {
+          "failed": "create_document_and_alert_from_data",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0391665,
+      "claude_usage": {
+        "input": 30,
+        "output": 2177,
+        "cache_read": 52015,
+        "cache_write": 4854,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_contact_info_directory' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_028",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 13,
+      "llm_calls": 14,
+      "latency_per_call": 1.5377922142839193,
+      "seconds": 25.94953680038452,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 2088,
+        "total_tokens": 2118
+      },
+      "interventions": null,
+      "cost_usd": 0.04651,
+      "claude_usage": {
+        "input": 30,
+        "output": 2088,
+        "cache_read": 75325,
+        "cache_write": 7215,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_028",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.686750983336727,
+      "seconds": 23.898035764694214,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 2095,
+        "total_tokens": 2123
+      },
+      "interventions": [
+        {
+          "failed": "create_document",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0328545,
+      "claude_usage": {
+        "input": 28,
+        "output": 2095,
+        "cache_read": 66335,
+        "cache_write": 2086,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_outlook_slot_pass_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_044",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 2.6552604750031605,
+      "seconds": 13.905339002609253,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 873,
+        "total_tokens": 883
+      },
+      "interventions": null,
+      "cost_usd": 0.024606700000000002,
+      "claude_usage": {
+        "input": 10,
+        "output": 873,
+        "cache_read": 15117,
+        "cache_write": 5738,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'submit_order_with_best_discount' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_044",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 2.492939463634023,
+      "seconds": 31.00067710876465,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 2223,
+        "total_tokens": 2253
+      },
+      "interventions": [
+        {
+          "failed": "submit_order_with_best_discount",
+          "chosen": "get_available_coupons",
+          "ranked": [
+            [
+              "get_available_coupons",
+              0.03565715189087524
+            ]
+          ]
+        },
+        {
+          "failed": "get_cart_summary",
+          "chosen": "generate_invoice_from_cart",
+          "ranked": [
+            [
+              "generate_invoice_from_cart",
+              0.07389379281190214
+            ]
+          ]
+        },
+        {
+          "failed": "create_document_and_alert",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.047242900000000004,
+      "claude_usage": {
+        "input": 30,
+        "output": 2223,
+        "cache_read": 54379,
+        "cache_write": 7806,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'submit_order_with_best_discount' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_009",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 10,
+      "llm_calls": 11,
+      "latency_per_call": 1.4127114818203899,
+      "seconds": 19.95559525489807,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1125,
+        "total_tokens": 1149
+      },
+      "interventions": null,
+      "cost_usd": 0.025917799999999998,
+      "claude_usage": {
+        "input": 24,
+        "output": 1125,
+        "cache_read": 35323,
+        "cache_write": 4435,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_009",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 9,
+      "llm_calls": 10,
+      "latency_per_call": 1.4119508599993424,
+      "seconds": 19.17038917541504,
+      "tokens": {
+        "input_tokens": 24,
+        "output_tokens": 1197,
+        "total_tokens": 1221
+      },
+      "interventions": [
+        {
+          "failed": "get_iot_device_status",
+          "chosen": "get_light_status",
+          "ranked": [
+            [
+              "get_light_status",
+              0.2686525895913786
+            ]
+          ]
+        }
+      ],
+      "cost_usd": 0.0249051,
+      "claude_usage": {
+        "input": 24,
+        "output": 1197,
+        "cache_read": 29971,
+        "cache_write": 3956,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_crypto_price_coinmarketcap' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_075",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 1.3754585400000603,
+      "seconds": 23.87221884727478,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1420,
+        "total_tokens": 1452
+      },
+      "interventions": null,
+      "cost_usd": 0.0361212,
+      "claude_usage": {
+        "input": 32,
+        "output": 1420,
+        "cache_read": 69597,
+        "cache_write": 5959,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_light_status' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_075",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 1.6246917000001606,
+      "seconds": 13.40585994720459,
+      "tokens": {
+        "input_tokens": 16,
+        "output_tokens": 724,
+        "total_tokens": 740
+      },
+      "interventions": [
+        {
+          "failed": "get_iot_device_status",
+          "chosen": "get_light_status",
+          "ranked": [
+            [
+              "get_light_status",
+              0.30046858382896574
+            ]
+          ]
+        }
+      ],
+      "cost_usd": 0.014389299999999999,
+      "claude_usage": {
+        "input": 16,
+        "output": 724,
+        "cache_read": 21598,
+        "cache_write": 1983,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_light_status' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_087",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.7640117799979635,
+      "seconds": 14.606748819351196,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 742,
+        "total_tokens": 754
+      },
+      "interventions": null,
+      "cost_usd": 0.0263475,
+      "claude_usage": {
+        "input": 12,
+        "output": 742,
+        "cache_read": 23310,
+        "cache_write": 6629,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'checkout_best_recommendation' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_087",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.6013499399986661,
+      "seconds": 27.723017930984497,
+      "tokens": {
+        "input_tokens": 34,
+        "output_tokens": 2390,
+        "total_tokens": 2424
+      },
+      "interventions": [
+        {
+          "failed": "optimize_discount",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.044713,
+      "claude_usage": {
+        "input": 34,
+        "output": 2390,
+        "cache_read": 111800,
+        "cache_write": 3826,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'checkout_best_recommendation' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_043",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 1.3691579133330378,
+      "seconds": 24.427958250045776,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1702,
+        "total_tokens": 1734
+      },
+      "interventions": null,
+      "cost_usd": 0.0391536,
+      "claude_usage": {
+        "input": 32,
+        "output": 1702,
+        "cache_read": 68096,
+        "cache_write": 6104,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_043",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.8730193125029473,
+      "seconds": 19.01714301109314,
+      "tokens": {
+        "input_tokens": 20,
+        "output_tokens": 1384,
+        "total_tokens": 1404
+      },
+      "interventions": [
+        {
+          "failed": "get_iot_device_status",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.019365900000000002,
+      "claude_usage": {
+        "input": 20,
+        "output": 1384,
+        "cache_read": 34084,
+        "cache_write": 831,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_quote_snapshot_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_010",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 2.5331122999996296,
+      "seconds": 8.604258060455322,
+      "tokens": {
+        "input_tokens": 6,
+        "output_tokens": 448,
+        "total_tokens": 454
+      },
+      "interventions": null,
+      "cost_usd": 0.016139,
+      "claude_usage": {
+        "input": 6,
+        "output": 448,
+        "cache_read": 4345,
+        "cache_write": 4485,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_010",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 2,
+      "llm_calls": 3,
+      "latency_per_call": 2.1075288666712972,
+      "seconds": 10.008707761764526,
+      "tokens": {
+        "input_tokens": 8,
+        "output_tokens": 598,
+        "total_tokens": 606
+      },
+      "interventions": [],
+      "cost_usd": 0.0085725,
+      "claude_usage": {
+        "input": 8,
+        "output": 598,
+        "cache_read": 13315,
+        "cache_write": 498,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_023",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.3911475249976017,
+      "seconds": 20.724870204925537,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1257,
+        "total_tokens": 1283
+      },
+      "interventions": null,
+      "cost_usd": 0.0301474,
+      "claude_usage": {
+        "input": 26,
+        "output": 1257,
+        "cache_read": 46404,
+        "cache_write": 5154,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'discover_smart_devices' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_023",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.5235133083321368,
+      "seconds": 22.58293080329895,
+      "tokens": {
+        "input_tokens": 26,
+        "output_tokens": 1263,
+        "total_tokens": 1289
+      },
+      "interventions": [],
+      "cost_usd": 0.0201393,
+      "claude_usage": {
+        "input": 26,
+        "output": 1263,
+        "cache_read": 50873,
+        "cache_write": 948,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'discover_smart_devices' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_077",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 3.270514749994618,
+      "seconds": 10.942186832427979,
+      "tokens": {
+        "input_tokens": 6,
+        "output_tokens": 438,
+        "total_tokens": 444
+      },
+      "interventions": null,
+      "cost_usd": 0.0158838,
+      "claude_usage": {
+        "input": 6,
+        "output": 438,
+        "cache_read": 4268,
+        "cache_write": 4426,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_077",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": false,
+      "tool_calls": 1,
+      "llm_calls": 2,
+      "latency_per_call": 3.2067700999978115,
+      "seconds": 10.006145715713501,
+      "tokens": {
+        "input_tokens": 6,
+        "output_tokens": 494,
+        "total_tokens": 500
+      },
+      "interventions": [],
+      "cost_usd": 0.0058214,
+      "claude_usage": {
+        "input": 6,
+        "output": 494,
+        "cache_read": 8694,
+        "cache_write": 0,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no perturbed C4 entry tool was called"
+    },
+    {
+      "task_id": "C4_task_089",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.6384288799978095,
+      "seconds": 11.430518388748169,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 771,
+        "total_tokens": 783
+      },
+      "interventions": null,
+      "cost_usd": 0.023595099999999997,
+      "claude_usage": {
+        "input": 12,
+        "output": 771,
+        "cache_read": 19411,
+        "cache_write": 5568,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_popularity' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_089",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.8354663800011621,
+      "seconds": 13.084035396575928,
+      "tokens": {
+        "input_tokens": 14,
+        "output_tokens": 928,
+        "total_tokens": 942
+      },
+      "interventions": [
+        {
+          "failed": "create_document",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0142091,
+      "claude_usage": {
+        "input": 14,
+        "output": 928,
+        "cache_read": 24361,
+        "cache_write": 986,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_popularity' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_037",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 1.8446948799983753,
+      "seconds": 30.949582815170288,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 2214,
+        "total_tokens": 2246
+      },
+      "interventions": null,
+      "cost_usd": 0.0533398,
+      "claude_usage": {
+        "input": 32,
+        "output": 2214,
+        "cache_read": 95908,
+        "cache_write": 8618,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'discover_smart_devices' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_037",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 2.4719083499949193,
+      "seconds": 13.513969898223877,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 842,
+        "total_tokens": 854
+      },
+      "interventions": [
+        {
+          "failed": "discover_smart_devices",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.010908200000000002,
+      "claude_usage": {
+        "input": 12,
+        "output": 842,
+        "cache_read": 23292,
+        "cache_write": 54,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'discover_smart_devices' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_016",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.326755426664992,
+      "seconds": 23.883089303970337,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1489,
+        "total_tokens": 1521
+      },
+      "interventions": null,
+      "cost_usd": 0.0380697,
+      "claude_usage": {
+        "input": 32,
+        "output": 1489,
+        "cache_read": 69257,
+        "cache_write": 6476,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_market_status_polygon' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_016",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.2496163800019227,
+      "seconds": 22.025107383728027,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1520,
+        "total_tokens": 1552
+      },
+      "interventions": [
+        {
+          "failed": "update_device_config",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0289074,
+      "claude_usage": {
+        "input": 32,
+        "output": 1520,
+        "cache_read": 73259,
+        "cache_write": 2527,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_market_status_polygon' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_018",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.9168448799988256,
+      "seconds": 11.698105812072754,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 814,
+        "total_tokens": 826
+      },
+      "interventions": null,
+      "cost_usd": 0.0246376,
+      "claude_usage": {
+        "input": 12,
+        "output": 814,
+        "cache_read": 19786,
+        "cache_write": 5798,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_popularity' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_018",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 11,
+      "llm_calls": 12,
+      "latency_per_call": 1.7399111250027393,
+      "seconds": 23.012911558151245,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 2126,
+        "total_tokens": 2154
+      },
+      "interventions": [
+        {
+          "failed": "create_document",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.034219,
+      "claude_usage": {
+        "input": 28,
+        "output": 2126,
+        "cache_read": 70805,
+        "cache_write": 2329,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_popularity' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_083",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 3.320095759999822,
+      "seconds": 18.160743236541748,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 995,
+        "total_tokens": 1007
+      },
+      "interventions": null,
+      "cost_usd": 0.0258707,
+      "claude_usage": {
+        "input": 12,
+        "output": 995,
+        "cache_read": 19642,
+        "cache_write": 5573,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_office365_room_ticket_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_083",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 2.158118740003556,
+      "seconds": 13.109468460083008,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 999,
+        "total_tokens": 1011
+      },
+      "interventions": [],
+      "cost_usd": 0.0146826,
+      "claude_usage": {
+        "input": 12,
+        "output": 999,
+        "cache_read": 24361,
+        "cache_write": 893,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_office365_room_ticket_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_029",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.3933219466678566,
+      "seconds": 23.63970422744751,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 2047,
+        "total_tokens": 2079
+      },
+      "interventions": null,
+      "cost_usd": 0.053771900000000004,
+      "claude_usage": {
+        "input": 32,
+        "output": 2047,
+        "cache_read": 100804,
+        "cache_write": 9263,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_029",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 1.8164762933350478,
+      "seconds": 29.332981824874878,
+      "tokens": {
+        "input_tokens": 34,
+        "output_tokens": 2750,
+        "total_tokens": 2784
+      },
+      "interventions": [
+        {
+          "failed": "get_cart_summary",
+          "chosen": "generate_invoice_from_cart",
+          "ranked": [
+            [
+              "generate_invoice_from_cart",
+              0.11670813008142102
+            ]
+          ]
+        }
+      ],
+      "cost_usd": 0.0568678,
+      "claude_usage": {
+        "input": 34,
+        "output": 2750,
+        "cache_read": 97673,
+        "cache_write": 7813,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_booking_stay_sheet_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_069",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.9748708769240273,
+      "seconds": 27.420169830322266,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 2055,
+        "total_tokens": 2083
+      },
+      "interventions": null,
+      "cost_usd": 0.0432122,
+      "claude_usage": {
+        "input": 28,
+        "output": 2055,
+        "cache_read": 57862,
+        "cache_write": 6728,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_069",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 2.0213815076914705,
+      "seconds": 28.229297876358032,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 2230,
+        "total_tokens": 2260
+      },
+      "interventions": [
+        {
+          "failed": "create_document_and_alert_from_data",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.034896800000000006,
+      "claude_usage": {
+        "input": 30,
+        "output": 2230,
+        "cache_read": 62193,
+        "cache_write": 2527,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_080",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 2.3018281500008015,
+      "seconds": 11.247051239013672,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 748,
+        "total_tokens": 758
+      },
+      "interventions": null,
+      "cost_usd": 0.024080900000000002,
+      "claude_usage": {
+        "input": 10,
+        "output": 748,
+        "cache_read": 16759,
+        "cache_write": 5962,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_collaborative' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_080",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.4127393666664527,
+      "seconds": 22.771175146102905,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1758,
+        "total_tokens": 1790
+      },
+      "interventions": [],
+      "cost_usd": 0.034736199999999995,
+      "claude_usage": {
+        "input": 32,
+        "output": 1758,
+        "cache_read": 99522,
+        "cache_write": 2856,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_collaborative' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_005",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.5540467769236643,
+      "seconds": 22.194955110549927,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 1721,
+        "total_tokens": 1749
+      },
+      "interventions": null,
+      "cost_usd": 0.037934300000000004,
+      "claude_usage": {
+        "input": 28,
+        "output": 1721,
+        "cache_read": 56083,
+        "cache_write": 6024,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: 'discover_smart_devices' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_005",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 1.631838746665744,
+      "seconds": 26.353300094604492,
+      "tokens": {
+        "input_tokens": 34,
+        "output_tokens": 2030,
+        "total_tokens": 2064
+      },
+      "interventions": [
+        {
+          "failed": "get_iot_device_status",
+          "chosen": "get_light_status",
+          "ranked": [
+            [
+              "get_light_status",
+              0.33086669148045034
+            ]
+          ]
+        }
+      ],
+      "cost_usd": 0.038155800000000004,
+      "claude_usage": {
+        "input": 34,
+        "output": 2030,
+        "cache_read": 67628,
+        "cache_write": 4410,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: 'discover_smart_devices' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_003",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.8169742499994754,
+      "seconds": 8.934754133224487,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 560,
+        "total_tokens": 570
+      },
+      "interventions": null,
+      "cost_usd": 0.0177861,
+      "claude_usage": {
+        "input": 10,
+        "output": 560,
+        "cache_read": 11761,
+        "cache_write": 4396,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_003",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.8562995749998663,
+      "seconds": 9.23275375366211,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 582,
+        "total_tokens": 592
+      },
+      "interventions": [],
+      "cost_usd": 0.008215,
+      "claude_usage": {
+        "input": 10,
+        "output": 582,
+        "cache_read": 15875,
+        "cache_write": 315,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_079",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.4728530666674486,
+      "seconds": 23.960583209991455,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 2011,
+        "total_tokens": 2043
+      },
+      "interventions": null,
+      "cost_usd": 0.048106,
+      "claude_usage": {
+        "input": 32,
+        "output": 2011,
+        "cache_read": 84320,
+        "cache_write": 7800,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_broker_balance_ledger_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_079",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 15,
+      "llm_calls": 15,
+      "latency_per_call": 1.4742307999995925,
+      "seconds": 24.117016792297363,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1958,
+        "total_tokens": 1990
+      },
+      "interventions": [
+        {
+          "failed": "create_document_and_alert_from_data",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0360504,
+      "claude_usage": {
+        "input": 32,
+        "output": 1958,
+        "cache_read": 88214,
+        "cache_write": 3034,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_broker_balance_ledger_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_049",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 13,
+      "llm_calls": 14,
+      "latency_per_call": 1.7138805714296592,
+      "seconds": 25.839059829711914,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 2285,
+        "total_tokens": 2315
+      },
+      "interventions": null,
+      "cost_usd": 0.05432,
+      "claude_usage": {
+        "input": 30,
+        "output": 2285,
+        "cache_read": 90550,
+        "cache_write": 8942,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: 'get_available_coupons' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_049",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 5,
+      "llm_calls": 6,
+      "latency_per_call": 2.175500799998796,
+      "seconds": 15.052624940872192,
+      "tokens": {
+        "input_tokens": 18,
+        "output_tokens": 1253,
+        "total_tokens": 1271
+      },
+      "interventions": [
+        {
+          "failed": "optimize_discount",
+          "chosen": null,
+          "ranked": []
+        },
+        {
+          "failed": "get_cart_summary",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0179259,
+      "claude_usage": {
+        "input": 18,
+        "output": 1253,
+        "cache_read": 34774,
+        "cache_write": 753,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_available_coupons' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_006",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 3,
+      "llm_calls": 4,
+      "latency_per_call": 1.5144849749995046,
+      "seconds": 7.811368227005005,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 448,
+        "total_tokens": 458
+      },
+      "interventions": null,
+      "cost_usd": 0.0176978,
+      "claude_usage": {
+        "input": 10,
+        "output": 448,
+        "cache_read": 13328,
+        "cache_write": 4746,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_006",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 2,
+      "llm_calls": 3,
+      "latency_per_call": 1.9035455000024133,
+      "seconds": 7.722891092300415,
+      "tokens": {
+        "input_tokens": 10,
+        "output_tokens": 469,
+        "total_tokens": 479
+      },
+      "interventions": [
+        {
+          "failed": "get_weatherapi_alert_card_native",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.0061928,
+      "claude_usage": {
+        "input": 10,
+        "output": 469,
+        "cache_read": 13328,
+        "cache_write": 60,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_weatherapi_alert_card_native' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_081",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.7686948199989274,
+      "seconds": 10.853106498718262,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 641,
+        "total_tokens": 653
+      },
+      "interventions": null,
+      "cost_usd": 0.023704,
+      "claude_usage": {
+        "input": 12,
+        "output": 641,
+        "cache_read": 21100,
+        "cache_write": 6064,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_collaborative' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_081",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 4,
+      "llm_calls": 5,
+      "latency_per_call": 1.7207473400048912,
+      "seconds": 10.605591535568237,
+      "tokens": {
+        "input_tokens": 12,
+        "output_tokens": 587,
+        "total_tokens": 599
+      },
+      "interventions": [],
+      "cost_usd": 0.0095953,
+      "claude_usage": {
+        "input": 12,
+        "output": 587,
+        "cache_read": 26763,
+        "cache_write": 410,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_collaborative' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_038",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 14,
+      "llm_calls": 15,
+      "latency_per_call": 1.3998570733344726,
+      "seconds": 22.53399109840393,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1620,
+        "total_tokens": 1652
+      },
+      "interventions": null,
+      "cost_usd": 0.0378396,
+      "claude_usage": {
+        "input": 32,
+        "output": 1620,
+        "cache_read": 64706,
+        "cache_write": 6042,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_market_status_polygon' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_038",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.5199583769225193,
+      "seconds": 22.14027237892151,
+      "tokens": {
+        "input_tokens": 34,
+        "output_tokens": 1459,
+        "total_tokens": 1493
+      },
+      "interventions": [
+        {
+          "failed": "get_market_status_polygon",
+          "chosen": "get_market_status_alpha",
+          "ranked": [
+            [
+              "get_market_status_alpha",
+              0.9615384615384616
+            ]
+          ]
+        },
+        {
+          "failed": "get_fx_quote_ticket_native",
+          "chosen": null,
+          "ranked": []
+        },
+        {
+          "failed": "get_stock_yahoo_finance",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.029023900000000002,
+      "claude_usage": {
+        "input": 34,
+        "output": 1459,
+        "cache_read": 55209,
+        "cache_write": 3538,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_market_status_polygon' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_036",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 13,
+      "llm_calls": 14,
+      "latency_per_call": 1.544323321426678,
+      "seconds": 23.76859450340271,
+      "tokens": {
+        "input_tokens": 30,
+        "output_tokens": 2074,
+        "total_tokens": 2104
+      },
+      "interventions": null,
+      "cost_usd": 0.050913599999999996,
+      "claude_usage": {
+        "input": 30,
+        "output": 2074,
+        "cache_read": 88661,
+        "cache_write": 8499,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_collaborative' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_036",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": false,
+      "hit": true,
+      "tool_calls": 7,
+      "llm_calls": 8,
+      "latency_per_call": 1.8496412500007864,
+      "seconds": 16.83338236808777,
+      "tokens": {
+        "input_tokens": 22,
+        "output_tokens": 1469,
+        "total_tokens": 1491
+      },
+      "interventions": [
+        {
+          "failed": "optimize_discount",
+          "chosen": null,
+          "ranked": []
+        },
+        {
+          "failed": "get_cart_summary",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.023004,
+      "claude_usage": {
+        "input": 22,
+        "output": 1469,
+        "cache_read": 48100,
+        "cache_write": 1384,
+        "refusals": 0
+      },
+      "failure_reason": "P4 failed: no complete valid path executed successfully; 'get_recommendations_collaborative' failed permanently but agent did not complete another valid path"
+    },
+    {
+      "task_id": "C4_task_012",
+      "mode": "P4",
+      "arm": "llm",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.5097708461521857,
+      "seconds": 21.30023503303528,
+      "tokens": {
+        "input_tokens": 28,
+        "output_tokens": 1404,
+        "total_tokens": 1432
+      },
+      "interventions": null,
+      "cost_usd": 0.0315945,
+      "claude_usage": {
+        "input": 28,
+        "output": 1404,
+        "cache_read": 47960,
+        "cache_write": 5081,
+        "refusals": 0
+      },
+      "failure_reason": null
+    },
+    {
+      "task_id": "C4_task_012",
+      "mode": "P4",
+      "arm": "hybrid",
+      "passed": true,
+      "hit": true,
+      "tool_calls": 12,
+      "llm_calls": 13,
+      "latency_per_call": 1.7805656615393952,
+      "seconds": 24.929819583892822,
+      "tokens": {
+        "input_tokens": 32,
+        "output_tokens": 1723,
+        "total_tokens": 1755
+      },
+      "interventions": [
+        {
+          "failed": "get_iot_device_status",
+          "chosen": null,
+          "ranked": []
+        },
+        {
+          "failed": "create_document",
+          "chosen": null,
+          "ranked": []
+        }
+      ],
+      "cost_usd": 0.025340599999999998,
+      "claude_usage": {
+        "input": 32,
+        "output": 1723,
+        "cache_read": 52291,
+        "cache_write": 1127,
+        "refusals": 0
+      },
+      "failure_reason": null
+    }
+  ]
+}

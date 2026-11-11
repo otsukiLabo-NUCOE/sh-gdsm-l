@@ -150,6 +150,112 @@ def exec_rel(belief: M.RelBelief, tool: str) -> float:
 
 
 # ---------------------------------------------------------------------------
+# Claude backend (revision, E-L)
+# ---------------------------------------------------------------------------
+# ToolMaze's OpenAIAgent keeps its history in chat-completions form; the
+# agent logic (system prompts, the hybrid state machine) is left unchanged and
+# only the transport is replaced: each request is translated to the Anthropic
+# Messages API (official SDK) and the reply back. Claude's own content blocks
+# (thinking included) are kept on the assistant turn and replayed unchanged.
+
+PRICES = {"claude-sonnet-5-5": (2.0, 10.0, 0.10, 2.5),
+          "claude-opus-5-5": (4.0, 20.0, 0.20, 5.0)}
+
+
+class _Obj:
+    def __init__(self, **kw):
+        self.__dict__.update(kw)
+
+
+class _ClaudeMsg:
+    def __init__(self, text, tool_calls, blocks):
+        self.content = text
+        self.tool_calls = tool_calls or None
+        self.reasoning_content = None
+        self._blocks = blocks
+
+    def model_dump(self, exclude_none=True):
+        d = {"role": "assistant", "content": self.content, "_anthropic_content": self._blocks}
+        if self.tool_calls:
+            d["tool_calls"] = self.tool_calls
+        return d
+
+
+class ClaudeShim:
+    """Exposes .chat.completions.create(**openai_kwargs) backed by Claude."""
+
+    def __init__(self, model, effort="medium"):
+        import anthropic
+        from llm_experiment import ensure_anthropic_key
+        ensure_anthropic_key()
+        self._c = anthropic.Anthropic(max_retries=8)
+        self.model, self.effort = model, effort
+        self.usage = dict(input=0, output=0, cache_read=0, cache_write=0, refusals=0)
+        self.chat = _Obj(completions=_Obj(create=self.create))
+
+    @staticmethod
+    def _convert(messages):
+        system, out = [], []
+        for m in messages:
+            r = m.get("role")
+            if r == "system":
+                system.append(m.get("content") or "")
+            elif r == "user":
+                out.append({"role": "user", "content": m.get("content") or ""})
+            elif r == "assistant":
+                if m.get("_anthropic_content") is not None:
+                    out.append({"role": "assistant", "content": m["_anthropic_content"]})
+                    continue
+                blocks = []
+                if (m.get("content") or "").strip():
+                    blocks.append({"type": "text", "text": m["content"]})
+                for tc in m.get("tool_calls") or []:
+                    blocks.append({"type": "tool_use", "id": tc["id"], "name": tc["function"]["name"],
+                                   "input": json.loads(tc["function"].get("arguments") or "{}")})
+                out.append({"role": "assistant", "content": blocks or [{"type": "text", "text": "."}]})
+            elif r == "tool":
+                out.append({"role": "user", "content": [{"type": "tool_result",
+                                                          "tool_use_id": m["tool_call_id"],
+                                                          "content": m.get("content") or ""}]})
+        return "\n\n".join(system), out
+
+    def create(self, model=None, messages=None, tools=None, max_tokens=None, **_ignored):
+        system, msgs = self._convert(messages or [])
+        ctools = [{"name": t["function"]["name"],
+                   "description": t["function"].get("description", ""),
+                   "input_schema": t["function"].get("parameters") or {"type": "object", "properties": {}}}
+                  for t in (tools or [])]
+        kw = dict(model=self.model, max_tokens=16000, system=system, messages=msgs,
+                  output_config={"effort": self.effort},
+                  cache_control={"type": "ephemeral"},
+                  betas=["server-side-fallback-2026-07-01"], fallbacks="default")
+        if ctools:
+            kw.update(tools=ctools, tool_choice={"type": "auto", "disable_parallel_tool_use": True})
+        resp = self._c.beta.messages.create(**kw)
+        u = resp.usage
+        self.usage["input"] += int(u.input_tokens)
+        self.usage["output"] += int(u.output_tokens)
+        self.usage["cache_read"] += int(getattr(u, "cache_read_input_tokens", 0) or 0)
+        self.usage["cache_write"] += int(getattr(u, "cache_creation_input_tokens", 0) or 0)
+        if resp.stop_reason == "refusal":
+            self.usage["refusals"] += 1
+        blocks = [b.model_dump(exclude_none=True) for b in resp.content]
+        text = "".join(b.text for b in resp.content if b.type == "text")
+        calls = [{"id": b.id, "type": "function",
+                  "function": {"name": b.name, "arguments": json.dumps(b.input, ensure_ascii=False)}}
+                 for b in resp.content if b.type == "tool_use"]
+        msg = _ClaudeMsg(text, calls, blocks)
+        return _Obj(choices=[_Obj(message=msg)],
+                    usage=_Obj(prompt_tokens=int(u.input_tokens), completion_tokens=int(u.output_tokens)))
+
+    def cost(self):
+        p = PRICES.get(self.model, (0, 0, 0, 0))
+        u = self.usage
+        return (u["input"] * p[0] + u["output"] * p[1] + u["cache_read"] * p[2]
+                + u["cache_write"] * p[3]) / 1e6
+
+
+# ---------------------------------------------------------------------------
 # Agents
 # ---------------------------------------------------------------------------
 
@@ -157,10 +263,14 @@ class LocalAgent(OpenAIAgent):
     """ToolMaze's OpenAI agent against llama.cpp, reasoning switched off, call
     latency recorded. Behaviour otherwise unchanged."""
 
-    def __init__(self, *a, no_think: bool = True, **kw):
+    def __init__(self, *a, no_think: bool = True, claude=None, **kw):
         super().__init__(*a, **kw)
         self.calls = 0
         self.latency = 0.0
+        self.claude = claude
+        if claude is not None:
+            self.client = claude
+            no_think = False
         create = self.client.chat.completions.create
 
         def wrapped(**kwargs):
@@ -179,8 +289,9 @@ class LocalAgent(OpenAIAgent):
 class HybridAgent(LocalAgent):
     """LLM fills arguments; the SH-GD/SM-L state machine decides recovery."""
 
-    def __init__(self, belief: M.RelBelief, *a, theta: float = 0.01, **kw):
+    def __init__(self, belief: M.RelBelief, *a, theta: float = 0.01, handover: bool = False, **kw):
         super().__init__(*a, **kw)
+        self.handover = handover
         self.belief = belief
         self.theta = theta
         self.failed: set = set()
@@ -240,6 +351,11 @@ class HybridAgent(LocalAgent):
             note = (f"[state monitor] {tool_name} failed and is treated as unavailable for the rest "
                     f"of this task. Call {alt} instead to obtain the equivalent information; fill in "
                     f"its arguments from the request and earlier results.")
+        elif self.handover:
+            # M-H: no learned candidate -> the decision is handed to the model
+            # without steering it (the outcome is still learned from)
+            note = (f"[state monitor] {tool_name} failed. No learned substitute is available; "
+                    f"decide yourself how to obtain the information it should have provided.")
         else:
             note = (f"[state monitor] {tool_name} failed and is treated as unavailable for the rest "
                     f"of this task. No alternative tool with evidence of substituting for it is known.")
@@ -253,7 +369,10 @@ class HybridAgent(LocalAgent):
 def run_one(task: dict, arm: str, belief: Optional[M.RelBelief], args) -> dict:
     kw = dict(model=args.model, api_key="none", base_url=args.base_url,
               temperature=args.temperature, max_tokens=1024)
-    agent = HybridAgent(belief, **kw) if arm == "hybrid" else LocalAgent(**kw)
+    if args.backend == "anthropic":
+        kw["claude"] = ClaudeShim(args.model, args.effort)
+    agent = (HybridAgent(belief, handover=(arm == "hybrid-h"), **kw) if arm.startswith("hybrid")
+             else LocalAgent(**kw))
     t0 = time.time()
     engine = ExecutionEngine(task, agent, tools_dir=os.path.join(TM_ROOT, "tools"))
     logger, tokens = engine.run(max_rounds=args.max_rounds)
@@ -268,6 +387,8 @@ def run_one(task: dict, arm: str, belief: Optional[M.RelBelief], args) -> dict:
                 llm_calls=agent.calls, latency_per_call=agent.latency / max(1, agent.calls),
                 seconds=time.time() - t0, tokens=tokens,
                 interventions=getattr(agent, "interventions", None),
+                cost_usd=(agent.claude.cost() if getattr(agent, "claude", None) else 0.0),
+                claude_usage=(agent.claude.usage if getattr(agent, "claude", None) else None),
                 failure_reason=j.get("failure_reason"))
 
 
@@ -280,6 +401,8 @@ def main() -> None:
     ap.add_argument("--base-url", default="http://127.0.0.1:8080/v1")
     ap.add_argument("--model", default="NVIDIA-Nemotron-Nano-9B-v2-Japanese-Q8_0")
     ap.add_argument("--temperature", type=float, default=0.0)
+    ap.add_argument("--backend", choices=["llama", "anthropic"], default="llama")
+    ap.add_argument("--effort", default="medium")
     ap.add_argument("--max-rounds", type=int, default=15)
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--out", default="results_toolmaze_pilot.json")
@@ -310,7 +433,7 @@ def main() -> None:
                          error=repr(e))
             rows.append(r)
             print(json.dumps({k: r.get(k) for k in ("task_id", "mode", "arm", "passed", "hit", "tool_calls",
-                                                   "llm_calls", "seconds", "error")}), flush=True)
+                                                   "llm_calls", "seconds", "cost_usd", "error")}), flush=True)
             summary = {}
             for arm_ in args.arms.split(","):
                 rs = [x for x in rows if x["arm"] == arm_ and "error" not in x]
@@ -320,7 +443,8 @@ def main() -> None:
                                          prr=(statistics.fmean(x["passed"] for x in hits) if hits else None),
                                          llm_calls=statistics.fmean(x["llm_calls"] for x in rs),
                                          tool_calls=statistics.fmean(x["tool_calls"] for x in rs),
-                                         latency=statistics.fmean(x["latency_per_call"] for x in rs))
+                                         latency=statistics.fmean(x["latency_per_call"] for x in rs),
+                                         cost_usd=sum(x.get("cost_usd", 0.0) for x in rs))
             json.dump(dict(config=vars(args), pretraining=pre, summary=summary, runs=rows),
                       open(args.out, "w", encoding="utf-8"), indent=2, default=str)
     print(json.dumps(summary, indent=1))

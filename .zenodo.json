@@ -1,6 +1,6 @@
 {
   "title": "SH-GD/SM-L: Dynamic Alternative-Path Selection for AI Agents Based on Learned Schema Compatibility and State Monitoring - code and results",
-  "description": "Reference implementation, experiment harnesses, result logs and the scripts that generate every number, table and figure of the article 'SH-GD/SM-L: Dynamic Alternative-Path Selection for AI Agents Based on Learned Schema Compatibility and State Monitoring' (submitted to IEEE Access).",
+  "description": "Reference implementation, experiment harnesses, result logs and the scripts that generate every number, table and figure of the article 'SH-GD/SM-L: Dynamic Alternative-Path Selection for AI Agents Based on Learned Schema Compatibility and State Monitoring' (revised manuscript resubmitted to IEEE Access). Version 2.0.0 adds the retry and hand-over transition rule, runs with Claude Sonnet 5.5 and Opus 5.5, and the experiments added in the revision.",
   "upload_type": "software",
   "license": "MIT",
   "creators": [
@@ -11,13 +11,16 @@
   ],
   "keywords": [
     "AI agents",
-    "alternative path selection",
     "Bayesian estimation",
+    "alternative path selection",
     "calibration",
     "fault recovery",
+    "large language models",
+    "non-stationarity",
     "schema compatibility",
     "state machines",
     "tool use"
   ],
-  "access_right": "open"
+  "access_right": "open",
+  "version": "2.0.0"
 }

@@ -172,6 +172,27 @@ class Config:
     # Candidate threshold applied to Thompson SAMPLES during training (Eq.17).
     # Identical for both estimators, so the two differ only at planning time.
     theta_explore: float = 0.12
+    # --- revision (2026-11): degraded supervision and non-stationarity -------
+    # val_acc: probability that an observed validation verdict is correct
+    # val_missing: probability that a step yields no validation verdict at all;
+    #   such a step is outcome-only: a failure cannot be told apart from an
+    #   execution error (it is counted as one), a success still shows that every
+    #   substituted input passed.
+    # signal: "full" (validator verdicts) or "outcome_only" (unstructured errors
+    #   only: every step behaves as if val_missing = 1).
+    # forget: per-episode discount of all posterior counts (1.0 = stationary).
+    val_acc: float = 1.0
+    val_missing: float = 0.0
+    signal: str = "full"
+    forget: float = 1.0
+    # val_correct: learner models the validator noise (likelihood with flip
+    #   probability 1 - acc_hat, acc_hat = val_acc_hat or val_acc).
+    # attribution: an unattributable validation failure is counted as an
+    #   execution failure ("exec", naive) or split over the substituted inputs
+    #   by its posterior responsibility ("soft").
+    val_correct: bool = False
+    val_acc_hat: Optional[float] = None
+    attribution: str = "exec"
 
 
 def cfg_mean(**kw) -> Config:
@@ -209,6 +230,25 @@ def _beta_ppf(q: float, a: float, b: float) -> float:
     return float(_b.ppf(q, a, b))
 
 
+def _np_searchsorted(cdf, q):
+    import numpy as _n
+    return _n.searchsorted(cdf, q)
+
+
+@lru_cache(maxsize=1 << 16)
+def _noisy_posterior(a: float, b: float, alpha: float, beta: float, acc: float):
+    """Posterior of rel when each verdict is flipped with probability 1-acc:
+    P(observed pass | rel) = rel*acc + (1-rel)*(1-acc). Grid approximation.
+    -> (mean, grid, cdf)."""
+    import numpy as _n
+    r = _n.linspace(0.0005, 0.9995, 1000)
+    q = r * acc + (1 - r) * (1 - acc)
+    lp = (alpha - 1) * _n.log(r) + (beta - 1) * _n.log1p(-r) + a * _n.log(q) + b * _n.log1p(-q)
+    w = _n.exp(lp - lp.max())
+    w /= w.sum()
+    return float((w * r).sum()), r, _n.cumsum(w)
+
+
 class Snapshot(dict):
     """A frozen rel table {(x, s): value}; .phat carries the execution
     reliability table {task_name: value} (None -> declared p_e * w(g))."""
@@ -237,17 +277,38 @@ class RelBelief:
         d = self.ea if ok else self.eb
         d[task] = d.get(task, 0) + 1
 
+    def decay(self, gamma: float) -> None:
+        """Discount all counts (forgetting for non-stationary logs)."""
+        if gamma >= 1.0:
+            return
+        for d in (self.a, self.b, self.ea, self.eb):
+            for k in d:
+                d[k] *= gamma
+
     def n(self, x: str, s: str) -> int:
         return self.a.get((x, s), 0) + self.b.get((x, s), 0)
 
     def _ab(self, x: str, s: str) -> Tuple[int, int]:
         return self.a.get((x, s), 0), self.b.get((x, s), 0)
 
+    def _noise_model(self) -> Optional[float]:
+        if not self.cfg.val_correct:
+            return None
+        acc = self.cfg.val_acc_hat if self.cfg.val_acc_hat is not None else self.cfg.val_acc
+        return None if acc >= 1.0 else acc
+
+    def _np(self, x: str, s: str):
+        a, b = self._ab(x, s)
+        return _noisy_posterior(round(a, 3), round(b, 3), self.cfg.alpha, self.cfg.beta,
+                                self._noise_model())
+
     # -- rel point estimates -------------------------------------------------
     def mean(self, x: str, s: str) -> float:
         """Eq.4: posterior mean."""
         if x == s:
             return 1.0
+        if self._noise_model() is not None:
+            return self._np(x, s)[0]
         a, b = self._ab(x, s)
         return (a + self.cfg.alpha) / (a + b + self.cfg.alpha + self.cfg.beta)
 
@@ -255,6 +316,9 @@ class RelBelief:
         """Eq.19: posterior lower confidence bound at level cfg.lcb_delta."""
         if x == s:
             return 1.0
+        if self._noise_model() is not None:
+            _, grid, cdf = self._np(x, s)
+            return float(grid[min(int(_np_searchsorted(cdf, self.cfg.lcb_delta)), len(grid) - 1)])
         a, b = self._ab(x, s)
         return _beta_ppf(self.cfg.lcb_delta, a + self.cfg.alpha, b + self.cfg.beta)
 
@@ -262,6 +326,9 @@ class RelBelief:
         """Eq.17: one draw from the posterior (Thompson sampling)."""
         if x == s:
             return 1.0
+        if self._noise_model() is not None:
+            _, grid, cdf = self._np(x, s)
+            return float(grid[min(int(_np_searchsorted(cdf, rng.random())), len(grid) - 1)])
         a, b = self._ab(x, s)
         return rng.betavariate(a + self.cfg.alpha, b + self.cfg.beta)
 
@@ -586,6 +653,28 @@ class MyopicPolicy(Policy):
         return a
 
 
+class GreedyPolicy(Policy):
+    """Ablation '-look-ahead': no value estimate of the successor states; the
+    executable task with the highest immediate success estimate (Eq.14) among
+    those that add a schema not yet held is chosen."""
+
+    def __init__(self, rel, cfg: Config, name: str = "greedy"):
+        self.est = Estimator(rel, cfg)
+        self.cfg = cfg
+        self.name = name
+
+    def act(self, st: State) -> Optional[int]:
+        sigma = st.sigma()
+        best, best_q = None, -1.0
+        for i in self.est.ready(st):
+            if all(o in sigma for o in TASKS[i].outputs):
+                continue
+            q = self.est.p_exec(i, st)
+            if q > best_q or (q == best_q and TASKS[i].name < TASKS[best].name):
+                best, best_q = i, q
+        return best
+
+
 class FixedPlanPolicy(Policy):
     """'-dynamic': a plan is computed once at S0 and executed in order."""
 
@@ -834,6 +923,7 @@ def optimal_value(cfg: Config) -> float:
 
 def run_episode(belief: RelBelief, cfg: Config, rng: random.Random,
                 explore: bool) -> bool:
+    belief.decay(cfg.forget)
     rel = belief.snapshot_sample(rng) if explore else belief.snapshot_mean()
     pol = MyopicPolicy(rel, explore_cfg(cfg) if explore else cfg, "train")
     st = State()
@@ -852,16 +942,47 @@ def run_episode(belief: RelBelief, cfg: Config, rng: random.Random,
             belief.observe_exec(t.name, False)
             st = st.with_failure(i)
             continue
-        belief.observe_exec(t.name, True)
         # (b) schema validation, one independent draw per input
+        verdicts = []
         all_pass = True
         for x, s in subs:
             passed = rng.random() < rho_star(x, s)
-            belief.observe(x, s, passed)
-            if not passed:
-                all_pass = False
+            verdicts.append((x, s, passed))
+            all_pass &= passed
+        observe_step(belief, cfg, rng, t.name, verdicts, all_pass)
         st = st.with_success(i) if all_pass else st.with_failure(i)
     return st.reached_goal()
+
+
+def observe_step(belief: "RelBelief", cfg: Config, rng: random.Random, task: str,
+                 verdicts, all_pass: bool) -> None:
+    """What the learner sees after an executed step (revision: degraded
+    supervision). verdicts = [(x, s, passed)] for every input of the task."""
+    outcome_only = cfg.signal == "outcome_only" or (cfg.val_missing > 0 and rng.random() < cfg.val_missing)
+    if outcome_only:
+        if all_pass:                       # success: every substitution passed
+            belief.observe_exec(task, True)
+            for x, s, _ in verdicts:
+                belief.observe(x, s, True)
+        elif cfg.attribution == "soft":    # split over the inputs (E-step)
+            belief.observe_exec(task, True)
+            rels = [(x, s, 1.0 if x == s else belief.mean(x, s)) for x, s, _ in verdicts]
+            R = 1.0
+            for _, _, r in rels:
+                R *= r
+            den = max(1.0 - R, 1e-9)
+            for x, s, r in rels:
+                if x == s:
+                    continue
+                belief.a[(x, s)] = belief.a.get((x, s), 0) + max(r - R, 0.0) / den
+                belief.b[(x, s)] = belief.b.get((x, s), 0) + (1.0 - r) / den
+        else:                              # unattributable failure (naive)
+            belief.observe_exec(task, False)
+        return
+    belief.observe_exec(task, True)
+    for x, s, passed in verdicts:
+        seen = passed if (cfg.val_acc >= 1.0 or rng.random() < cfg.val_acc) else (not passed)
+        belief.observe(x, s, seen)
 
 
 def clone_belief(b: RelBelief, cfg: Optional[Config] = None) -> RelBelief:

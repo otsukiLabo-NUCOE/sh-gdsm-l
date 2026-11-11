@@ -41,29 +41,60 @@ def arrow(ax, a, b, color=BLUE):
                                                     shrinkA=9, shrinkB=9))
 
 
+def _edge(p, q, w, h, gap=0.04):
+    """End points of the segment p->q clipped to the borders of two w x h boxes
+    centred on p and q, with a small gap, so that no arrow enters a box."""
+    (x1, y1), (x2, y2) = p, q
+    dx, dy = x2 - x1, y2 - y1
+    hw, hh = w / 2 + gap, h / 2 + gap
+    t = min(hw / abs(dx) if dx else math.inf, hh / abs(dy) if dy else math.inf)
+    return (x1 + t * dx, y1 + t * dy), (x2 - t * dx, y2 - t * dy)
+
+
 def fig1(out):
-    fig, (a1, a2) = plt.subplots(1, 2, figsize=(3.5, 1.9), gridspec_kw=dict(width_ratios=[1, 2.4]))
+    W, H = 0.78, 0.36
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(3.5, 1.9), gridspec_kw=dict(width_ratios=[1, 2.6]))
     for ax in (a1, a2):
         ax.set_axis_off()
-    a1.set_xlim(-0.6, 0.6); a1.set_ylim(-0.4, 2.6)
-    for i, t in enumerate(["TaskA", "TaskB", "TaskC"]):
-        box(a1, 0, 2.2 - i * 1.0, t)
-    arrow(a1, (0, 2.2), (0, 1.2)); arrow(a1, (0, 1.2), (0, 0.2))
+
+    def link(ax, p, q, color=BLUE):
+        s, e = _edge(p, q, W, H)
+        ax.annotate("", xy=e, xytext=s, arrowprops=dict(arrowstyle="-|>", color=color, lw=1.0,
+                                                        mutation_scale=8, shrinkA=0, shrinkB=0))
+
+    a1.set_xlim(-0.6, 0.6); a1.set_ylim(-0.35, 2.55)
+    lin = [(0, 2.2), (0, 1.1), (0, 0.0)]
+    for (x, y), t in zip(lin, ["TaskA", "TaskB", "TaskC"]):
+        box(a1, x, y, t, w=W, h=H)
+    link(a1, lin[0], lin[1]); link(a1, lin[1], lin[2])
     a1.set_title("(a) Linear", fontsize=8)
-    a2.set_xlim(-0.2, 3.4); a2.set_ylim(-0.4, 2.6)
-    pos = {"TaskA": (0.4, 2.2), "TaskB": (2.8, 2.0), "TaskC": (1.4, 1.2), "TaskD": (2.8, 1.0),
-           "TaskE": (0.4, 0.1), "TaskF": (2.0, 0.1)}
+
+    # three layers; every edge goes from one layer to the next, so no edge crosses a box
+    a2.set_xlim(-0.05, 3.35); a2.set_ylim(-0.35, 2.55)
+    pos = {"TaskA": (0.45, 2.2), "TaskB": (2.75, 2.2),
+           "TaskC": (1.6, 1.1), "TaskD": (2.75, 1.1),
+           "TaskE": (0.45, 0.0), "TaskF": (2.15, 0.0)}
     for t, (x, y) in pos.items():
-        box(a2, x, y, t, w=0.8, h=0.38)
+        box(a2, x, y, t, w=W, h=H)
     for a, b in [("TaskA", "TaskC"), ("TaskB", "TaskC"), ("TaskB", "TaskD"), ("TaskC", "TaskE"),
                  ("TaskD", "TaskF")]:
-        arrow(a2, pos[a], pos[b])
+        link(a2, pos[a], pos[b])
     for a, b in [("TaskA", "TaskE"), ("TaskC", "TaskF")]:
-        arrow(a2, pos[a], pos[b], RED)
+        link(a2, pos[a], pos[b], RED)
     a2.set_title("(b) Non-linear workflow", fontsize=8)
     fig.tight_layout(pad=0.2)
     fig.savefig(os.path.join(out, "fig1_linear_vs_graph.pdf"))
     plt.close(fig)
+
+
+XT = [0, 100, 400, 1600]
+
+
+def _xt(a):
+    a.set_xscale("symlog", linthresh=50)
+    a.set_xticks(XT)
+    a.set_xticklabels([str(x) for x in XT], fontsize=6.5)
+    a.minorticks_off()
 
 
 def fig3(out, d):
@@ -77,21 +108,21 @@ def fig3(out, d):
         a.plot(x, m, "o-", color=c, ms=2.5, lw=1, label=lab)
         a.fill_between(x, [u - v for u, v in zip(m, h)], [u + v for u, v in zip(m, h)], color=c, alpha=0.18, lw=0)
     a.axhline(100 * opt, ls="--", color=GREY, lw=0.8, label="Optimal (exact DP)")
-    a.set_xscale("symlog", linthresh=50); a.set_xlabel("Training episodes"); a.set_ylabel("Completion [%]")
-    a.set_title("(a) Claimed vs realized", fontsize=8); a.legend(fontsize=6.5, frameon=False)
+    _xt(a); a.set_xlabel("Training episodes"); a.set_ylabel("Completion [%]")
+    a.set_title("(a) Claimed vs realized", fontsize=8); a.legend(fontsize=6.5, frameon=False, loc="upper left")
     a = axs[1]
     em = d.get("experiment1_mean")
     a.plot(x, [r["ece"] for r in e1], "o-", color=BLUE, ms=2.5, lw=1, label="LCB")
     if em:
         a.plot(x, [r["ece"] for r in em], "s--", color=GREEN, ms=2.5, lw=1, label=r"Mean, $\theta$=0.12")
-    a.set_xscale("symlog", linthresh=50); a.set_xlabel("Training episodes"); a.set_ylabel("ECE over decision states")
+    _xt(a); a.set_xlabel("Training episodes"); a.set_ylabel("ECE over decision states")
     a.set_title("(b) Calibration", fontsize=8); a.legend(fontsize=6.5, frameon=False)
     a = axs[2]
     for key, lab, c in (("rel_err_all", "All 110 pairs", GREY), ("rel_err_nonzero", r"Pairs with $\rho^*>0$", PURPLE)):
         m = [r[key] for r in e1]; h = [r[key + "_ci"] for r in e1]
         a.plot(x, m, "o-", color=c, ms=2.5, lw=1, label=lab)
         a.fill_between(x, [u - v for u, v in zip(m, h)], [u + v for u, v in zip(m, h)], color=c, alpha=0.18, lw=0)
-    a.set_xscale("symlog", linthresh=50); a.set_xlabel("Training episodes"); a.set_ylabel(r"Mean $|\mathrm{rel}-\rho^*|$ (posterior mean)")
+    _xt(a); a.set_xlabel("Training episodes"); a.set_ylabel(r"Mean $|\mathrm{rel}-\rho^*|$ (posterior mean)")
     a.set_title("(c) Estimation error", fontsize=8); a.legend(fontsize=6.5, frameon=False)
     fig.tight_layout(pad=0.3)
     fig.savefig(os.path.join(out, "fig3_learning_curve.pdf"))

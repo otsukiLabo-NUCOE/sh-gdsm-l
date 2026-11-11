@@ -489,10 +489,15 @@ class AnthropicClient:
     latency_s: float = 0.0
     _client: Any = None
 
+    cache_read_tokens: int = 0
+    cache_write_tokens: int = 0
+    refusals: int = 0
+
     def chat(self, messages: List[dict]) -> str:
         if self._client is None:
             import anthropic
-            self._client = anthropic.Anthropic()
+            ensure_anthropic_key()
+            self._client = anthropic.Anthropic(max_retries=8)
         t0 = time.perf_counter()
         resp = self._client.beta.messages.create(
             model=self.model, max_tokens=self.max_tokens, messages=messages,
@@ -500,17 +505,51 @@ class AnthropicClient:
             betas=["server-side-fallback-2026-07-01"], fallbacks="default")
         self.latency_s += time.perf_counter() - t0
         self.calls += 1
-        self.prompt_tokens += int(resp.usage.input_tokens)
-        self.completion_tokens += int(resp.usage.output_tokens)
+        u = resp.usage
+        self.prompt_tokens += int(u.input_tokens)
+        self.completion_tokens += int(u.output_tokens)
+        self.cache_read_tokens += int(getattr(u, "cache_read_input_tokens", 0) or 0)
+        self.cache_write_tokens += int(getattr(u, "cache_creation_input_tokens", 0) or 0)
         if resp.stop_reason == "refusal":
+            self.refusals += 1
             return ""                       # counted as a malformed action
         return "".join(b.text for b in resp.content if b.type == "text")
+
+
+def ensure_anthropic_key() -> None:
+    """ANTHROPIC_API_KEY from the process, else from the Windows user
+    environment (setx) when the parent process predates it. Never printed."""
+    if os.environ.get("ANTHROPIC_API_KEY") or os.name != "nt":
+        return
+    try:
+        import winreg
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as k:
+            os.environ["ANTHROPIC_API_KEY"] = winreg.QueryValueEx(k, "ANTHROPIC_API_KEY")[0]
+    except OSError:
+        pass
+
+
+# USD per million tokens (input, output, cache read, cache write 5 min)
+PRICES = {"claude-sonnet-5-5": (2.0, 10.0, 0.10, 2.5),
+          "claude-opus-5-5": (4.0, 20.0, 0.20, 5.0)}
+
+
+def client_cost(c) -> float:
+    p = PRICES.get(getattr(c, "model", ""), None)
+    if p is None:
+        return 0.0
+    return (c.prompt_tokens * p[0] + c.completion_tokens * p[1]
+            + getattr(c, "cache_read_tokens", 0) * p[2]
+            + getattr(c, "cache_write_tokens", 0) * p[3]) / 1e6
+
+
+EFFORT = "medium"
 
 
 def make_client(backend: str, endpoint: str, model: Optional[str],
                 no_think: bool = True):
     if backend == "anthropic":
-        return AnthropicClient(model=model or DEFAULT_CLAUDE_MODEL)
+        return AnthropicClient(model=model or DEFAULT_CLAUDE_MODEL, effort=EFFORT)
     if backend == "openai":
         return LlamaClient(endpoint, model or "gpt-5", api_key=os.environ.get("OPENAI_API_KEY"),
                            no_think=False)
@@ -834,6 +873,10 @@ def main() -> None:
     ap.add_argument("--train-episodes", type=int, default=1600,
                     help="episodes used to learn rel for arms C and D")
     ap.add_argument("--seeds", type=int, default=5)
+    ap.add_argument("--seed-list", default=None,
+                    help="comma-separated seeds (overrides --seeds), e.g. 3,4")
+    ap.add_argument("--effort", default="medium",
+                    help="Claude effort level (anthropic backend)")
     ap.add_argument("--arms", default="A,B,C,D")
     ap.add_argument("--estimator", choices=["lcb", "mean"], default="lcb",
                     help="planning-time point estimate for arms C/D (Eq.19 / Eq.4)")
@@ -843,6 +886,10 @@ def main() -> None:
                          "instances per pair, print it, and exit")
     args = ap.parse_args()
     PROMPT_LANG = args.lang
+    global EFFORT
+    EFFORT = args.effort
+    seed_list = ([int(x) for x in args.seed_list.split(",")] if args.seed_list
+                 else list(range(1, args.seeds + 1)))
     if args.endpoint is None:
         args.endpoint = ("https://api.openai.com/v1/chat/completions"
                          if args.backend == "openai" else DEFAULT_ENDPOINT)
@@ -883,6 +930,14 @@ def main() -> None:
     arms = [a.strip().upper() for a in args.arms.split(",")]
     results: Dict[str, dict] = {}
     per_seed: Dict[str, List[dict]] = {}
+    if os.path.exists(args.out):          # resume: keep finished (arm, seed) cells
+        try:
+            prev = json.load(open(args.out, encoding="utf-8"))
+            per_seed = {a: [r for r in rs if r.get("seed") in seed_list]
+                        for a, rs in prev.get("per_seed", {}).items()}
+            print("resume:", {a: [r["seed"] for r in rs] for a, rs in per_seed.items()}, flush=True)
+        except (OSError, ValueError):
+            per_seed = {}
 
     def dump() -> None:
         with open(args.out, "w", encoding="utf-8") as f:
@@ -891,7 +946,7 @@ def main() -> None:
 
     for arm in arms:
         rates, steps_, malf, secs, claims, lat, calls_ep = [], [], [], [], [], [], []
-        for sd in range(1, args.seeds + 1):
+        for sd in seed_list:
             rng = random.Random(10_000 + sd)
             client = make_client(args.backend, args.endpoint, args.model,
                                  no_think=not args.think)
@@ -901,6 +956,16 @@ def main() -> None:
                 for _ in range(args.train_episodes):
                     episode_shgdsm(belief, cfg, trng, explore=True)
                 claims.append(M.Estimator(belief.snapshot_mean(), cfg).p_goal(M.State()))
+            old = next((r for r in per_seed.get(arm, []) if r["seed"] == sd), None)
+            if old is not None:
+                rates.append(old["completion"])
+                steps_.append(old["steps"])
+                malf.append(old["malformed"])
+                secs.append(old.get("seconds_per_episode", 0.0))
+                calls_ep.append(old["llm_calls"] / args.episodes)
+                if old["llm_calls"]:
+                    lat.append(old["mean_call_latency_s"])
+                continue
             done = 0
             s_acc = m_acc = 0
             t0 = time.time()
@@ -931,7 +996,11 @@ def main() -> None:
                        llm_calls=client.calls, prompt_tokens=client.prompt_tokens,
                        completion_tokens=client.completion_tokens,
                        mean_call_latency_s=(client.latency_s / client.calls
-                                            if client.calls else 0.0))
+                                            if client.calls else 0.0),
+                       cache_read_tokens=getattr(client, "cache_read_tokens", 0),
+                       refusals=getattr(client, "refusals", 0),
+                       cost_usd=client_cost(client),
+                       seconds_per_episode=secs[-1])
             per_seed.setdefault(arm, []).append(row)
             print(f"arm {arm} seed {sd}: " + json.dumps(row), flush=True)
             dump()                                # partial results survive a crash

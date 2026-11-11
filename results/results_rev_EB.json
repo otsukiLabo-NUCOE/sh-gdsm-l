@@ -1,0 +1,1738 @@
+{
+ "rows": [
+  {
+   "universe": "reference",
+   "seed": 1,
+   "arm": "SH-GD/SM-L",
+   "real": 0.4095373415778095,
+   "claim": 0.38656705422046445,
+   "ece": 0.017785467688294827
+  },
+  {
+   "universe": "reference",
+   "seed": 1,
+   "arm": "tool-bandit",
+   "real": 0.14876625700371093,
+   "claim": 0.13463363595022093,
+   "ece": 0.023370537706621803
+  },
+  {
+   "universe": "reference",
+   "seed": 1,
+   "arm": "similarity",
+   "real": 0.37263636229433905,
+   "claim": 0.5449780394395161,
+   "ece": 0.15514496321298035
+  },
+  {
+   "universe": "reference",
+   "seed": 1,
+   "arm": "exact-match",
+   "real": 0.32167617804,
+   "claim": 0.3209609942987115,
+   "ece": 0.004192443604793927
+  },
+  {
+   "universe": "reference",
+   "seed": 1,
+   "arm": "oracle",
+   "real": 0.40953734157780963,
+   "claim": 0.4199674454613038,
+   "ece": 0.010430287054511865
+  },
+  {
+   "universe": "reference",
+   "seed": 1,
+   "arm": "optimal",
+   "real": 0.40953734157780974,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 1,
+   "arm": "SH-GD/SM-L",
+   "real": 0.20822692432877607,
+   "claim": 0.1612450361107971,
+   "ece": 0.0355600003423598
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 1,
+   "arm": "tool-bandit",
+   "real": 0.0,
+   "claim": 0.1331905038185427,
+   "ece": 0.056059859140514735
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 1,
+   "arm": "similarity",
+   "real": 0.13252986732529687,
+   "claim": 0.49799630711390375,
+   "ece": 0.30845811235965187
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 1,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 1,
+   "arm": "oracle",
+   "real": 0.20822692432877607,
+   "claim": 0.2354045679461949,
+   "ece": 0.029035309663876876
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 1,
+   "arm": "optimal",
+   "real": 0.2082269243287762,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference",
+   "seed": 2,
+   "arm": "SH-GD/SM-L",
+   "real": 0.40953734157780947,
+   "claim": 0.39620762673919874,
+   "ece": 0.014105623661903419
+  },
+  {
+   "universe": "reference",
+   "seed": 2,
+   "arm": "tool-bandit",
+   "real": 0.14876625700371093,
+   "claim": 0.12704466718483065,
+   "ece": 0.01870349618605735
+  },
+  {
+   "universe": "reference",
+   "seed": 2,
+   "arm": "similarity",
+   "real": 0.37263636229433905,
+   "claim": 0.5449780394395161,
+   "ece": 0.15514496321298035
+  },
+  {
+   "universe": "reference",
+   "seed": 2,
+   "arm": "exact-match",
+   "real": 0.32167617804000004,
+   "claim": 0.32844453228200154,
+   "ece": 0.004237450365795055
+  },
+  {
+   "universe": "reference",
+   "seed": 2,
+   "arm": "oracle",
+   "real": 0.40953734157780963,
+   "claim": 0.4199674454613038,
+   "ece": 0.010430287054511865
+  },
+  {
+   "universe": "reference",
+   "seed": 2,
+   "arm": "optimal",
+   "real": 0.40953734157780974,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 2,
+   "arm": "SH-GD/SM-L",
+   "real": 0.20822692432877607,
+   "claim": 0.16896405753192234,
+   "ece": 0.026542786788416452
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 2,
+   "arm": "tool-bandit",
+   "real": 0.0,
+   "claim": 0.12594611645259512,
+   "ece": 0.0503819358538304
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 2,
+   "arm": "similarity",
+   "real": 0.13252986732529687,
+   "claim": 0.49799630711390375,
+   "ece": 0.30845811235965187
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 2,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 2,
+   "arm": "oracle",
+   "real": 0.20822692432877607,
+   "claim": 0.2354045679461949,
+   "ece": 0.029035309663876876
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 2,
+   "arm": "optimal",
+   "real": 0.2082269243287762,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference",
+   "seed": 3,
+   "arm": "SH-GD/SM-L",
+   "real": 0.4095373415778094,
+   "claim": 0.4130845267761414,
+   "ece": 0.00574836386483149
+  },
+  {
+   "universe": "reference",
+   "seed": 3,
+   "arm": "tool-bandit",
+   "real": 0.14876625700371093,
+   "claim": 0.14674931507374978,
+   "ece": 0.027970788252706907
+  },
+  {
+   "universe": "reference",
+   "seed": 3,
+   "arm": "similarity",
+   "real": 0.37263636229433905,
+   "claim": 0.5449780394395161,
+   "ece": 0.15514496321298035
+  },
+  {
+   "universe": "reference",
+   "seed": 3,
+   "arm": "exact-match",
+   "real": 0.32167617804,
+   "claim": 0.3330929317491049,
+   "ece": 0.008436357486796569
+  },
+  {
+   "universe": "reference",
+   "seed": 3,
+   "arm": "oracle",
+   "real": 0.40953734157780963,
+   "claim": 0.4199674454613038,
+   "ece": 0.010430287054511865
+  },
+  {
+   "universe": "reference",
+   "seed": 3,
+   "arm": "optimal",
+   "real": 0.40953734157780974,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 3,
+   "arm": "SH-GD/SM-L",
+   "real": 0.20822692432877604,
+   "claim": 0.20813079916446053,
+   "ece": 0.013641158368287488
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 3,
+   "arm": "tool-bandit",
+   "real": 0.0,
+   "claim": 0.14540054747665732,
+   "ece": 0.060264832809541945
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 3,
+   "arm": "similarity",
+   "real": 0.13252986732529687,
+   "claim": 0.49799630711390375,
+   "ece": 0.30845811235965187
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 3,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 3,
+   "arm": "oracle",
+   "real": 0.20822692432877607,
+   "claim": 0.2354045679461949,
+   "ece": 0.029035309663876876
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 3,
+   "arm": "optimal",
+   "real": 0.2082269243287762,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference",
+   "seed": 4,
+   "arm": "SH-GD/SM-L",
+   "real": 0.40953734157780947,
+   "claim": 0.4060484857336033,
+   "ece": 0.008790207554798844
+  },
+  {
+   "universe": "reference",
+   "seed": 4,
+   "arm": "tool-bandit",
+   "real": 0.14876625700371093,
+   "claim": 0.11960636022220117,
+   "ece": 0.013049472731964804
+  },
+  {
+   "universe": "reference",
+   "seed": 4,
+   "arm": "similarity",
+   "real": 0.37263636229433905,
+   "claim": 0.5449780394395161,
+   "ece": 0.15514496321298035
+  },
+  {
+   "universe": "reference",
+   "seed": 4,
+   "arm": "exact-match",
+   "real": 0.32167617804000004,
+   "claim": 0.32246125889376875,
+   "ece": 0.0032267946788359448
+  },
+  {
+   "universe": "reference",
+   "seed": 4,
+   "arm": "oracle",
+   "real": 0.40953734157780963,
+   "claim": 0.4199674454613038,
+   "ece": 0.010430287054511865
+  },
+  {
+   "universe": "reference",
+   "seed": 4,
+   "arm": "optimal",
+   "real": 0.40953734157780974,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 4,
+   "arm": "SH-GD/SM-L",
+   "real": 0.20822692432877607,
+   "claim": 0.1883047949482881,
+   "ece": 0.01293458472666889
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 4,
+   "arm": "tool-bandit",
+   "real": 0.0,
+   "claim": 0.11835264931316414,
+   "ece": 0.05108480733689975
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 4,
+   "arm": "similarity",
+   "real": 0.13252986732529687,
+   "claim": 0.49799630711390375,
+   "ece": 0.30845811235965187
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 4,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 4,
+   "arm": "oracle",
+   "real": 0.20822692432877607,
+   "claim": 0.2354045679461949,
+   "ece": 0.029035309663876876
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 4,
+   "arm": "optimal",
+   "real": 0.2082269243287762,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference",
+   "seed": 5,
+   "arm": "SH-GD/SM-L",
+   "real": 0.4095373415778095,
+   "claim": 0.40367942522437783,
+   "ece": 0.005053998253090294
+  },
+  {
+   "universe": "reference",
+   "seed": 5,
+   "arm": "tool-bandit",
+   "real": 0.14876625700371093,
+   "claim": 0.14645995629405428,
+   "ece": 0.03157512801399436
+  },
+  {
+   "universe": "reference",
+   "seed": 5,
+   "arm": "similarity",
+   "real": 0.37263636229433905,
+   "claim": 0.5449780394395161,
+   "ece": 0.15514496321298035
+  },
+  {
+   "universe": "reference",
+   "seed": 5,
+   "arm": "exact-match",
+   "real": 0.32167617804000004,
+   "claim": 0.3243453847737934,
+   "ece": 0.002716611832046948
+  },
+  {
+   "universe": "reference",
+   "seed": 5,
+   "arm": "oracle",
+   "real": 0.40953734157780963,
+   "claim": 0.4199674454613038,
+   "ece": 0.010430287054511865
+  },
+  {
+   "universe": "reference",
+   "seed": 5,
+   "arm": "optimal",
+   "real": 0.40953734157780974,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 5,
+   "arm": "SH-GD/SM-L",
+   "real": 0.20822692432877607,
+   "claim": 0.19539991555789515,
+   "ece": 0.00816183211296883
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 5,
+   "arm": "tool-bandit",
+   "real": 0.0,
+   "claim": 0.14528825627614905,
+   "ece": 0.0588655654657039
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 5,
+   "arm": "similarity",
+   "real": 0.13252986732529687,
+   "claim": 0.49799630711390375,
+   "ece": 0.30845811235965187
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 5,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 5,
+   "arm": "oracle",
+   "real": 0.20822692432877607,
+   "claim": 0.2354045679461949,
+   "ece": 0.029035309663876876
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 5,
+   "arm": "optimal",
+   "real": 0.2082269243287762,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference",
+   "seed": 6,
+   "arm": "SH-GD/SM-L",
+   "real": 0.40187801932710465,
+   "claim": 0.3892260218315805,
+   "ece": 0.010697239336455661
+  },
+  {
+   "universe": "reference",
+   "seed": 6,
+   "arm": "tool-bandit",
+   "real": 0.14876625700371096,
+   "claim": 0.12409340133092395,
+   "ece": 0.0328670797446142
+  },
+  {
+   "universe": "reference",
+   "seed": 6,
+   "arm": "similarity",
+   "real": 0.37263636229433905,
+   "claim": 0.5449780394395161,
+   "ece": 0.15514496321298035
+  },
+  {
+   "universe": "reference",
+   "seed": 6,
+   "arm": "exact-match",
+   "real": 0.32167617804,
+   "claim": 0.3214406069905583,
+   "ece": 0.0024011283023664533
+  },
+  {
+   "universe": "reference",
+   "seed": 6,
+   "arm": "oracle",
+   "real": 0.40953734157780963,
+   "claim": 0.4199674454613038,
+   "ece": 0.010430287054511865
+  },
+  {
+   "universe": "reference",
+   "seed": 6,
+   "arm": "optimal",
+   "real": 0.40953734157780974,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 6,
+   "arm": "SH-GD/SM-L",
+   "real": 0.20433258563779685,
+   "claim": 0.1886402615362477,
+   "ece": 0.010457135027319441
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 6,
+   "arm": "tool-bandit",
+   "real": 0.0,
+   "claim": 0.12300194908086637,
+   "ece": 0.052821107067287106
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 6,
+   "arm": "similarity",
+   "real": 0.13252986732529687,
+   "claim": 0.49799630711390375,
+   "ece": 0.30845811235965187
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 6,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 6,
+   "arm": "oracle",
+   "real": 0.20822692432877607,
+   "claim": 0.2354045679461949,
+   "ece": 0.029035309663876876
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 6,
+   "arm": "optimal",
+   "real": 0.2082269243287762,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference",
+   "seed": 7,
+   "arm": "SH-GD/SM-L",
+   "real": 0.3875859834828844,
+   "claim": 0.3907673766171549,
+   "ece": 0.00543870887693766
+  },
+  {
+   "universe": "reference",
+   "seed": 7,
+   "arm": "tool-bandit",
+   "real": 0.14876625700371096,
+   "claim": 0.13187030256406307,
+   "ece": 0.03618134601597332
+  },
+  {
+   "universe": "reference",
+   "seed": 7,
+   "arm": "similarity",
+   "real": 0.37263636229433905,
+   "claim": 0.5449780394395161,
+   "ece": 0.15514496321298035
+  },
+  {
+   "universe": "reference",
+   "seed": 7,
+   "arm": "exact-match",
+   "real": 0.32167617804,
+   "claim": 0.34244843879140663,
+   "ece": 0.00827515286221343
+  },
+  {
+   "universe": "reference",
+   "seed": 7,
+   "arm": "oracle",
+   "real": 0.40953734157780963,
+   "claim": 0.4199674454613038,
+   "ece": 0.010430287054511865
+  },
+  {
+   "universe": "reference",
+   "seed": 7,
+   "arm": "optimal",
+   "real": 0.40953734157780974,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 7,
+   "arm": "SH-GD/SM-L",
+   "real": 0.13505573067902604,
+   "claim": 0.11599681627279435,
+   "ece": 0.010280071760078975
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 7,
+   "arm": "tool-bandit",
+   "real": 0.0,
+   "claim": 0.1305950330417106,
+   "ece": 0.05600728670901496
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 7,
+   "arm": "similarity",
+   "real": 0.13252986732529687,
+   "claim": 0.49799630711390375,
+   "ece": 0.30845811235965187
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 7,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 7,
+   "arm": "oracle",
+   "real": 0.20822692432877607,
+   "claim": 0.2354045679461949,
+   "ece": 0.029035309663876876
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 7,
+   "arm": "optimal",
+   "real": 0.2082269243287762,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference",
+   "seed": 9,
+   "arm": "SH-GD/SM-L",
+   "real": 0.4095373415778094,
+   "claim": 0.4122595112035756,
+   "ece": 0.01098884366185753
+  },
+  {
+   "universe": "reference",
+   "seed": 9,
+   "arm": "tool-bandit",
+   "real": 0.14876625700371093,
+   "claim": 0.11946448591390446,
+   "ece": 0.017417519272713
+  },
+  {
+   "universe": "reference",
+   "seed": 9,
+   "arm": "similarity",
+   "real": 0.37263636229433905,
+   "claim": 0.5449780394395161,
+   "ece": 0.15514496321298035
+  },
+  {
+   "universe": "reference",
+   "seed": 9,
+   "arm": "exact-match",
+   "real": 0.32167617804,
+   "claim": 0.33258025637885247,
+   "ece": 0.009542371045851402
+  },
+  {
+   "universe": "reference",
+   "seed": 9,
+   "arm": "oracle",
+   "real": 0.40953734157780963,
+   "claim": 0.4199674454613038,
+   "ece": 0.010430287054511865
+  },
+  {
+   "universe": "reference",
+   "seed": 9,
+   "arm": "optimal",
+   "real": 0.40953734157780974,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 9,
+   "arm": "SH-GD/SM-L",
+   "real": 0.20822692432877604,
+   "claim": 0.19359633788728703,
+   "ece": 0.007467339851191942
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 9,
+   "arm": "tool-bandit",
+   "real": 0.0,
+   "claim": 0.11857214477406952,
+   "ece": 0.04986988967342493
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 9,
+   "arm": "similarity",
+   "real": 0.13252986732529687,
+   "claim": 0.49799630711390375,
+   "ece": 0.30845811235965187
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 9,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 9,
+   "arm": "oracle",
+   "real": 0.20822692432877607,
+   "claim": 0.2354045679461949,
+   "ece": 0.029035309663876876
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 9,
+   "arm": "optimal",
+   "real": 0.2082269243287762,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference",
+   "seed": 8,
+   "arm": "SH-GD/SM-L",
+   "real": 0.4095373415778094,
+   "claim": 0.3991234058596319,
+   "ece": 0.008252212533791223
+  },
+  {
+   "universe": "reference",
+   "seed": 8,
+   "arm": "tool-bandit",
+   "real": 0.14876625700371093,
+   "claim": 0.1087556463168895,
+   "ece": 0.011489696498827308
+  },
+  {
+   "universe": "reference",
+   "seed": 8,
+   "arm": "similarity",
+   "real": 0.37263636229433905,
+   "claim": 0.5449780394395161,
+   "ece": 0.15514496321298035
+  },
+  {
+   "universe": "reference",
+   "seed": 8,
+   "arm": "exact-match",
+   "real": 0.3216761780399999,
+   "claim": 0.3194249081083057,
+   "ece": 0.0017588253490925818
+  },
+  {
+   "universe": "reference",
+   "seed": 8,
+   "arm": "oracle",
+   "real": 0.40953734157780963,
+   "claim": 0.4199674454613038,
+   "ece": 0.010430287054511865
+  },
+  {
+   "universe": "reference",
+   "seed": 8,
+   "arm": "optimal",
+   "real": 0.40953734157780974,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 8,
+   "arm": "SH-GD/SM-L",
+   "real": 0.20822692432877604,
+   "claim": 0.21116236643372577,
+   "ece": 0.01689200269706337
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 8,
+   "arm": "tool-bandit",
+   "real": 0.0,
+   "claim": 0.10776524196107162,
+   "ece": 0.04722047314333635
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 8,
+   "arm": "similarity",
+   "real": 0.13252986732529687,
+   "claim": 0.49799630711390375,
+   "ece": 0.30845811235965187
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 8,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 8,
+   "arm": "oracle",
+   "real": 0.20822692432877607,
+   "claim": 0.2354045679461949,
+   "ece": 0.029035309663876876
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 8,
+   "arm": "optimal",
+   "real": 0.2082269243287762,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference",
+   "seed": 10,
+   "arm": "SH-GD/SM-L",
+   "real": 0.4018780193271046,
+   "claim": 0.3827873584408803,
+   "ece": 0.013358826226532318
+  },
+  {
+   "universe": "reference",
+   "seed": 10,
+   "arm": "tool-bandit",
+   "real": 0.14876625700371096,
+   "claim": 0.11819079979860714,
+   "ece": 0.030272886274419878
+  },
+  {
+   "universe": "reference",
+   "seed": 10,
+   "arm": "similarity",
+   "real": 0.37263636229433905,
+   "claim": 0.5449780394395161,
+   "ece": 0.15514496321298035
+  },
+  {
+   "universe": "reference",
+   "seed": 10,
+   "arm": "exact-match",
+   "real": 0.32167617803999987,
+   "claim": 0.3185075879815954,
+   "ece": 0.0031148226745172382
+  },
+  {
+   "universe": "reference",
+   "seed": 10,
+   "arm": "oracle",
+   "real": 0.40953734157780963,
+   "claim": 0.4199674454613038,
+   "ece": 0.010430287054511865
+  },
+  {
+   "universe": "reference",
+   "seed": 10,
+   "arm": "optimal",
+   "real": 0.40953734157780974,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 10,
+   "arm": "SH-GD/SM-L",
+   "real": 0.20433258563779685,
+   "claim": 0.16132924338564114,
+   "ece": 0.029897342519246372
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 10,
+   "arm": "tool-bandit",
+   "real": 0.0,
+   "claim": 0.1169792296821347,
+   "ece": 0.050284230927980594
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 10,
+   "arm": "similarity",
+   "real": 0.13252986732529687,
+   "claim": 0.49799630711390375,
+   "ece": 0.30845811235965187
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 10,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 10,
+   "arm": "oracle",
+   "real": 0.20822692432877607,
+   "claim": 0.2354045679461949,
+   "ece": 0.029035309663876876
+  },
+  {
+   "universe": "reference (transfer)",
+   "seed": 10,
+   "arm": "optimal",
+   "real": 0.2082269243287762,
+   "claim": null,
+   "ece": null
+  },
+  {
+   "universe": "K=8",
+   "seed": 3,
+   "arm": "SH-GD/SM-L",
+   "real": 0.1615,
+   "claim": 0.1573912316570869,
+   "ece": 0.006902091392363491
+  },
+  {
+   "universe": "K=8",
+   "seed": 3,
+   "arm": "tool-bandit",
+   "real": 0.1145,
+   "claim": 0.08914534651247752,
+   "ece": 0.026001489220201724
+  },
+  {
+   "universe": "K=8",
+   "seed": 3,
+   "arm": "similarity",
+   "real": 0.1165,
+   "claim": 0.16955687808554076,
+   "ece": 0.04521340641297987
+  },
+  {
+   "universe": "K=8",
+   "seed": 3,
+   "arm": "exact-match",
+   "real": 0.083,
+   "claim": 0.11454798396620447,
+   "ece": 0.026288595938376888
+  },
+  {
+   "universe": "K=8",
+   "seed": 3,
+   "arm": "oracle",
+   "real": 0.1525,
+   "claim": 0.1727672379460734,
+   "ece": 0.021420399342996336
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 3,
+   "arm": "SH-GD/SM-L",
+   "real": 0.136,
+   "claim": 0.1496033987647163,
+   "ece": 0.013076247729968096
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 3,
+   "arm": "tool-bandit",
+   "real": 0.106,
+   "claim": 0.08593691723410957,
+   "ece": 0.022887840938493883
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 3,
+   "arm": "similarity",
+   "real": 0.1095,
+   "claim": 0.13021273178588566,
+   "ece": 0.019150225392699533
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 3,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 3,
+   "arm": "oracle",
+   "real": 0.127,
+   "claim": 0.16855901489752922,
+   "ece": 0.032736539364812293
+  },
+  {
+   "universe": "K=8",
+   "seed": 1,
+   "arm": "SH-GD/SM-L",
+   "real": 0.251,
+   "claim": 0.2750122752611054,
+   "ece": 0.02309067992706824
+  },
+  {
+   "universe": "K=8",
+   "seed": 1,
+   "arm": "tool-bandit",
+   "real": 0.1755,
+   "claim": 0.13260384430836358,
+   "ece": 0.040858259999584964
+  },
+  {
+   "universe": "K=8",
+   "seed": 1,
+   "arm": "similarity",
+   "real": 0.18,
+   "claim": 0.3085132811862725,
+   "ece": 0.1144701602202511
+  },
+  {
+   "universe": "K=8",
+   "seed": 1,
+   "arm": "exact-match",
+   "real": 0.109,
+   "claim": 0.1584963251060698,
+   "ece": 0.047860555167430444
+  },
+  {
+   "universe": "K=8",
+   "seed": 1,
+   "arm": "oracle",
+   "real": 0.263,
+   "claim": 0.2825086051334529,
+   "ece": 0.020444340520170218
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 1,
+   "arm": "SH-GD/SM-L",
+   "real": 0.2085,
+   "claim": 0.23538519737374464,
+   "ece": 0.022733854845002382
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 1,
+   "arm": "tool-bandit",
+   "real": 0.0225,
+   "claim": 0.12989940680973167,
+   "ece": 0.11669903581088775
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 1,
+   "arm": "similarity",
+   "real": 0.0795,
+   "claim": 0.23330816577425784,
+   "ece": 0.13557269436705535
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 1,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 1,
+   "arm": "oracle",
+   "real": 0.193,
+   "claim": 0.2610833571243085,
+   "ece": 0.05793331881801332
+  },
+  {
+   "universe": "K=8",
+   "seed": 2,
+   "arm": "SH-GD/SM-L",
+   "real": 0.134,
+   "claim": 0.12521320558691085,
+   "ece": 0.008848969677171557
+  },
+  {
+   "universe": "K=8",
+   "seed": 2,
+   "arm": "tool-bandit",
+   "real": 0.0995,
+   "claim": 0.07917836668233114,
+   "ece": 0.016527919256915855
+  },
+  {
+   "universe": "K=8",
+   "seed": 2,
+   "arm": "similarity",
+   "real": 0.0915,
+   "claim": 0.16604375086893586,
+   "ece": 0.0740533052028492
+  },
+  {
+   "universe": "K=8",
+   "seed": 2,
+   "arm": "exact-match",
+   "real": 0.0995,
+   "claim": 0.09737989805810343,
+   "ece": 0.005754265316783394
+  },
+  {
+   "universe": "K=8",
+   "seed": 2,
+   "arm": "oracle",
+   "real": 0.132,
+   "claim": 0.141305388318136,
+   "ece": 0.012618464008718133
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 2,
+   "arm": "SH-GD/SM-L",
+   "real": 0.0815,
+   "claim": 0.08264916364459463,
+   "ece": 0.0022125972447222322
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 2,
+   "arm": "tool-bandit",
+   "real": 0.016,
+   "claim": 0.06480267349849034,
+   "ece": 0.06396626361915304
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 2,
+   "arm": "similarity",
+   "real": 0.0135,
+   "claim": 0.08728442256020286,
+   "ece": 0.0775903813849686
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 2,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 2,
+   "arm": "oracle",
+   "real": 0.091,
+   "claim": 0.11181071140206866,
+   "ece": 0.019766456874262386
+  },
+  {
+   "universe": "K=8",
+   "seed": 6,
+   "arm": "SH-GD/SM-L",
+   "real": 0.304,
+   "claim": 0.3131836070151228,
+   "ece": 0.007022604480427294
+  },
+  {
+   "universe": "K=8",
+   "seed": 6,
+   "arm": "tool-bandit",
+   "real": 0.282,
+   "claim": 0.25098499673352725,
+   "ece": 0.033669454702873663
+  },
+  {
+   "universe": "K=8",
+   "seed": 6,
+   "arm": "similarity",
+   "real": 0.2935,
+   "claim": 0.35299215455850397,
+   "ece": 0.06564940583531931
+  },
+  {
+   "universe": "K=8",
+   "seed": 6,
+   "arm": "exact-match",
+   "real": 0.2555,
+   "claim": 0.28443973690558655,
+   "ece": 0.024506150479224994
+  },
+  {
+   "universe": "K=8",
+   "seed": 6,
+   "arm": "oracle",
+   "real": 0.314,
+   "claim": 0.3193190398252914,
+   "ece": 0.0104744275033284
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 6,
+   "arm": "SH-GD/SM-L",
+   "real": 0.2335,
+   "claim": 0.2350389149940073,
+   "ece": 0.006098330020998571
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 6,
+   "arm": "tool-bandit",
+   "real": 0.2225,
+   "claim": 0.23613206949272736,
+   "ece": 0.07300787542771858
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 6,
+   "arm": "similarity",
+   "real": 0.2125,
+   "claim": 0.2510542974036416,
+   "ece": 0.038802195901507006
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 6,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 6,
+   "arm": "oracle",
+   "real": 0.2285,
+   "claim": 0.27374244807233383,
+   "ece": 0.04281973638646192
+  },
+  {
+   "universe": "K=8",
+   "seed": 4,
+   "arm": "SH-GD/SM-L",
+   "real": 0.218,
+   "claim": 0.26413733996664523,
+   "ece": 0.04197152632529586
+  },
+  {
+   "universe": "K=8",
+   "seed": 4,
+   "arm": "tool-bandit",
+   "real": 0.1805,
+   "claim": 0.18788606818217546,
+   "ece": 0.03784484533519375
+  },
+  {
+   "universe": "K=8",
+   "seed": 4,
+   "arm": "similarity",
+   "real": 0.1835,
+   "claim": 0.292145919142902,
+   "ece": 0.09454747039387089
+  },
+  {
+   "universe": "K=8",
+   "seed": 4,
+   "arm": "exact-match",
+   "real": 0.1105,
+   "claim": 0.17367969639871006,
+   "ece": 0.05674053513032231
+  },
+  {
+   "universe": "K=8",
+   "seed": 4,
+   "arm": "oracle",
+   "real": 0.2495,
+   "claim": 0.2885343844023278,
+   "ece": 0.03246440034923239
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 4,
+   "arm": "SH-GD/SM-L",
+   "real": 0.1595,
+   "claim": 0.17468940611640027,
+   "ece": 0.03011146290434579
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 4,
+   "arm": "tool-bandit",
+   "real": 0.069,
+   "claim": 0.17334306595807325,
+   "ece": 0.1364407825952393
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 4,
+   "arm": "similarity",
+   "real": 0.108,
+   "claim": 0.18072213989235963,
+   "ece": 0.0711088754874926
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 4,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 4,
+   "arm": "oracle",
+   "real": 0.166,
+   "claim": 0.23767845554414602,
+   "ece": 0.06122670889900257
+  },
+  {
+   "universe": "K=8",
+   "seed": 5,
+   "arm": "SH-GD/SM-L",
+   "real": 0.169,
+   "claim": 0.15188178785484074,
+   "ece": 0.017753434634412393
+  },
+  {
+   "universe": "K=8",
+   "seed": 5,
+   "arm": "tool-bandit",
+   "real": 0.1605,
+   "claim": 0.11036386413464139,
+   "ece": 0.034759872902896824
+  },
+  {
+   "universe": "K=8",
+   "seed": 5,
+   "arm": "similarity",
+   "real": 0.162,
+   "claim": 0.22735451041547294,
+   "ece": 0.05620330131809335
+  },
+  {
+   "universe": "K=8",
+   "seed": 5,
+   "arm": "exact-match",
+   "real": 0.105,
+   "claim": 0.10877445101047933,
+   "ece": 0.0064903639589670515
+  },
+  {
+   "universe": "K=8",
+   "seed": 5,
+   "arm": "oracle",
+   "real": 0.179,
+   "claim": 0.1910915493769344,
+   "ece": 0.009010255716470577
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 5,
+   "arm": "SH-GD/SM-L",
+   "real": 0.1505,
+   "claim": 0.13471697079668687,
+   "ece": 0.009904509029089988
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 5,
+   "arm": "tool-bandit",
+   "real": 0.126,
+   "claim": 0.10837970610994696,
+   "ece": 0.01628683460621825
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 5,
+   "arm": "similarity",
+   "real": 0.122,
+   "claim": 0.18871046587433848,
+   "ece": 0.05600506372509881
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 5,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 5,
+   "arm": "oracle",
+   "real": 0.148,
+   "claim": 0.16947424377887976,
+   "ece": 0.025918495651836952
+  },
+  {
+   "universe": "K=8",
+   "seed": 7,
+   "arm": "SH-GD/SM-L",
+   "real": 0.1855,
+   "claim": 0.1823081237143973,
+   "ece": 0.0016816498327973755
+  },
+  {
+   "universe": "K=8",
+   "seed": 7,
+   "arm": "tool-bandit",
+   "real": 0.154,
+   "claim": 0.14050619863600466,
+   "ece": 0.013159569973281823
+  },
+  {
+   "universe": "K=8",
+   "seed": 7,
+   "arm": "similarity",
+   "real": 0.168,
+   "claim": 0.25134068188907976,
+   "ece": 0.07392151889241642
+  },
+  {
+   "universe": "K=8",
+   "seed": 7,
+   "arm": "exact-match",
+   "real": 0.151,
+   "claim": 0.16219955080818627,
+   "ece": 0.011836933231306905
+  },
+  {
+   "universe": "K=8",
+   "seed": 7,
+   "arm": "oracle",
+   "real": 0.19,
+   "claim": 0.19309010621718026,
+   "ece": 0.0037464649020551625
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 7,
+   "arm": "SH-GD/SM-L",
+   "real": 0.1015,
+   "claim": 0.12127823427434681,
+   "ece": 0.022834529468142135
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 7,
+   "arm": "tool-bandit",
+   "real": 0.0555,
+   "claim": 0.1370929588643729,
+   "ece": 0.10235998115464626
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 7,
+   "arm": "similarity",
+   "real": 0.055,
+   "claim": 0.182099509295361,
+   "ece": 0.12262721469337161
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 7,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 7,
+   "arm": "oracle",
+   "real": 0.1275,
+   "claim": 0.15070729327686339,
+   "ece": 0.026489761840668414
+  },
+  {
+   "universe": "K=8",
+   "seed": 8,
+   "arm": "SH-GD/SM-L",
+   "real": 0.3465,
+   "claim": 0.3513336919161135,
+   "ece": 0.00936125671432251
+  },
+  {
+   "universe": "K=8",
+   "seed": 8,
+   "arm": "tool-bandit",
+   "real": 0.3205,
+   "claim": 0.26443966619902715,
+   "ece": 0.04151798561380196
+  },
+  {
+   "universe": "K=8",
+   "seed": 8,
+   "arm": "similarity",
+   "real": 0.317,
+   "claim": 0.36195563202976966,
+   "ece": 0.04292755359360939
+  },
+  {
+   "universe": "K=8",
+   "seed": 8,
+   "arm": "exact-match",
+   "real": 0.2235,
+   "claim": 0.2471712471486015,
+   "ece": 0.019293747518518492
+  },
+  {
+   "universe": "K=8",
+   "seed": 8,
+   "arm": "oracle",
+   "real": 0.332,
+   "claim": 0.3764287689085737,
+   "ece": 0.044905905390505936
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 8,
+   "arm": "SH-GD/SM-L",
+   "real": 0.308,
+   "claim": 0.301297332321965,
+   "ece": 0.010518739015327707
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 8,
+   "arm": "tool-bandit",
+   "real": 0.283,
+   "claim": 0.2598636820140535,
+   "ece": 0.019553694384050684
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 8,
+   "arm": "similarity",
+   "real": 0.282,
+   "claim": 0.2647766992003713,
+   "ece": 0.012686248961852388
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 8,
+   "arm": "exact-match",
+   "real": 0.0,
+   "claim": 0.0,
+   "ece": 0.0
+  },
+  {
+   "universe": "K=8 (transfer)",
+   "seed": 8,
+   "arm": "oracle",
+   "real": 0.311,
+   "claim": 0.361466827970909,
+   "ece": 0.047359670387045104
+  }
+ ],
+ "summary": {
+  "reference | SH-GD/SM-L": {
+   "real": 0.405810341318176,
+   "ece": 0.010021949165849326,
+   "diff_vs_proposed": 0.0,
+   "wilcoxon_p": null
+  },
+  "reference | tool-bandit": {
+   "real": 0.14876625700371093,
+   "ece": 0.024289795069789295,
+   "diff_vs_proposed": -0.25704408431446507,
+   "wilcoxon_p": 0.001953125
+  },
+  "reference | similarity": {
+   "real": 0.37263636229433905,
+   "ece": 0.15514496321298035,
+   "diff_vs_proposed": -0.03317397902383694,
+   "wilcoxon_p": 0.001953125
+  },
+  "reference | exact-match": {
+   "real": 0.32167617804,
+   "ece": 0.004790195820230955,
+   "diff_vs_proposed": -0.084134163278176,
+   "wilcoxon_p": 0.001953125
+  },
+  "reference | oracle": {
+   "real": 0.4095373415778097,
+   "ece": 0.010430287054511865,
+   "diff_vs_proposed": 0.0037270002596336447,
+   "wilcoxon_p": 0.001953125
+  },
+  "reference | optimal": {
+   "real": 0.40953734157780974,
+   "ece": null,
+   "diff_vs_proposed": 0.0037270002596337557,
+   "wilcoxon_p": 0.001953125
+  },
+  "reference (transfer) | SH-GD/SM-L": {
+   "real": 0.2001309372256052,
+   "ece": 0.017183425419360156,
+   "diff_vs_proposed": 0.0,
+   "wilcoxon_p": null
+  },
+  "reference (transfer) | tool-bandit": {
+   "real": 0.0,
+   "ece": 0.05328599881275346,
+   "diff_vs_proposed": -0.2001309372256052,
+   "wilcoxon_p": 0.001953125
+  },
+  "reference (transfer) | similarity": {
+   "real": 0.13252986732529687,
+   "ece": 0.30845811235965187,
+   "diff_vs_proposed": -0.06760106990030834,
+   "wilcoxon_p": 0.001953125
+  },
+  "reference (transfer) | exact-match": {
+   "real": 0.0,
+   "ece": 0.0,
+   "diff_vs_proposed": -0.2001309372256052,
+   "wilcoxon_p": 0.001953125
+  },
+  "reference (transfer) | oracle": {
+   "real": 0.20822692432877607,
+   "ece": 0.029035309663876872,
+   "diff_vs_proposed": 0.008095987103170854,
+   "wilcoxon_p": 0.03125
+  },
+  "reference (transfer) | optimal": {
+   "real": 0.2082269243287762,
+   "ece": null,
+   "diff_vs_proposed": 0.008095987103170993,
+   "wilcoxon_p": 0.001953125
+  },
+  "K=8 | SH-GD/SM-L": {
+   "real": 0.2211875,
+   "ece": 0.01457902662298234,
+   "diff_vs_proposed": 0.0,
+   "wilcoxon_p": null
+  },
+  "K=8 | tool-bandit": {
+   "real": 0.18587499999999998,
+   "ece": 0.030542424625593822,
+   "diff_vs_proposed": -0.035312500000000004,
+   "wilcoxon_p": 0.0078125
+  },
+  "K=8 | similarity": {
+   "real": 0.189,
+   "ece": 0.0708732652336737,
+   "diff_vs_proposed": -0.0321875,
+   "wilcoxon_p": 0.0078125
+  },
+  "K=8 | exact-match": {
+   "real": 0.142125,
+   "ece": 0.024846393342616308,
+   "diff_vs_proposed": -0.0790625,
+   "wilcoxon_p": 0.0078125
+  },
+  "K=8 | oracle": {
+   "real": 0.2265,
+   "ece": 0.019385582216684644,
+   "diff_vs_proposed": 0.005312500000000005,
+   "wilcoxon_p": 0.3828125
+  },
+  "K=8 (transfer) | SH-GD/SM-L": {
+   "real": 0.172375,
+   "ece": 0.014686283782199612,
+   "diff_vs_proposed": 0.0,
+   "wilcoxon_p": null
+  },
+  "K=8 (transfer) | tool-bandit": {
+   "real": 0.1125625,
+   "ece": 0.06890028856705097,
+   "diff_vs_proposed": -0.059812500000000005,
+   "wilcoxon_p": 0.0078125
+  },
+  "K=8 (transfer) | similarity": {
+   "real": 0.12275,
+   "ece": 0.06669286248925574,
+   "diff_vs_proposed": -0.04962500000000001,
+   "wilcoxon_p": 0.0078125
+  },
+  "K=8 (transfer) | exact-match": {
+   "real": 0.0,
+   "ece": 0.0,
+   "diff_vs_proposed": -0.172375,
+   "wilcoxon_p": 0.0078125
+  },
+  "K=8 (transfer) | oracle": {
+   "real": 0.174,
+   "ece": 0.03928133602776287,
+   "diff_vs_proposed": 0.0016249999999999997,
+   "wilcoxon_p": 0.84375
+  }
+ }
+}

@@ -471,6 +471,73 @@ def time_to_recover(row: dict, tau_tool: float, tau_llm: float) -> float:
 # ---------------------------------------------------------------------------
 
 
+HANDOVER_U = 0.02      # hand over when the best utility (Eq.15) is below this
+MAX_HANDOVERS = 6
+
+
+def episode_handover(belief: M.RelBelief, cfg: M.Config, rng: random.Random,
+                     env: L.FaultEnv, client, learn: bool = True
+                     ) -> Tuple[L.EpisodeResult, int]:
+    """M-H (revision): arm C, but when no candidate clears the pruning
+    constant or the best utility is below HANDOVER_U, ONE decision is handed
+    to the LLM (same prompt as arms A/B, with the learned hint). The executed
+    result, whoever chose it, is fed back into the posteriors.
+    Returns (result, number of hand-overs)."""
+    pol = M.MyopicPolicy(belief.snapshot_mean(), cfg)
+    store = {"instruction": L.instruction_payload()}
+    st = M.State()
+    trace, steps, handovers, malformed = [], 0, 0, 0
+    calls0 = client.calls
+    done_names, failed_names, last_error = [], [], ""
+    for _ in range(MAX_DECISIONS):
+        if "final_report" in store:
+            break
+        rows = pol.scores(st)
+        i = rows[0][0] if rows else None
+        if i is not None and rows[0][4] >= HANDOVER_U:
+            t = M.TASKS[i]
+            sigma = st.sigma()
+            name = t.name
+            sub = {s_: (pol.est.best_substitution(s_, sigma)[0] or s_) for s_ in t.inputs}
+        else:
+            if handovers >= MAX_HANDOVERS:
+                break
+            handovers += 1
+            extra = (L.msg("last_failure", err=last_error) if last_error else "")
+            extra += L.msg("hint", hint=L.rel_hint_text(belief, cfg))
+            prompt = L.system_prompt().format(tools=L.tools_block(), sigma=sorted(store),
+                                              failed=failed_names or L.msg("none"),
+                                              done=done_names or L.msg("none"), extra=extra)
+            act = L.parse_action(client.chat([{"role": "user", "content": prompt}]))
+            if act is None:
+                malformed += 1
+                last_error = L.msg("malformed")
+                continue
+            name, sub = act
+            if name not in M.TASK_INDEX or (st.used() >> M.TASK_INDEX[name]) & 1:
+                last_error = L.msg("already_failed", name=name)
+                continue
+            i = M.TASK_INDEX[name]
+        ok, obs, err = L._apply(name, sub, store, rng, env)
+        steps += 1
+        trace.append((name, ok, err, frozenset(store), client.calls - calls0))
+        if learn:
+            for x, s_, passed in obs:
+                belief.observe(x, s_, passed)
+            eo = L.exec_outcome(ok, err)
+            if eo is not None:
+                belief.observe_exec(name, eo)
+        if ok:
+            done_names.append(name)
+            last_error = ""
+            st = st.with_success(i)
+        else:
+            failed_names.append(name)
+            last_error = err
+            st = st.with_failure(i)
+    return (L.EpisodeResult("final_report" in store, steps, malformed, 0.0, [], trace), handovers)
+
+
 def run_llm(args) -> None:
     """Arms A/B driven by a real model, with arm C run on the SAME random
     streams (common random numbers) so that the comparison is paired.
@@ -491,14 +558,17 @@ def run_llm(args) -> None:
 
     for key in args.scenarios.split(","):
         scn = SCN[key]
-        for arm, reflect in (("C", None), ("A", 0), ("B", 3)):
+        arms = [a_ for a_ in (("C", None), ("A", 0), ("B", 3), ("C+H", None))
+                if a_[0] in args.llm_arms.split(",")]
+        for arm, reflect in arms:
             cells = []
-            for sd in range(1, args.llm_seeds + 1):
+            for sd in range(args.llm_seed_start, args.llm_seed_start + args.llm_seeds):
                 acc = Acc()
                 rng = random.Random(10_000 + 100 * sd + SCN_INDEX[key])
-                if arm == "C":
+                hand = 0
+                if arm in ("C", "C+H"):
                     belief = trained_belief(cfg, sd, args.train_episodes)
-                else:
+                if arm != "C":
                     client = L.make_client(args.backend, args.endpoint, args.model,
                                            no_think=not args.think)
                 for _ in range(args.episodes):
@@ -506,18 +576,26 @@ def run_llm(args) -> None:
                     if arm == "C":
                         r, ds, nd = episode_shgdsm(belief, cfg, rng, env)
                         acc.dec_seconds += ds; acc.decisions += nd
+                    elif arm == "C+H":
+                        r, h = episode_handover(belief, cfg, rng, env, client)
+                        hand += h
                     else:
                         r = L.episode_llm(client, rng, reflect=reflect, env=env)
                     acc.add(r, scn, not args.iid)
                 if arm != "C" and client.calls:
                     lat.setdefault(f"{arm}", []).append(client.latency_s / client.calls)
                 cells.append(acc.summary())
+                cells[-1]["handovers_per_episode"] = hand / args.episodes
+                if arm != "C":
+                    cells[-1]["llm_calls_total"] = client.calls
+                    cells[-1]["cost_usd"] = L.client_cost(client)
                 print(key, arm, sd, json.dumps(cells[-1], ensure_ascii=False), flush=True)
             agg = {}
             for k in cells[0]:
                 m, h = ci95([c[k] for c in cells])
                 agg[k], agg[k + "_ci"] = m, h
-            results.setdefault(key, {})[f"{arm}-llm" if arm != "C" else "C"] = agg
+            agg["cells"] = cells
+            results.setdefault(key, {})[f"{arm}-llm" if arm not in ("C", "C+H") else arm] = agg
             dump()
     print("wrote", args.out)
 
@@ -553,12 +631,17 @@ def main() -> None:
     ap.add_argument("--lang", choices=["en", "ja"], default="en")
     ap.add_argument("--think", action="store_true")
     ap.add_argument("--llm-seeds", type=int, default=3)
+    ap.add_argument("--llm-seed-start", type=int, default=1)
+    ap.add_argument("--llm-arms", default="C,A,B",
+                    help="subset of C,A,B,C+H (C+H: hand-over extension, M-H)")
+    ap.add_argument("--effort", default="medium")
     ap.add_argument("--estimator", choices=["lcb", "mean"], default="lcb")
     ap.add_argument("--iid", action="store_true",
                     help="i.i.d. per-call execution errors instead of persistent")
     args = ap.parse_args()
 
     L.PROMPT_LANG = args.lang
+    L.EFFORT = args.effort
     if args.endpoint is None:
         args.endpoint = ("https://api.openai.com/v1/chat/completions"
                          if args.backend == "openai" else L.DEFAULT_ENDPOINT)
